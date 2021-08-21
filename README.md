@@ -1,5 +1,4 @@
-# ground-motion-packet
-Description of GMP —A GeoJSON Specification for Ground Motion Metrics
+# Description of GMP —A GeoJSON Specification for Ground Motion Metrics
 
 Here we present a specification for a GeoJSON (https://geojson.org/) format for 
 unassociated and event-associated ground motion metrics—that is, quantities 
