@@ -1,0 +1,250 @@
+{
+    "type": "FeatureCollection",
+    "ground_motion_packet_format_version": "0.1-dev",
+    "provenance": {
+        "prefix": {
+            "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+        },
+        "agent": {
+            "seis_prov:sp000_sa_0000000": {
+                "prov:label": "gmprocess",
+                "prov:type": {
+                    "$": "prov:SoftwareAgent",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:software_name": "gmprocess",
+                "seis_prov:software_version": "1.1",
+                "seis_prov:website": {
+                    "$": "http://dx.doi.org/10.5066/P9ANQXN3",
+                    "type": "xsd:anyURI"
+                },
+                "seis_prov:role": "software"
+            },
+            "seis_prov:sp000_pp_0000000": {
+                "prov:label": "Mr. Processor",
+                "prov:type": {
+                    "$": "prov:Person",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "Mr. Processor",
+                "seis_prov:email": "mrprocessor@processing.org",
+                "seis_prov:role": "data processor"
+            },
+            "seis_prov:sp000_og_0000000": {
+                "prov:label": "IRIS DMC",
+                "prov:type": {
+                    "$": "prov:Organization",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "IRIS DMC",
+                "seis_prov:role": "data distributor",
+                "seis_prov:website": {
+                    "$": "https://www.iris.edu/",
+                    "type": "xsd:anyURI"
+                }
+            }
+        }
+    },
+    "event": {
+        "type": "Feature",
+        "properties": {
+            "id": "ci38457511",
+            "time": "2019-07-06T03:19:53Z",
+            "magnitude": 7.1
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -117.599,
+                35.77,
+                8.0
+            ]
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "class": "station",
+                "network_code": "CI",
+                "station_code": "CCC",
+                "name": "Christmas Canyon China Lake",
+                "streams": [
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 100.0,
+                            "stream_housing": {
+                                "cosmos_code": 10,
+                                "description": "Building",
+                                "stream_depth": 0.0
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": -90.0,
+                                    "start_time": "2019-07-06T03:19:53Z",
+                                    "end_time": "2019-07-06T04:59:53Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Spectral acceleration",
+                                            "name": "SA",
+                                            "units": "g",
+                                            "provenance_ids": [
+                                                "seis_prov:sp000_sa_0000000",
+                                                "seis_prov:sp000_pp_0000000",
+                                                "seis_prov:sp000_og_0000000"
+                                            ]
+                                        },
+                                        "dimensions": {
+                                            "number": 2,
+                                            "names": [
+                                                "critical damping",
+                                                "period"
+                                            ],
+                                            "units": [
+                                                "%",
+                                                "s"
+                                            ],
+                                            "values": [
+                                                [
+                                                    5.0,
+                                                    10.0,
+                                                    20.0
+                                                ],
+                                                [
+                                                    0.5,
+                                                    1.0,
+                                                    1.5
+                                                ]
+                                            ]
+                                        },
+                                        "values": [
+                                            [
+                                                2.3,
+                                                2.0,
+                                                0.4
+                                            ],
+                                            [
+                                                1.6,
+                                                1.4,
+                                                0.8
+                                            ],
+                                            [
+                                                2.0,
+                                                1.8,
+                                                1.0
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2019-07-06T03:42:53Z",
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "ROTD50",
+                                    "location_code": "--",
+                                    "as_recorded": false,
+                                    "azimuth": 0,
+                                    "dip": 0,
+                                    "start_time": "2019-07-06T03:19:53Z",
+                                    "end_time": "2019-07-06T04:59:53Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Significant duration",
+                                            "name": "SDUR",
+                                            "units": "sec"
+                                        },
+                                        "dimensions": {
+                                            "number": 2,
+                                            "names": [
+                                                "Start percentage",
+                                                "End percentage"
+                                            ],
+                                            "units": [
+                                                "%",
+                                                "%"
+                                            ],
+                                            "axis_values": [
+                                                [
+                                                    5.0
+                                                ],
+                                                [
+                                                    75.0,
+                                                    95.0
+                                                ]
+                                            ]
+                                        },
+                                        "values": [
+                                            [
+                                                22.3,
+                                                22.6
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "description": "Bracketed duration",
+                                            "name": "BDUR",
+                                            "units": "sec"
+                                        },
+                                        "dimensions": {
+                                            "number": 1,
+                                            "names": [
+                                                "Threshold"
+                                            ],
+                                            "units": [
+                                                "g"
+                                            ],
+                                            "axis_values": [
+                                                0.025,
+                                                0.05,
+                                                0.1
+                                            ]
+                                        },
+                                        "values": [
+                                            41.7,
+                                            30.5,
+                                            23.4
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3645,
+                    35.5249,
+                    670.0
+                ]
+            }
+        }
+    ]
+}
