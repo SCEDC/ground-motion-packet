@@ -1,12 +1,20 @@
----
-layout: page
-title: Event
-nav_order: 3
-parent: Specification
-has_toc: false
----
+Navigation
+----------
 
-## Event
+ - [About](../index.md)
+ - [GeoJSON Overview](../geojson.md)
+ - [Terminology](../terms.md)
+ - Specification
+   - [Base Dictionary](base.md)
+   - [Event Dictionary](event.md)
+   - [Provenance](provenance.md)
+   - Features
+     - [Stations](features/station.md)
+     - [Streams and Traces](features/streams_traces.md)
+     - [Metrics Dictionary](features/metrics_dict.md)
+
+Event
+=====
 
 The event dictionary contains the following keys:
 
@@ -52,13 +60,13 @@ The event dictionary contains the following keys:
 Including the "event" dictionary is not required, but if it is present then the 
 above elements are required.
 
-<i><b>NOTE</b>: "depth" in the events geometry coordinates array is defined as 
-kilometers positive downward. This conforms with seismic metadata convention, 
-but deviates from GeoJSON. Note, however, that "downward from what?" is a 
-legitimate question. It may be the surface or it may be the WGS 84 ellipsoid or 
-some other reference. This standard makes no attempt to define a reference. 
-Users concerned with such matters should consult an authoritative reference for 
-earthquake origin information.</i>
+> NOTE: "depth" in the events geometry coordinates array is defined as 
+> kilometers positive downward. This conforms with seismic metadata convention, 
+> but deviates from GeoJSON. Note, however, that "downward from what?" is a 
+> legitimate question. It may be the surface or it may be the WGS 84 ellipsoid 
+> or some other reference. This standard makes no attempt to define a reference. 
+> Users concerned with such matters should consult an authoritative reference
+> for earthquake origin information.
 
 The following example illustrates the "event" dictionary:
 
