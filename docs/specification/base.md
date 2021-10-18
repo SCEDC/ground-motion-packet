@@ -1,11 +1,20 @@
----
-layout: page
-title: Base Dictionary
-nav_order: 1
-parent: Specification
----
+Navigation
+----------
 
-## Base Dictionary
+ - [About](../index.md)
+ - [GeoJSON Overview](../geojson.md)
+ - [Terminology](../terms.md)
+ - Specification
+   - [Base Dictionary](base.md)
+   - [Event Dictionary](event.md)
+   - [Provenance](provenance.md)
+   - Features
+     - [Stations](features/station.md)
+     - [Streams and Traces](features/streams_traces.md)
+     - [Metrics Dictionary](features/metrics_dict.md)
+
+Base Dictionary
+===============
 
 For the base GeoJSON dictionary, the GMP specification adds three additional
 keys:

@@ -1,13 +1,21 @@
----
-layout: page
-title: Streams and Traces
-nav_order: 3
-parent: Features
-grand_parent: Specification
-has_toc: false
----
+Navigation
+----------
 
-## Streams and Traces
+ - [About](../../index.md)
+ - [GeoJSON Overview](../../geojson.md)
+ - [Terminology](../../terms.md)
+ - Specification
+   - [Base Dictionary](../base.md)
+   - [Event Dictionary](../event.md)
+   - [Provenance](../provenance.md)
+   - Features
+     - [Stations](station.md)
+     - [Streams and Traces](streams_traces.md)
+     - [Metrics Dictionary](metrics_dict.md)
+
+
+Streams and Traces
+==================
 
 For the purposes of the GMP format, we require that the traces be grouped into 
 streams for which their corresponding properties (i.e., metadata) are 

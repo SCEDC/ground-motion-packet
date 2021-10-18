@@ -1,11 +1,21 @@
----
-layout: page
-title: Provenance
-nav_order: 2
-parent: Specification
----
+Navigation
+----------
 
-## Provenance 
+ - [About](../index.md)
+ - [GeoJSON Overview](../geojson.md)
+ - [Terminology](../terms.md)
+ - Specification
+   - [Base Dictionary](base.md)
+   - [Event Dictionary](event.md)
+   - [Provenance](provenance.md)
+   - Features
+     - [Stations](features/station.md)
+     - [Streams and Traces](features/streams_traces.md)
+     - [Metrics Dictionary](features/metrics_dict.md)
+
+
+Provenance 
+==========
 
 The provenance document is meant to inform the user about the provider, source, 
 distributor, and processing of the data in this file. The provenance should 

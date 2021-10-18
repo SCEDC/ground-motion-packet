@@ -1,13 +1,21 @@
----
-layout: page
-title: Metrics Dictionary
-nav_order: 4
-parent: Features
-grand_parent: Specification
-has_toc: false
----
+Navigation
+----------
 
-## Metrics Dictionary
+ - [About](../../index.md)
+ - [GeoJSON Overview](../../geojson.md)
+ - [Terminology](../../terms.md)
+ - Specification
+   - [Base Dictionary](../base.md)
+   - [Event Dictionary](../event.md)
+   - [Provenance](../provenance.md)
+   - Features
+     - [Stations](station.md)
+     - [Streams and Traces](streams_traces.md)
+     - [Metrics Dictionary](metrics_dict.md)
+
+
+Metrics Dictionary
+==================
 
 The "metrics" dictionary contains the values and metadata relevant for the 
 metrics associated with the parent trace. One challenge with ground motion

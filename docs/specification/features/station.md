@@ -1,13 +1,21 @@
----
-layout: page
-title: Stations
-nav_order: 2
-parent: Features
-grand_parent: Specification
-has_toc: false
----
+Navigation
+----------
 
-## Stations
+ - [About](../../index.md)
+ - [GeoJSON Overview](../../geojson.md)
+ - [Terminology](../../terms.md)
+ - Specification
+   - [Base Dictionary](../base.md)
+   - [Event Dictionary](../event.md)
+   - [Provenance](../provenance.md)
+   - Features
+     - [Stations](station.md)
+     - [Streams and Traces](streams_traces.md)
+     - [Metrics Dictionary](metrics_dict.md)
+
+
+Stations
+========
 
 The GeoJSON features represent seismic stations in the GMP specification. 
 Station metadata is included in the GeoJSON feature "properties" dictionary. 
@@ -26,9 +34,9 @@ Requited properties include:
     <i>(list; required)</i>.</dd>
 </dl>
 
-<i><b>NOTE</b>: "depth" in the station geometry coordinates array is defined as 
-meters positive downward from the surface. This conforms with seismic metadata 
-convention, but deviates from GeoJSON.</i>
+> NOTE: "depth" in the station geometry coordinates array is defined as 
+> meters positive downward from the surface. This conforms with seismic
+> metadata convention, but deviates from GeoJSON.
 
 Example:
 

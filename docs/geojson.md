@@ -1,10 +1,21 @@
----
-layout: page
-title: GeoJSON Overview
-nav_order: 3
----
+Navigation
+----------
 
-## GeoJSON Overview
+ - [About](index.md)
+ - [GeoJSON Overview](geojson.md)
+ - [Terminology](terms.md)
+ - Specification
+   - [Base Dictionary](specification/base.md)
+   - [Event Dictionary](specification/event.md)
+   - [Provenance](specification/provenance.md)
+   - Features
+     - [Stations](specification/features/station.md)
+     - [Streams and Traces](specification/features/streams_traces.md)
+     - [Metrics Dictionary](specification/features/metrics_dict.md)
+
+
+GeoJSON Overview
+================
 
 The GMP ground motion format is an extension of the GeoJSON "FeatureCollection"
 format for points. For example, a simple collection of two points in GeoJSON
