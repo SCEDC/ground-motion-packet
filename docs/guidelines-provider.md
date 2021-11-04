@@ -24,3 +24,15 @@ a provider to send GMP data even if this information is not known. How much
 detail is known to the provider will affect how the stream dictionary is
 organized. Table 2 gives guidance on how a provider should write a GMP file
 depending on how much information is known about site installation.
+
+Table: Stream/Trace Organization vs Site Installation Type 
+=====
+
+Site Type | Is stream_housing and/or depth known to data provider?
+| Number of stream Elements; Number of traces per stream (“as_recorded” = True) 
+| Comments 
+ --- | --- | --- | ---
+  1 triaxial sensor digitized at 100 sps
+| Yes
+| streams []: 1
+| traces{} : 3
