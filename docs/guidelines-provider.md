@@ -8,13 +8,13 @@ Navigation
    - [Base Dictionary](base.md)
    - [Event Dictionary](event.md)
    - [Provenance](provenance.md)
-   - [Guidelines for Data Providers](guidelines-provider.md)
+   - [Guidelines for Data Providers on Incomplete Data](guidelines-provider.md)
    - Features
      - [Stations](features/station.md)
      - [Streams and Traces](features/streams_traces.md)
      - [Metrics Dictionary](features/metrics_dict.md)
 
-Guidelines for Data Providers
+Guidelines for Data Providers on Incomplete Data
 =====
 
 It is a common scenario where the data provider may only know the instrument
