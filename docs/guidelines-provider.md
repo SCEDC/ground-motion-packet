@@ -20,8 +20,11 @@ Guidelines for Data Providers on Incomplete Data  (Work in Progress)
 It is a common scenario where the data provider may only know the instrument
 response for seismic channels but may not be given information on sensor
 installation (housing, emplacement depth).  How much detail is known to the 
-provider will affect how the stream dictionary is organized. **If the provider 
-does not have enough information to separate 2 time series they should be put into the same stream.**
+provider will affect how the stream dictionary is organized. 
+
+**If the provider has sufficient knowledge of the site installation, a stream should contain traces from a single sensor at a single sample rate.**
+
+**If the provider does not have enough information to separate 2 time series they should be put into the same stream.**
 
 Example
 ====
