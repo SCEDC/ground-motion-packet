@@ -5,9 +5,9 @@ Navigation
  - [GeoJSON Overview](geojson.md)
  - [Terminology](terms.md)
  - Specification
-   - [Base Dictionary](specification/base.md)
-   - [Event Dictionary](specification/event.md)
-   - [Provenance](specification/provenance.md)
+   - [Base Dictionary](../specification/base.md)
+   - [Event Dictionary](../specification/event.md)
+   - [Provenance](../specification/provenance.md)
    - [Guidelines for Data Providers on Incomplete Data](guidelines-provider.md)
    - Features
      - [Stations](features/station.md)
@@ -24,7 +24,7 @@ provider will affect how the stream dictionary is organized.
 
 **If the provider has sufficient knowledge of the site installation, a stream should contain traces from a single sensor at a single sample rate.**
 
-**If the provider does not have enough information to separate 2 time series they should be put into the same stream.**
+**If the provider does not have enough information to determine if multiple time series with the same sample rate came from one or more sensors they should be put into the same stream.**
 
 Example
 ====
