@@ -1,9 +1,9 @@
 Navigation
 ----------
 
- - [About](../index.md)
- - [GeoJSON Overview](../geojson.md)
- - [Terminology](../terms.md)
+ - [About](index.md)
+ - [GeoJSON Overview](geojson.md)
+ - [Terminology](terms.md)
  - Specification
    - [Base Dictionary](base.md)
    - [Event Dictionary](event.md)
