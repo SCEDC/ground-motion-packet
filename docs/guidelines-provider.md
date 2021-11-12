@@ -5,9 +5,9 @@ Navigation
  - [GeoJSON Overview](geojson.md)
  - [Terminology](terms.md)
  - Specification
-   - [Base Dictionary](base.md)
-   - [Event Dictionary](event.md)
-   - [Provenance](provenance.md)
+   - [Base Dictionary](specification/base.md)
+   - [Event Dictionary](specification/event.md)
+   - [Provenance](specification/provenance.md)
    - [Guidelines for Data Providers on Incomplete Data](guidelines-provider.md)
    - Features
      - [Stations](features/station.md)
