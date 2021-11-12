@@ -5,14 +5,14 @@ Navigation
  - [GeoJSON Overview](geojson.md)
  - [Terminology](terms.md)
  - Specification
-   - [Base Dictionary](../specification/base.md)
-   - [Event Dictionary](../specification/event.md)
-   - [Provenance](../specification/provenance.md)
+   - [Base Dictionary](specification/base.md)
+   - [Event Dictionary](specification/event.md)
+   - [Provenance](specification/provenance.md)
    - [Guidelines for Data Providers on Incomplete Data](guidelines-provider.md)
    - Features
-     - [Stations](features/station.md)
-     - [Streams and Traces](features/streams_traces.md)
-     - [Metrics Dictionary](features/metrics_dict.md)
+     - [Stations](specification/features/station.md)
+     - [Streams and Traces](specification/features/streams_traces.md)
+     - [Metrics Dictionary](specification/features/metrics_dict.md)
 
 Guidelines for Data Providers on Incomplete Data  (Work in Progress)
 =====
