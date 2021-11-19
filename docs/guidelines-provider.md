@@ -44,7 +44,8 @@ location code: 10
 ```
 
 If both channels have a sample rate 100 sps and nothing else is known about the site installation,
-then both traces should be put into one stream.
+then both traces should be put into one stream. They should also set the values of the keys "cosmos_code" 
+and "stream_depth" to "unknown" in the "stream_housing" dictionary.
 
 ```
 ...
