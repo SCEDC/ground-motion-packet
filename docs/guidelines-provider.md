@@ -140,23 +140,6 @@ and the other channel belonging to the borehole sensor at 20.0 m depth, then the
                                     "end_time":"2019-07-06T04:59:53Z"
                                 },   
 ...
-```
-
-The following table gives guidance on how a provider should write a GMP file depending on how much information is known about site installation.
-
-Table: Stream/Trace Organization vs Site Installation Type (Version 2)
-=====
-
-Sensor Type | Is sample rate uniform? | Is housing known? | # surface sensors | # borehole sensors | Number of Streams | Number of Traces | Comments
---- | --- | --- | --- | --- | --- | --- | ---
-triaxial | Yes | Yes | 1 | 0 | 1 | 3 | 3 traces because it is a triaxial sensor; in the "stream_housing" dictionary, the "cosmos_code" and "stream_depth" are known.
-triaxial | Yes | No | 1 | 0 | 1 | 3 | 3 traces because it is a triaxial sensor; in the "stream_housing" dictionary, mark "cosmos_code" and "stream_depth" as "unknown"
-triaxial | No | Yes | 1 | 0 | 2+ | 3,3... | N 3-trace streams; stream is grouped by sample rate (e.g., 100 sps and 200 sps); housing is indicated in stream properties.
-triaxial | No | No | 1 | 0 | 2+ | 3,3... | N 3-trace streams; stream is grouped by sample rate (e.g., 100 sps and 200 sps); housing is unknown is stream properties.
-triaxial | Yes | Yes | 1 | 1 | 2 | 3,3 | The depth of the sensors is given in "stream_depth" under "stream_housing" for each stream; the "cosmos_code" is also given.
-triaxial | Yes | No | 1 | 1 | 1 | 6 | In the "stream_housing" dictionary, mark "cosmos_code" and "stream_depth" as "unknown"; the sensors are differentiated by location code
-mixed | Yes | Yes | 2 | 1 | 3 | 1,3,3 | First stream is a vertical surface sensor, second is a surface triaxial, third is a borehole triaxial with known depth(i.e. known housing).
-mixed | Yes | No | 2 | 1 | 2 | 1,6 | First stream is a vertical surface sensor, second is a pair of triaxial sensors with distinct location codes but unknown housing.
 
 
 
