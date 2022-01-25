@@ -35,8 +35,8 @@ Requited properties include:
 </dl>
 
 > NOTE: "depth" in the station geometry coordinates array is defined as 
-> meters positive downward from the surface. This conforms with seismic
-> metadata convention, but deviates from GeoJSON.
+> meters positive from the WGS84 datum. This conforms with GEOJSON
+> standard, but defiates from metadata convention.
 
 Example:
 
