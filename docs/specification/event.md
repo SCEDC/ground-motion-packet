@@ -32,7 +32,7 @@ The event dictionary contains the following keys:
         </dd>
       <dt>time</dt>
         <dd>
-          Event origin time in UTC ISO 8601 *extended* format (i.e., with separators between the year, month, and day, and the hour, minutes, and seconds, and with a “T” between the date and time) <i>(string; required)</i>.
+          Event origin time in UTC ISO 8601 *extended* format (i.e., with separators between the year, month, and day, and the hour, minutes, and seconds, and with a “T” between the date and time)<i>(string; required)</i>.
         </dd>
       <dt>magnitude</dt>
         <dd>
@@ -61,7 +61,7 @@ Including the "event" dictionary is not required, but if it is present then the
 above elements are required.
 
 > NOTE: "depth" in the events geometry coordinates array conforms with the
-> GeoJSON standard (meters above WGS datum). This id different from  
+> GeoJSON standard (meters above WGS datum). This is different from
 > seismic metadata convention, which is kilometers positive downward.
 
 The following example illustrates the "event" dictionary:
