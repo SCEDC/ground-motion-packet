@@ -25,6 +25,11 @@ keys:
       The version of the ground motion packet 
       <i>(string; required)</i>.
     </dd>
+ <dt>creation_time</dt>
+    <dd>
+     File creation timestamp in UTC in ISO 8601 *extended* format (i.e., with separators between the year, month, and day, and the hour, minutes, and seconds, and with a “T” between the date and time) ex “2022-01-16T14:12:32.470Z” 
+      <i>(string; required)</i>.
+    </dd>
   <dt>event</dt>
     <dd> 
       An optional dictionary containing earthquake properties for the
