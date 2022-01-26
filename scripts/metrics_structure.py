@@ -26,13 +26,13 @@ def main():
     for station in gmp["features"]:
         sta_properties = station["properties"]
         sta_coords = station["geometry"]["coordinates"]
-        print(f"-> name:\t{sta_properties['name']}")
+        print(f"── name:\t{sta_properties['name']}")
         print(f"   network code:\t{sta_properties['network_code']}")
         print(f"   station code:\t{sta_properties['station_code']}")
 
         for stream in sta_properties["streams"]:
             stream_properties = stream["properties"]
-            print(f"---> band code:\t{stream_properties['band_code']}")
+            print(f"──── band code:\t{stream_properties['band_code']}")
             print(f"     inst code:\t{stream_properties['instrument_code']}")
             print(f"     sampel rate:\t{stream_properties['samples_per_second']} Hz")
 
@@ -41,7 +41,7 @@ def main():
 
             for trace in stream["traces"]:
                 trace_properties = trace["properties"]
-                print(f"-----> channel code:\t{trace_properties['channel_code']}")
+                print(f"────── channel code:\t{trace_properties['channel_code']}")
                 print(f"       location code:\t{trace_properties['location_code']}")
                 print(f"       as recorded:\t{trace_properties['as_recorded']}")
                 print(f"       dip:\t{trace_properties['dip']} deg")
