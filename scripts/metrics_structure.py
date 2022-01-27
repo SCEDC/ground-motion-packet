@@ -20,6 +20,11 @@ def main():
         f"Summary of metrics for event {event['id']} "
         f"(file created {gmp['creation_time']})"
     )
+    print("PROVENANCE")
+    prov = gmp["provenance"]
+    agents = prov["agent"]
+    for provid, prov_dict in agents.items():
+        print_provenance_agent(prov_dict)
     print("-" * 80)
     print("EVENT")
     print(f"  magnitude:    {event['magnitude']}")
@@ -27,7 +32,9 @@ def main():
     print(f"  longitude:    {event_coords[0]} degrees")
     print(f"  latitude:     {event_coords[1]} degrees")
     print(f"  elevation:    {event_coords[2]} m")
+    print("-" * 80)
 
+    print("FEATURES")
     for station in gmp["features"]:
         sta_properties = station["properties"]
         sta_coords = station["geometry"]["coordinates"]
@@ -60,6 +67,26 @@ def main():
                 print("──────── METRICS")
                 for metric in trace["metrics"]:
                     print_metrics(metric, indent=9)
+
+
+def print_provenance_agent(prov_dict):
+    if prov_dict["seis_prov:role"] == "software":
+        software = prov_dict["seis_prov:software_name"]
+        software_version = prov_dict["seis_prov:software_version"]
+        print("── SOFTWARE")
+        print(f"   name: {software}")
+        print(f"   version: {software_version}")
+    elif prov_dict["seis_prov:role"] == "data distributor":
+        print("── DATA DISTRIBUTOR")
+        dist_name = prov_dict["seis_prov:name"]
+        print(f"   name: {dist_name}")
+    elif prov_dict["seis_prov:role"] == "data provider":
+        print("── DATA PROVIDER")
+        provider_name = prov_dict["seis_prov:name"]
+        print(f"   name: {provider_name}")
+    if "seis_prov:website" in prov_dict:
+        software_url = prov_dict["seis_prov:website"]["$"]
+        print(f"   url: {software_url}")
 
 
 def print_metrics(metric, indent=0):
