@@ -57,7 +57,7 @@ def main():
                 print(f"       start time:     {trace_properties['start_time']}")
                 print(f"       end time:       {trace_properties['end_time']}")
 
-                print("       METRICS:")
+                print("──────── METRICS")
                 for metric in trace["metrics"]:
                     print_metrics(metric, indent=9)
 
@@ -70,7 +70,7 @@ def print_metrics(metric, indent=0):
     munits = metric_properties["units"]
     mvals = metric["values"]
     if ndims == 0:
-        print(instr + f"{desc}: {mvals}, {munits}")
+        print(instr + f"{desc}: {mvals} {munits}")
     elif ndims == 1:
         dims = metric["dimensions"]
         dnames = dims["names"]
@@ -82,7 +82,7 @@ def print_metrics(metric, indent=0):
         for ind0 in range(shape):
             dval0 = dvals[ind0]
             val = mvals[ind0]
-            print(instr + f"{desc} [{dname0}={dval0} {dunit0}]: {val}, {munits}")
+            print(instr + f"{desc} [{dname0}={dval0} {dunit0}]: {val} {munits}")
     elif ndims == 2:
         dims = metric["dimensions"]
         dnames = dims["names"]

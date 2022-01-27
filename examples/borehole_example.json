@@ -97,8 +97,8 @@
                             "instrument_code": "N",
                             "samples_per_second": 200.0,
                             "stream_housing": {
-                                "cosmos_code": 6,
-                                "description": "Free field",
+                                "cosmos_code": 50,
+                                "description": "Geotechnical array",
                                 "stream_depth": 0.0
                             }
                         },
