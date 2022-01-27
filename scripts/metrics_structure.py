@@ -41,8 +41,8 @@ def main():
     print("EVENT")
     print(f"  magnitude:    {event['magnitude']}")
     event_coords = gmp["event"]["geometry"]["coordinates"]
-    print(f"  longitude:    {event_coords[0]} degrees")
-    print(f"  latitude:     {event_coords[1]} degrees")
+    print(f"  longitude:    {event_coords[0]} deg")
+    print(f"  latitude:     {event_coords[1]} deg")
     print(f"  elevation:    {event_coords[2]} m")
     print("-" * 80)
 
@@ -60,10 +60,13 @@ def main():
             print("──── STREAM")
             print(f"     band code:    {stream_properties['band_code']}")
             print(f"     inst code:    {stream_properties['instrument_code']}")
-            print(f"     sampel rate:  {stream_properties['samples_per_second']} Hz")
+            print(f"     sample rate:  {stream_properties['samples_per_second']} Hz")
 
             housing = stream_properties["stream_housing"]
             print(f"     Housing: {housing}")
+            print(f"       COSMOS code: {housing['cosmos_code']}")
+            print(f"       description: {housing['description']}")
+            print(f"       depth:       {housing['stream_depth']} m")
 
             for trace in stream["traces"]:
                 trace_properties = trace["properties"]
@@ -106,10 +109,10 @@ def print_metrics(metric, indent=0):
     ndims = metric["dimensions"]["number"]
     metric_properties = metric["properties"]
     desc = metric_properties["description"]
-    munits = metric_properties["units"]
+    munits = format_units(metric_properties["units"])
     mvals = metric["values"]
     if ndims == 0:
-        print(instr + f"{desc}: {mvals} {munits}")
+        print(instr + f"{desc}: {mvals}{munits}")
     elif ndims == 1:
         dims = metric["dimensions"]
         dnames = dims["names"]
@@ -117,11 +120,11 @@ def print_metrics(metric, indent=0):
         dvals = dims["axis_values"]
         shape = len(dvals)
         dname0 = dnames[0]
-        dunit0 = dunits[0]
+        dunit0 = format_units(dunits[0])
         for ind0 in range(shape):
             dval0 = dvals[ind0]
             val = mvals[ind0]
-            print(instr + f"{desc} [{dname0}={dval0} {dunit0}]: {val} {munits}")
+            print(instr + f"{desc} [{dname0}={dval0}{dunit0}]: {val}{munits}")
     elif ndims == 2:
         dims = metric["dimensions"]
         dnames = dims["names"]
@@ -130,20 +133,27 @@ def print_metrics(metric, indent=0):
         shape = [len(d) for d in dvals]
         for ind0 in range(shape[0]):
             dname0 = dnames[0]
-            dunit0 = dunits[0]
+            dunit0 = format_units(dunits[0])
             dval0 = dvals[0][ind0]
 
             for ind1 in range(shape[1]):
                 dname1 = dnames[1]
-                dunit1 = dunits[1]
+                dunit1 = format_units(dunits[1])
                 dval1 = dvals[1][ind1]
 
                 val = mvals[ind0][ind1]
                 print(
                     instr + f"{desc} "
-                    f"[{dname0}={dval0} {dunit0}, "
-                    f"{dname1}={dval1} {dunit1}]: {val} {munits}"
+                    f"[{dname0}={dval0}{dunit0}, "
+                    f"{dname1}={dval1}{dunit1}]: {val}{munits}"
                 )
+
+
+def format_units(s):
+    if s == "%":
+        return s
+    else:
+        return f" {s}"
 
 
 if __name__ == "__main__":
