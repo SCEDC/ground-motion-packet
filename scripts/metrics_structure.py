@@ -22,6 +22,18 @@ def main():
     )
     print("PROVENANCE")
     prov = gmp["provenance"]
+    # To validate:
+    # http://seismicdata.github.io/SEIS-PROV/validation.html
+    # git clone https://github.com/SeismicData/SEIS-PROV.git
+    # cd SEIS-PROV/validator
+    # pip install -v -e .
+    # from seis_prov_validate import validate
+    # with open('test.json', 'w') as outfile:
+    #     json.dump(prov, outfile)
+    # result = validate("test.json")
+    # result.is_valid
+    # result.warnings
+    #
     agents = prov["agent"]
     for provid, prov_dict in agents.items():
         print_provenance_agent(prov_dict)
@@ -70,7 +82,7 @@ def main():
 
 
 def print_provenance_agent(prov_dict):
-    if prov_dict["seis_prov:role"] == "software":
+    if prov_dict["prov:type"]["$"] == "prov:SoftwareAgent":
         software = prov_dict["seis_prov:software_name"]
         software_version = prov_dict["seis_prov:software_version"]
         print("── SOFTWARE")

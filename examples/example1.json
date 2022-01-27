@@ -18,8 +18,7 @@
                 "seis_prov:website": {
                     "$": "http://dx.doi.org/10.5066/P9ANQXN3",
                     "type": "xsd:anyURI"
-                },
-                "seis_prov:role": "software"
+                }
             },
             "seis_prov:sp000_pp_0000000": {
                 "prov:label": "Mr. Processor",
