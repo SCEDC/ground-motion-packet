@@ -74,7 +74,7 @@ def print_metrics(metric, indent=0):
         for ind0 in range(shape):
             dval0 = dvals[ind0]
             val = mvals[ind0]
-            print(instr + f"{desc} [{dname0}={dval0}{dunit0}]: {val}, {munits}")
+            print(instr + f"{desc} [{dname0}={dval0} {dunit0}]: {val}, {munits}")
     elif ndims == 2:
         dims = metric["dimensions"]
         dnames = dims["names"]
@@ -94,8 +94,8 @@ def print_metrics(metric, indent=0):
                 val = mvals[ind0][ind1]
                 print(
                     instr + f"{desc} "
-                    f"[{dname0}={dval0}{dunit0}, "
-                    f"{dname1}={dval1}{dunit1}]: {val}, {munits}"
+                    f"[{dname0}={dval0} {dunit0}, "
+                    f"{dname1}={dval1} {dunit1}]: {val} {munits}"
                 )
 
 
