@@ -1,6 +1,7 @@
 {
     "type": "FeatureCollection",
     "version": "0.1-dev",
+    "creation_time": "2018-01-04 10:59:47Z",
     "provenance": {
         "prefix": {
             "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
@@ -57,7 +58,7 @@
             "coordinates": [
                 -117.599,
                 35.77,
-                8.0
+                -8000.0
             ]
         }
     },
@@ -94,7 +95,7 @@
                                 "metrics": [
                                     {
                                         "properties": {
-                                            "description": "Spectral acceleration",
+                                            "description": "Sspectral acceleration",
                                             "name": "SA",
                                             "units": "g",
                                             "provenance_ids": [
@@ -113,7 +114,7 @@
                                                 "%",
                                                 "s"
                                             ],
-                                            "values": [
+                                            "axis_values": [
                                                 [
                                                     5.0,
                                                     10.0,
@@ -149,7 +150,7 @@
                                             "description": "Peak ground acceleration",
                                             "name": "PGA",
                                             "units": "g",
-                                            "time_of_peak": "2019-07-06T03:42:53Z",
+                                            "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
                                             "number": 0,
@@ -180,8 +181,8 @@
                                         "dimensions": {
                                             "number": 2,
                                             "names": [
-                                                "Start percentage",
-                                                "End percentage"
+                                                "start percentage",
+                                                "end percentage"
                                             ],
                                             "units": [
                                                 "%",
@@ -213,7 +214,7 @@
                                         "dimensions": {
                                             "number": 1,
                                             "names": [
-                                                "Threshold"
+                                                "threshold"
                                             ],
                                             "units": [
                                                 "g"
