@@ -1,6 +1,7 @@
 {
     "type": "FeatureCollection",
     "version": "0.1-dev",
+    "creation_time": "2018-01-04 10:59:47Z",
     "provenance": {
         "prefix": {
             "seis_prov": "http://seisprov.org/seis_prov/0.1/#"

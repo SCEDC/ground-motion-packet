@@ -16,38 +16,46 @@ def main():
     event = gmp["event"]["properties"]
 
     print("-" * 80)
-    print(f"Summary of metrics for event {event['id']}")
-    print(f"    magnitude:\t{event['magnitude']}")
+    print(
+        f"Summary of metrics for event {event['id']} "
+        f"(file created {gmp['creation_time']})"
+    )
+    print("-" * 80)
+    print("EVENT")
+    print(f"  magnitude:    {event['magnitude']}")
     event_coords = gmp["event"]["geometry"]["coordinates"]
-    print(f"    longitude:\t{event_coords[0]} degrees")
-    print(f"    latitude:\t{event_coords[1]} degrees")
-    print(f"    elevation:\t{event_coords[2]} m")
+    print(f"  longitude:    {event_coords[0]} degrees")
+    print(f"  latitude:     {event_coords[1]} degrees")
+    print(f"  elevation:    {event_coords[2]} m")
 
     for station in gmp["features"]:
         sta_properties = station["properties"]
         sta_coords = station["geometry"]["coordinates"]
-        print(f"── name:\t{sta_properties['name']}")
-        print(f"   network code:\t{sta_properties['network_code']}")
-        print(f"   station code:\t{sta_properties['station_code']}")
+        print("── STATION")
+        print(f"   name:           {sta_properties['name']}")
+        print(f"   network code:   {sta_properties['network_code']}")
+        print(f"   station code:   {sta_properties['station_code']}")
 
         for stream in sta_properties["streams"]:
             stream_properties = stream["properties"]
-            print(f"──── band code:\t{stream_properties['band_code']}")
-            print(f"     inst code:\t{stream_properties['instrument_code']}")
-            print(f"     sampel rate:\t{stream_properties['samples_per_second']} Hz")
+            print("──── STREAM")
+            print(f"     band code:    {stream_properties['band_code']}")
+            print(f"     inst code:    {stream_properties['instrument_code']}")
+            print(f"     sampel rate:  {stream_properties['samples_per_second']} Hz")
 
             housing = stream_properties["stream_housing"]
             print(f"     Housing: {housing}")
 
             for trace in stream["traces"]:
                 trace_properties = trace["properties"]
-                print(f"────── channel code:\t{trace_properties['channel_code']}")
-                print(f"       location code:\t{trace_properties['location_code']}")
-                print(f"       as recorded:\t{trace_properties['as_recorded']}")
-                print(f"       dip:\t{trace_properties['dip']} deg")
-                print(f"       azimuth:\t{trace_properties['azimuth']} deg")
-                print(f"       start time:\t{trace_properties['start_time']}")
-                print(f"       end time:\t{trace_properties['end_time']}")
+                print("────── TRACE")
+                print(f"       channel code:   {trace_properties['channel_code']}")
+                print(f"       location code:  {trace_properties['location_code']}")
+                print(f"       as recorded:    {trace_properties['as_recorded']}")
+                print(f"       dip:            {trace_properties['dip']} deg")
+                print(f"       azimuth:        {trace_properties['azimuth']} deg")
+                print(f"       start time:     {trace_properties['start_time']}")
+                print(f"       end time:       {trace_properties['end_time']}")
 
                 print("       METRICS:")
                 for metric in trace["metrics"]:
