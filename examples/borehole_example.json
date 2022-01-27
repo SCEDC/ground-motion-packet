@@ -1,0 +1,478 @@
+{
+    "type": "FeatureCollection",
+    "version": "0.1-dev",
+    "creation_time": "2018-01-04 10:59:47Z",
+    "provenance": {
+        "prefix": {
+            "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+        },
+        "agent": {
+            "seis_prov:sp000_sa_0000000": {
+                "prov:label": "gmprocess",
+                "prov:type": {
+                    "$": "prov:SoftwareAgent",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:software_name": "gmprocess",
+                "seis_prov:software_version": "1.1",
+                "seis_prov:website": {
+                    "$": "http://dx.doi.org/10.5066/P9ANQXN3",
+                    "type": "xsd:anyURI"
+                },
+                "seis_prov:role": "software"
+            },
+            "seis_prov:sp000_pp_0000000": {
+                "prov:label": "The Processor",
+                "prov:type": {
+                    "$": "prov:Person",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "The Processor",
+                "seis_prov:email": "processor@processing.org",
+                "seis_prov:role": "data processor"
+            },
+            "seis_prov:sp000_og_0000000": {
+                "prov:label": "CESMD",
+                "prov:type": {
+                    "$": "prov:Organization",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "Center for Engineering Strong Motion Data",
+                "seis_prov:role": "data distributor",
+                "seis_prov:website": {
+                    "$": "https://www.strongmotioncenter.org/",
+                    "type": "xsd:anyURI"
+                }
+            },
+            "seis_prov:sp000_og_0000001": {
+                "prov:label": "CSMIP",
+                "prov:type": {
+                    "$": "prov:Organization",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "California Strong Motion Instrumentation Program",
+                "seis_prov:role": "data provider",
+                "seis_prov:website": {
+                    "$": "https://www.conservation.ca.gov/cgs/smip/",
+                    "type": "xsd:anyURI"
+                }
+            }
+        }
+    },
+    "event": {
+        "type": "Feature",
+        "properties": {
+            "id": "nc72948801",
+            "time": "2018-01-04 10:39:37Z",
+            "magnitude": 4.4
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -122.257,
+                37.855,
+                12.3
+            ]
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3741,
+                    37.8252,
+                    2.0
+                ]
+            },
+            "properties": {
+                "network_code": "CE",
+                "station_code": "58642",
+                "name": "Treasure Island - Geotechnical Array",
+                "streams": [
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 200.0,
+                            "stream_housing": {
+                                "cosmos_code": 6,
+                                "description": "Free field",
+                                "stream_depth": 0.0
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNN",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNZ",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 90.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 90.0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 200.0,
+                            "stream_housing": {
+                                "cosmos_code": 50,
+                                "description": "Geotechnical array",
+                                "stream_depth": 7.0
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNN",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNZ",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 90.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 200.0,
+                            "stream_housing": {
+                                "cosmos_code": 50,
+                                "description": "Geotechnical array",
+                                "stream_depth": 16.0
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNN",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNZ",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 90.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 200.0,
+                            "stream_housing": {
+                                "cosmos_code": 50,
+                                "description": "Geotechnical array",
+                                "stream_depth": 31.0
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNN",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNZ",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 90.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2018-01-04 10:39:37Z",
+                                    "end_time": "2018-01-04 10:40:37Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2018-01-04 10:40:07Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
