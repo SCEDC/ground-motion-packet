@@ -94,7 +94,7 @@
                                 "metrics": [
                                     {
                                         "properties": {
-                                            "description": "Sspectral acceleration",
+                                            "description": "Spectral acceleration",
                                             "name": "SA",
                                             "units": "g",
                                             "provenance_ids": [
