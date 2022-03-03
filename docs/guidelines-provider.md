@@ -8,14 +8,19 @@ Navigation
    - [Base Dictionary](specification/base.md)
    - [Event Dictionary](specification/event.md)
    - [Provenance](specification/provenance.md)
-   - [Guidelines for Data Providers on Incomplete Data](guidelines-provider.md)
+   - [Guidelines for Data Providers](guidelines-provider.md)
    - Features
      - [Stations](specification/features/station.md)
      - [Streams and Traces](specification/features/streams_traces.md)
      - [Metrics Dictionary](specification/features/metrics_dict.md)
 
-Guidelines for Data Providers on Incomplete Data  (Work in Progress)
-=====
+## Guidelines for Data Providers (Work in Progress)
+
+### Organization
+
+Only one event should be described in a file.
+
+### Incomplete Data 
 
 It is a common scenario where the data provider may only know the instrument
 response for seismic channels but may not be given information on sensor
@@ -26,8 +31,8 @@ provider will affect how the stream dictionary is organized.
 
 **If the provider does not have enough information to determine if multiple time series with the same sample rate came from one or more sensors they should be put into the same stream. The data provider should the set the values to the appropriate keys in the "stream_housing" dictionary to "unknown" to mark this ambiguity.**
 
-Example
-====
+#### Example
+
 Consider two time series with the SEED channel codes:
 ```
 net code: CI
