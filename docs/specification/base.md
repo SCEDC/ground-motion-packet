@@ -8,6 +8,7 @@ Navigation
    - [Base Dictionary](base.md)
    - [Event Dictionary](event.md)
    - [Provenance](provenance.md)
+   - [Guidelines for Data Providers](guidelines-provider.md)
    - Features
      - [Stations](features/station.md)
      - [Streams and Traces](features/streams_traces.md)
