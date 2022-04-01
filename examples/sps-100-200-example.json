@@ -1,7 +1,7 @@
 {
     "type": "FeatureCollection",
     "version": "0.1-dev",
-    "creation_time": "2018-01-04 10:59:47Z",
+    "creation_time": "2022-03-31 21:57:47Z",
     "provenance": {
         "prefix": {
             "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
@@ -26,10 +26,25 @@
                     "$": "prov:Organization",
                     "type": "prov:QUALIFIED_NAME"
                 },
+                "seis_prov:doi": "doi:10.7914/SN/CI",
                 "seis_prov:name": "Southern California Seismic Network",
+                "seis_prov:role": "data processor",
+                "seis_prov:website": {
+                    "$": "https://scsn.org/",
+                    "type": "xsd:anyURI"
+                }
+            },
+            "seis_prov:sp000_og_0000001": {
+                "prov:label": "SCEDC",
+                "prov:type": {
+                    "$": "prov:Organization",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:doi": "10.7909/C3WD3xH1",
+                "seis_prov:name": "Southern California Earthquake Data Center",
                 "seis_prov:role": "data distributor",
                 "seis_prov:website": {
-                    "$": "https://scedc.caltech.edu/",
+                    "$": "https://scedc.caltech.edu",
                     "type": "xsd:anyURI"
                 }
             }
@@ -78,6 +93,164 @@
                                     "as_recorded": true,
                                     "azimuth": 90,
                                     "dip": 0.0,
+                                    "start_time": "2019-07-06T03:19:53Z",
+                                    "end_time": "2019-07-06T04:59:53Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Spectral acceleration",
+                                            "name": "SA",
+                                            "units": "g",
+                                            "provenance_ids": [
+                                                "seis_prov:sp000_sa_0000000",
+                                                "seis_prov:sp000_pp_0000000",
+                                                "seis_prov:sp000_og_0000000"
+                                            ]
+                                        },
+                                        "dimensions": {
+                                            "number": 2,
+                                            "names": [
+                                                "critical damping",
+                                                "period"
+                                            ],
+                                            "units": [
+                                                "%",
+                                                "s"
+                                            ],
+                                            "axis_values": [
+                                                [
+                                                    5.0,
+                                                    10.0,
+                                                    20.0
+                                                ],
+                                                [
+                                                    0.5,
+                                                    1.0,
+                                                    1.5
+                                                ]
+                                            ]
+                                        },
+                                        "values": [
+                                            [
+                                                2.3,
+                                                2.0,
+                                                0.4
+                                            ],
+                                            [
+                                                1.6,
+                                                1.4,
+                                                0.8
+                                            ],
+                                            [
+                                                2.0,
+                                                1.8,
+                                                1.0
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2019-07-06T03:42:53Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNN",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": 0.0,
+                                    "start_time": "2019-07-06T03:19:53Z",
+                                    "end_time": "2019-07-06T04:59:53Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Spectral acceleration",
+                                            "name": "SA",
+                                            "units": "g",
+                                            "provenance_ids": [
+                                                "seis_prov:sp000_sa_0000000",
+                                                "seis_prov:sp000_pp_0000000",
+                                                "seis_prov:sp000_og_0000000"
+                                            ]
+                                        },
+                                        "dimensions": {
+                                            "number": 2,
+                                            "names": [
+                                                "critical damping",
+                                                "period"
+                                            ],
+                                            "units": [
+                                                "%",
+                                                "s"
+                                            ],
+                                            "axis_values": [
+                                                [
+                                                    5.0,
+                                                    10.0,
+                                                    20.0
+                                                ],
+                                                [
+                                                    0.5,
+                                                    1.0,
+                                                    1.5
+                                                ]
+                                            ]
+                                        },
+                                        "values": [
+                                            [
+                                                2.3,
+                                                2.0,
+                                                0.4
+                                            ],
+                                            [
+                                                1.6,
+                                                1.4,
+                                                0.8
+                                            ],
+                                            [
+                                                2.0,
+                                                1.8,
+                                                1.0
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "description": "Peak ground acceleration",
+                                            "name": "PGA",
+                                            "units": "g",
+                                            "time_of_peak": "2019-07-06T03:42:53Z"
+                                        },
+                                        "dimensions": {
+                                            "number": 0,
+                                            "units": null,
+                                            "axis_values": null
+                                        },
+                                        "values": 0.137
+                                    }
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "channel_code": "HNZ",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0,
+                                    "dip": -90.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
                                 },
