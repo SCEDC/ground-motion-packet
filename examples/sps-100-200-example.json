@@ -105,7 +105,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
@@ -184,7 +185,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
@@ -263,7 +265,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
@@ -428,7 +431,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
@@ -507,7 +511,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
@@ -586,7 +591,8 @@
                                             "provenance_ids": [
                                                 "seis_prov:sp000_sa_0000000",
                                                 "seis_prov:sp000_pp_0000000",
-                                                "seis_prov:sp000_og_0000000"
+                                                "seis_prov:sp000_og_0000000",
+                                                "seis_prov:sp000_og_0000001"
                                             ]
                                         },
                                         "dimensions": {
