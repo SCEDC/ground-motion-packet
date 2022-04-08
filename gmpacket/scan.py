@@ -179,23 +179,18 @@ def get_init_row_names_vals(prop_dicts):
 
 
 def print_provenance_agent(prov_dict, print_summary):
-    if prov_dict["prov:type"]["$"] == "prov:SoftwareAgent":
+    prov_type = prov_dict["prov:type"]["$"].replace("prov:", "")
+    print(f"── {prov_type}")
+    if "seis_prov:role" in prov_dict:
+        print(f"   role: {prov_dict['seis_prov:role']}")
+    if "seis_prov:name" in prov_dict:
+        print(f"   name: {prov_dict['seis_prov:name']}")
+    if "software" in prov_type.lower():
         software = prov_dict["seis_prov:software_name"]
         software_version = prov_dict["seis_prov:software_version"]
         if print_summary:
-            print("── SOFTWARE")
-            print(f"   name: {software}")
-            print(f"   version: {software_version}")
-    elif prov_dict["seis_prov:role"] == "data distributor":
-        dist_name = prov_dict["seis_prov:name"]
-        if print_summary:
-            print("── DATA DISTRIBUTOR")
-            print(f"   name: {dist_name}")
-    elif prov_dict["seis_prov:role"] == "data provider":
-        provider_name = prov_dict["seis_prov:name"]
-        if print_summary:
-            print("── DATA PROVIDER")
-            print(f"   name: {provider_name}")
+            print(f"   software_name: {software}")
+            print(f"   software_version: {software_version}")
     if "seis_prov:website" in prov_dict:
         software_url = prov_dict["seis_prov:website"]["$"]
         if print_summary:
