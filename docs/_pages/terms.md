@@ -1,21 +1,12 @@
-Navigation
-----------
+---
+title: Terminology
+author: Eric Thompson
+date: 2022-04-10
+category: Jekyll
+layout: post
+---
 
- - [About](index.md)
- - [GeoJSON Overview](geojson.md)
- - [Terminology](terms.md)
- - Specification
-   - [Base Dictionary](specification/base.md)
-   - [Event Dictionary](specification/event.md)
-   - [Provenance](specification/provenance.md)
-   - Features
-     - [Stations](specification/features/station.md)
-     - [Streams and Traces](specification/features/streams_traces.md)
-     - [Metrics Dictionary](specification/features/metrics_dict.md)
-
-
-Terminology
-===========
+# Terminology
 
 <dl>
   <dt>JSON</dt>

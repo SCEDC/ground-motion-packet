@@ -1,20 +1,8 @@
-Navigation
-----------
+---
+layout: home
+---
 
- - [About](index.md)
- - [GeoJSON Overview](geojson.md)
- - [Terminology](terms.md)
- - Specification
-   - [Base Dictionary](specification/base.md)
-   - [Event Dictionary](specification/event.md)
-   - [Provenance](specification/provenance.md)
-   - Features
-     - [Stations](specification/features/station.md)
-     - [Streams and Traces](specification/features/streams_traces.md)
-     - [Metrics Dictionary](specification/features/metrics_dict.md)
-
-About
-=====
+# About
 
 Here we present a specification for a [GeoJSON](https://geojson.org/) format 
 for unassociated and event-associated ground motion metrics—that is, quantities
