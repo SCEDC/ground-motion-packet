@@ -28,7 +28,7 @@ to refer to a single cotinuous time series, and
 to refer to a group of traces.
 
 ```{attention}
-Although the use of these terms in convenient for use in organizing waveform 
+Although the use of the terms "trace" and "stream" is convenient for use in organizing waveform 
 metrics, there is the potential for confusion since we are referring to the trace 
 or streams from which the metrics are derived, and the waveforms themselves are not
 stored in the format presented here. 
