@@ -2,9 +2,12 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="GeoJSON Overview" href="geojson.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/><title>Search - Ground Motion Packet Documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Ground Motion Packet Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -124,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Ground Motion Packet Documentation</div></a>
+      <a href="#"><div class="brand">Ground Motion Packet Documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,12 +147,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
   <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -205,24 +208,54 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <section id="earthquake-ground-motion-data-packet">
+<h1>Earthquake Ground Motion Data Packet<a class="headerlink" href="#earthquake-ground-motion-data-packet" title="Permalink to this headline">#</a></h1>
+<p>Here we present a specification for a <a class="reference external" href="https://geojson.org/">GeoJSON</a> format
+for unassociated and event-associated ground motion metrics—that is, quantities
+derived from ground motion records (e.g., accelerograms, velocity recordings).
+We refer to this specification as a Ground Motion Packet (GMP). Common example
+metrics include peak ground acceleration (PGA), peak ground velocity (PGV), and
+spectral acceleration (SA). This format is designed so that it can also include
+metrics that are gaining popularity for many engineering use cases, such as
+significant duration, Arias intensity, and inelastic response spectra. This
+format should be able to be used by any application that uses ground motion
+metrics including, but not limited to, ShakeMap. The GMP format is not meant to
+describe station metadata or site installation. The purpose of the metadata
+included in the GMP format is to provide high-level information regarding the
+suitability of the data for common engineering/seismological applications.</p>
+<p>Note that this ground motion packet is for ground motion metrics and not the
+waveforms themselves. Some metrics are associated with a single waveform, and
+others are associated with a group a waveforms. We apply
+<a class="reference external" href="https://docs.obspy.org/">ObsPy</a>’s nomenclature of
+“<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.trace.Trace.html">trace</a>”
+to refer to a single cotinuous time series, and
+“<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.stream.Stream.html">stream</a>”
+to refer to a group of traces.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Although the use of these terms in convenient for use in organizing waveform
+metrics, there is the potential for confusion since we are referring to the trace
+or streams from which the metrics are derived, and the waveforms themselves are not
+stored in the format presented here.</p>
 </div>
-</noscript>
-
-<div id="search-results"></div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="geojson.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">GeoJSON Overview</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           
         </div>
         <div class="bottom-of-page">
@@ -263,8 +296,5 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

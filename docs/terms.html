@@ -2,9 +2,12 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Specification" href="specification/index.html" /><link rel="prev" title="GeoJSON Overview" href="geojson.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/><title>Search - Ground Motion Packet Documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Terminology - Ground Motion Packet Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -149,15 +152,15 @@
   
   <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="geojson.html">GeoJSON Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terms.html">Terminology</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Terminology</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="specification/index.html">Specification</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="specification/base.html">Base Dictionary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="specification/event.html">Event</a></li>
@@ -205,25 +208,73 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
-
-<div id="search-results"></div>
+          <section class="tex2jax_ignore mathjax_ignore" id="terminology">
+<h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">#</a></h1>
+<dl class="simple myst">
+<dt><a class="reference external" href="https://www.json.org/json-en.html">JSON</a></dt><dd><p>A standard file format, which stands for JavaScript Object Notation.
+This standard is appealing because it is human readable, allows for
+flexible data structures, and is supported by many programming languages.</p>
+</dd>
+<dt><a class="reference external" href="https://geojson.org/">GeoJSON</a></dt><dd><p>A JSON specification that is designed for spatial data. This is a
+format that can be read by most GIS software and is supported in many
+programming languages.</p>
+</dd>
+<dt><strong>Feature</strong></dt><dd><p>GeoJSON term for specifying a spatial object (point, line, or polygon).
+Here all of our features will be points (denoting
+latitude/longitude/elevation of a station and/or an event).</p>
+</dd>
+<dt><strong>Intensity Measure/Metric</strong></dt><dd><p>A parametric representation of a ground motion record. Examples include
+PGA or PGV, spectral acceleration, Arias Intensity, significant duration,
+cumulative absolute velocity, and inelastic response spectra.</p>
+</dd>
+<dt><strong>Trace</strong></dt><dd><p>A reference to the time series used to compute the <b>Intensity
+Measure/Metric</b>. This might be from a single seismic data channel
+(e.g., HNE, HNN) or a derived combination of seismic channels such as the
+rotd50 or transverse time series. This is often referred to as
+“component” in other contexts, especially when the station has only one
+sensor sampled at one sample rate. We use the term “trace” to avoid
+confusion with the use of the term “component” in the instrumentation
+context and therefore avoid assumptions about sample rate and
+orientation. Note that these terms are important for defining the
+hierarchy of the data structure, but this format does not report the time
+series array itself.</p>
+</dd>
+<dt><strong>Stream</strong></dt><dd><p>A collection of traces. The terms
+“<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.trace.Trace.html">trace</a>” and
+“<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.stream.Stream.html">stream</a>”
+follow the terminology adopted by <a class="reference external" href="https://docs.obspy.org/">ObsPy</a>.</p>
+</dd>
+<dt><strong>Provenance</strong></dt><dd><p>A <a class="reference external" href="http://seismicdata.github.io/SEIS-PROV/">SEIS-PROV</a>-compliant
+provenance document.</p>
+</dd>
+</dl>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="specification/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Specification</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="geojson.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">GeoJSON Overview</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -263,8 +314,5 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
