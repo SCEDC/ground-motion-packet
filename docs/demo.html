@@ -1,0 +1,560 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developer Notes" href="dev.html" /><link rel="prev" title="Command Line Tools" href="cli.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Demo - Ground Motion Packet Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/pied-piper-admonition.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Ground Motion Packet Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="geojson.html">GeoJSON Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terms.html">Terminology</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="specification/index.html">Specification</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="specification/base.html">Base Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification/event.html">Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification/provenance.html">Provenance</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="specification/features/index.html">Features</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/station.html">Stations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/streams_traces.html">Streams and Traces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/metrics_dict.html">Metrics Dictionary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Tools</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Developer Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="demo">
+<h1>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h1>
+<p>Be sure to install the python packages as described
+in the <a class="reference internal" href="cli.html"><span class="doc std std-doc">Command Line Tools</span></a> section.</p>
+<p>Also, for this demo specifically, also install ipyleaflet with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install ipyleaflet
+jupyter nbextension <span class="nb">enable</span> --py widgetsnbextension
+</pre></div>
+</div>
+<p>The following tutorial can be run in an ipython notebook or in
+an ipython shell.</p>
+<p>We will start with the necessary imports</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+
+<span class="kn">from</span> <span class="nn">ipyleaflet</span> <span class="kn">import</span> <span class="n">Map</span><span class="p">,</span> <span class="n">GeoJSON</span>
+<span class="kn">from</span> <span class="nn">gmpacket.scan</span> <span class="kn">import</span> <span class="n">scan_gmp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will read in the example data that is in the data directory
+of the gmpacket package</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datapath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="s1">'examples'</span><span class="p">,</span> <span class="s1">'sps-100-200-example.json'</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">data_file</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s1">'gmpacket'</span><span class="p">,</span> <span class="n">datapath</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">geo_json</span> <span class="o">=</span> <span class="n">GeoJSON</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is only one feature, so we will grab it to set the center of the map</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="n">geo_json</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'features'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'geometry'</span><span class="p">][</span><span class="s1">'coordinates'</span><span class="p">]</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">geo_json</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "b4dd746564a941a986490a7bab319d04"}
+</script></div>
+</div>
+<p>Now we can use the <code class="docutils literal notranslate"><span class="pre">scan_gmp</span></code> function to print a summary of the example data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan_gmp</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="n">print_what</span><span class="o">=</span><span class="s1">'summary'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+Summary of metrics for event ci38457511 (file created 2022-03-31 21:57:47Z)
+PROVENANCE
+   Is valid? True
+── SoftwareAgent
+   software_name: ampgen
+   software_version: 0.0.36
+   url: http://dx.doi.org/10.5066/P9ANQXN3
+── Organization
+   role: data processor
+   name: Southern California Seismic Network
+   url: https://scsn.org/
+── Organization
+   role: data distributor
+   name: Southern California Earthquake Data Center
+   url: https://scedc.caltech.edu
+--------------------------------------------------------------------------------
+EVENT
+  magnitude:    7.1
+  longitude:    -117.599 deg
+  latitude:     35.77 deg
+  elevation:    8.0 m
+--------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also change the <code class="docutils literal notranslate"><span class="pre">print_what</span></code> argument to also include the metrics</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan_gmp</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="n">print_what</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+Summary of metrics for event ci38457511 (file created 2022-03-31 21:57:47Z)
+PROVENANCE
+   Is valid? True
+── SoftwareAgent
+   software_name: ampgen
+   software_version: 0.0.36
+   url: http://dx.doi.org/10.5066/P9ANQXN3
+── Organization
+   role: data processor
+   name: Southern California Seismic Network
+   url: https://scsn.org/
+── Organization
+   role: data distributor
+   name: Southern California Earthquake Data Center
+   url: https://scedc.caltech.edu
+--------------------------------------------------------------------------------
+EVENT
+  magnitude:    7.1
+  longitude:    -117.599 deg
+  latitude:     35.77 deg
+  elevation:    8.0 m
+--------------------------------------------------------------------------------
+FEATURES
+── STATION True
+   name:           Christmas Canyon China Lake
+   network code:   CI
+   station code:   CCC
+──── STREAM
+     band code:    H
+     inst code:    N
+     sample rate:  100.0 Hz
+     Housing: {'cosmos_code': 6, 'description': 'Free field', 'stream_depth': 0.0}
+       COSMOS code: 6
+       description: Free field
+       depth:       0.0 m
+────── TRACE
+       channel code:   HNE
+       location code:  --
+       as recorded:    True
+       dip:            0.0 deg
+       azimuth:        90 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+────── TRACE
+       channel code:   HNN
+       location code:  --
+       as recorded:    True
+       dip:            0.0 deg
+       azimuth:        0 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+────── TRACE
+       channel code:   HNZ
+       location code:  --
+       as recorded:    True
+       dip:            -90.0 deg
+       azimuth:        0 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+────── TRACE
+       channel code:   ROTD50
+       location code:  --
+       as recorded:    False
+       dip:            0 deg
+       azimuth:        0 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Significant duration [Start percentage=5.0%, End percentage=75.0%]: 22.3 sec
+         Significant duration [Start percentage=5.0%, End percentage=95.0%]: 22.6 sec
+         Bracketed duration [Threshold=0.025 g]: 41.7 sec
+         Bracketed duration [Threshold=0.05 g]: 30.5 sec
+         Bracketed duration [Threshold=0.1 g]: 23.4 sec
+──── STREAM
+     band code:    H
+     inst code:    N
+     sample rate:  200.0 Hz
+     Housing: {'cosmos_code': 6, 'description': 'Free field', 'stream_depth': 0.0}
+       COSMOS code: 6
+       description: Free field
+       depth:       0.0 m
+────── TRACE
+       channel code:   HNE
+       location code:  2C
+       as recorded:    True
+       dip:            0.0 deg
+       azimuth:        90 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+────── TRACE
+       channel code:   HNN
+       location code:  2C
+       as recorded:    True
+       dip:            0.0 deg
+       azimuth:        0 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+────── TRACE
+       channel code:   HNZ
+       location code:  2C
+       as recorded:    True
+       dip:            -90.0 deg
+       azimuth:        0 deg
+       start time:     2019-07-06T03:19:53Z
+       end time:       2019-07-06T04:59:53Z
+──────── METRICS
+         Spectral acceleration [critical damping=5.0%, period=0.5 s]: 2.3 g
+         Spectral acceleration [critical damping=5.0%, period=1.0 s]: 2.0 g
+         Spectral acceleration [critical damping=5.0%, period=1.5 s]: 0.4 g
+         Spectral acceleration [critical damping=10.0%, period=0.5 s]: 1.6 g
+         Spectral acceleration [critical damping=10.0%, period=1.0 s]: 1.4 g
+         Spectral acceleration [critical damping=10.0%, period=1.5 s]: 0.8 g
+         Spectral acceleration [critical damping=20.0%, period=0.5 s]: 2.0 g
+         Spectral acceleration [critical damping=20.0%, period=1.0 s]: 1.8 g
+         Spectral acceleration [critical damping=20.0%, period=1.5 s]: 1.0 g
+         Peak ground acceleration: 0.137 g
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"824001c0b4284f51ae01fbe74c4e3208": {"model_name": "LeafletGeoJSONModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletGeoJSONModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletGeoJSONView", "base": false, "bottom": false, "data": {"type": "FeatureCollection", "version": "0.1-dev", "creation_time": "2022-03-31 21:57:47Z", "provenance": {"prefix": {"seis_prov": "http://seisprov.org/seis_prov/0.1/#"}, "agent": {"seis_prov:sp000_sa_0000000": {"prov:label": "ampgen", "prov:type": {"$": "prov:SoftwareAgent", "type": "prov:QUALIFIED_NAME"}, "seis_prov:software_name": "ampgen", "seis_prov:software_version": "0.0.36", "seis_prov:website": {"$": "http://dx.doi.org/10.5066/P9ANQXN3", "type": "xsd:anyURI"}}, "seis_prov:sp000_og_0000000": {"prov:label": "SCSN", "prov:type": {"$": "prov:Organization", "type": "prov:QUALIFIED_NAME"}, "seis_prov:doi": "doi:10.7914/SN/CI", "seis_prov:name": "Southern California Seismic Network", "seis_prov:role": "data processor", "seis_prov:website": {"$": "https://scsn.org/", "type": "xsd:anyURI"}}, "seis_prov:sp000_og_0000001": {"prov:label": "SCEDC", "prov:type": {"$": "prov:Organization", "type": "prov:QUALIFIED_NAME"}, "seis_prov:doi": "10.7909/C3WD3xH1", "seis_prov:name": "Southern California Earthquake Data Center", "seis_prov:role": "data distributor", "seis_prov:website": {"$": "https://scedc.caltech.edu", "type": "xsd:anyURI"}}}}, "event": {"type": "Feature", "properties": {"id": "ci38457511", "time": "2019-07-06T03:19:53Z", "magnitude": 7.1}, "geometry": {"type": "Point", "coordinates": [-117.599, 35.77, 8.0]}}, "features": [{"type": "Feature", "properties": {"network_code": "CI", "station_code": "CCC", "name": "Christmas Canyon China Lake", "streams": [{"properties": {"band_code": "H", "instrument_code": "N", "samples_per_second": 100.0, "stream_housing": {"cosmos_code": 6, "description": "Free field", "stream_depth": 0.0}}, "traces": [{"properties": {"channel_code": "HNE", "location_code": "--", "as_recorded": true, "azimuth": 90, "dip": 0.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}, {"properties": {"channel_code": "HNN", "location_code": "--", "as_recorded": true, "azimuth": 0, "dip": 0.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}, {"properties": {"channel_code": "HNZ", "location_code": "--", "as_recorded": true, "azimuth": 0, "dip": -90.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}, {"properties": {"channel_code": "ROTD50", "location_code": "--", "as_recorded": false, "azimuth": 0, "dip": 0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Significant duration", "name": "SDUR", "units": "sec"}, "dimensions": {"number": 2, "names": ["Start percentage", "End percentage"], "units": ["%", "%"], "axis_values": [[5.0], [75.0, 95.0]]}, "values": [[22.3, 22.6]]}, {"properties": {"description": "Bracketed duration", "name": "BDUR", "units": "sec"}, "dimensions": {"number": 1, "names": ["Threshold"], "units": ["g"], "axis_values": [0.025, 0.05, 0.1]}, "values": [41.7, 30.5, 23.4]}]}]}, {"properties": {"band_code": "H", "instrument_code": "N", "samples_per_second": 200.0, "stream_housing": {"cosmos_code": 6, "description": "Free field", "stream_depth": 0.0}}, "traces": [{"properties": {"channel_code": "HNE", "location_code": "2C", "as_recorded": true, "azimuth": 90, "dip": 0.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}, {"properties": {"channel_code": "HNN", "location_code": "2C", "as_recorded": true, "azimuth": 0, "dip": 0.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}, {"properties": {"channel_code": "HNZ", "location_code": "2C", "as_recorded": true, "azimuth": 0, "dip": -90.0, "start_time": "2019-07-06T03:19:53Z", "end_time": "2019-07-06T04:59:53Z"}, "metrics": [{"properties": {"description": "Spectral acceleration", "name": "SA", "units": "g", "provenance_ids": ["seis_prov:sp000_sa_0000000", "seis_prov:sp000_pp_0000000", "seis_prov:sp000_og_0000000", "seis_prov:sp000_og_0000001"]}, "dimensions": {"number": 2, "names": ["critical damping", "period"], "units": ["%", "s"], "axis_values": [[5.0, 10.0, 20.0], [0.5, 1.0, 1.5]]}, "values": [[2.3, 2.0, 0.4], [1.6, 1.4, 0.8], [2.0, 1.8, 1.0]]}, {"properties": {"description": "Peak ground acceleration", "name": "PGA", "units": "g", "time_of_peak": "2019-07-06T03:42:53Z"}, "dimensions": {"number": 0, "units": null, "axis_values": null}, "values": 0.137}]}]}]}, "geometry": {"type": "Point", "coordinates": [-117.3645, 35.5249, 670.0]}}]}, "hover_style": {}, "layers": [], "name": "", "options": [], "point_style": {}, "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "style": {}}}, "aea7bfaa07c34a698abb01adea2fc186": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "45c84b475f0e4ad4923c4327a3724d7a": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "55d611e7484f439aa136bf44b09d6289": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "OpenStreetMap.Mapnik", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "d88f1d115e454ff791ce026149ec0689": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b0cc2d973ccd4b209ab05991c67d11dc": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "b4dd746564a941a986490a7bab319d04": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [35.5249, -117.3645], "close_popup_on_click": true, "controls": ["IPY_MODEL_cf2d0c4f7605499ab0158091f3d95c1b", "IPY_MODEL_3d5429049c62470dbf72d11f20175a48"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_aea7bfaa07c34a698abb01adea2fc186", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_45c84b475f0e4ad4923c4327a3724d7a", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_55d611e7484f439aa136bf44b09d6289", "IPY_MODEL_824001c0b4284f51ae01fbe74c4e3208"], "layout": "IPY_MODEL_d88f1d115e454ff791ce026149ec0689", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "2022-04-11", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "prefer_canvas", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "prefer_canvas": false, "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_b0cc2d973ccd4b209ab05991c67d11dc", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 7.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "cf2d0c4f7605499ab0158091f3d95c1b": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "3d5429049c62470dbf72d11f20175a48": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="dev.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Developer Notes</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="cli.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Command Line Tools</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Unlicense
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/SCEDC/ground-motion-packet" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    </body>
+</html>

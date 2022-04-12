@@ -45,9 +45,10 @@ extensions = [
     # Our custom extension, only meant for Furo's own documentation.
     "furo.sphinxext",
     # External stuff
-    "myst_parser",
+    # "myst_parser",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
+    "myst_nb",
 ]
 
 myst_enable_extensions = [

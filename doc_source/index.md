@@ -44,5 +44,6 @@ terms
 specification/index
 examples
 cli
+demo
 dev
 ```

@@ -15,6 +15,17 @@ with [conda](https://docs.conda.io/en/latest/)).
 cd doc_source
 mamba create -n gmpdocs python=3.9 --file requirements.txt
 conda activate gmpdocs
+```
+
+Then install the python packages as described  in the 
+[Command Line Tools](cli) section. For the demo, we'll also need
+
+```shell
+pip install ipyleaflet
+jupyter nbextension enable --py widgetsnbextension
+```
+
+```shell
 ./makedocs.sh
 ```
 

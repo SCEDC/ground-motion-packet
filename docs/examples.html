@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/pied-piper-admonition.css" />
@@ -175,6 +177,7 @@
 </li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev.html">Developer Notes</a></li>
 </ul>
 
@@ -211,15 +214,32 @@
           <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h1>
 <p>Examples <strong>with fake data</strong> can be found in this repository
-<a class="reference external" href="https://github.com/SCEDC/ground-motion-packet/tree/main/examples">here</a>.
+<a class="reference external" href="https://github.com/SCEDC/ground-motion-packet/tree/main/gmpacket/data/examples">here</a>.
 These examples are selected to illustrate a number of different possible
 instrument configurations and to highlight the value of sensible grouping
 of traces into streams.</p>
 <dl class="simple myst">
-<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/examples/example1.json">Example 1</a></dt><dd><p>This is the simplest example, which is a single 3-component intstrument grouped as
-a stream.</p>
+<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/example1.json">Example 1</a></dt><dd><p>This is a very simple example for station CI.CCC. It contains a single stream
+for the HN instrument with. It contains two traces</p>
+<ul class="simple">
+<li><p>The HNE component</p></li>
+<li><p>ROTD50</p></li>
+</ul>
+<p>This illustrates one important aspect of this data structure: ROTD50 is derived from
+two horizontal components for this instrument and the ROTD50 metrics cannot be
+derived from the metrics of the individual components. Thus, it is valuable to
+report it at the “trace” level (there is an associated trace, that is the rotated
+combination of the horizontal traces that is associated the ROTD50 metrics).</p>
+<p>For the HNE trace, the metrics dictionary includes response spectra (a 2D array
+metric) and peak ground acceleration (a scalar metric).</p>
+<p>For the ROTD50 trace, the metrics dictionary includes significant duration (a 2D
+array metric) and bracketed duration (a 1D array metric).</p>
 </dd>
-<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/examples/borehole_example.json">Borehole Example</a></dt><dd><p>This is for the downhole geotechnical array at Treasure Island. There are three
+<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json">Multichannel</a></dt><dd><p>This example is also for a single station (BK.OVRO) and contains
+a single stream for the HN instrument. It contains three traces: HNN, HNE, and HNZ. Each traces includes PGA and response spectra
+metrics.</p>
+</dd>
+<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json">Borehole Example</a></dt><dd><p>This is for the downhole geotechnical array at Treasure Island. There are three
 traces at each depth, and each depth is grouped as a stream.</p>
 </dd>
 </dl>
@@ -289,5 +309,9 @@ traces at each depth, and each depth is grouped as a stream.</p>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     </body>
 </html>

@@ -11,7 +11,11 @@ setup(
     author="Ellen Yu, Lijam Hagos, Jamie Steidl, Eric Thompson, Bruce Worden",
     author_email="emthompson@usgs.gov",
     url="https://github.com/SCEDC/ground-motion-packet",
-    packages=["gmpacket",],
-    package_data={"gmpacket": glob.glob("gmpacket/examples/**", recursive=True)},
-    entry_points={"console_scripts": ["gmpformat = gmpacket.bin.gmpformat:main",]},
+    packages=["gmpacket"],
+    package_data={"gmpacket": glob.glob("gmpacket/data/**", recursive=True)},
+    entry_points={
+        "console_scripts": [
+            "gmpformat = gmpacket.bin.gmpformat:main",
+        ]
+    },
 )
