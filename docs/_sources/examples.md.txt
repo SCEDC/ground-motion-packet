@@ -1,15 +1,34 @@
 ## Examples
 
 Examples **with fake data** can be found in this repository 
-[here](https://github.com/SCEDC/ground-motion-packet/tree/main/examples).
+[here](https://github.com/SCEDC/ground-motion-packet/tree/main/gmpacket/data/examples).
 These examples are selected to illustrate a number of different possible
 instrument configurations and to highlight the value of sensible grouping
 of traces into streams. 
 
-[Example 1](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/examples/example1.json)
-:  This is the simplest example, which is a single 3-component intstrument grouped as
-   a stream.
+[Example 1](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/example1.json)
+:  This is a very simple example for station CI.CCC. It contains a single stream
+   for the HN instrument with. It contains two traces
+   - The HNE component
+   - ROTD50
 
-[Borehole Example](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/examples/borehole_example.json)
+   This illustrates one important aspect of this data structure: ROTD50 is derived from
+   two horizontal components for this instrument and the ROTD50 metrics cannot be 
+   derived from the metrics of the individual components. Thus, it is valuable to
+   report it at the "trace" level (there is an associated trace, that is the rotated
+   combination of the horizontal traces that is associated the ROTD50 metrics).
+
+   For the HNE trace, the metrics dictionary includes response spectra (a 2D array
+   metric) and peak ground acceleration (a scalar metric).
+
+   For the ROTD50 trace, the metrics dictionary includes significant duration (a 2D
+   array metric) and bracketed duration (a 1D array metric). 
+
+[Multichannel](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json)
+:  This example is also for a single station (BK.OVRO) and contains
+   a single stream for the HN instrument. It contains three traces: HNN, HNE, and HNZ. Each traces includes PGA and response spectra 
+   metrics. 
+
+[Borehole Example](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json)
 :  This is for the downhole geotechnical array at Treasure Island. There are three
    traces at each depth, and each depth is grouped as a stream.

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Command Line Tools" href="cli.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Demo" href="demo.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
         <title>Developer Notes - Ground Motion Packet Documentation</title>
@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/pied-piper-admonition.css" />
@@ -175,6 +177,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Developer Notes</a></li>
 </ul>
 
@@ -221,7 +224,15 @@ with <a class="reference external" href="https://docs.conda.io/en/latest/">conda
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> doc_source
 mamba create -n gmpdocs <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 --file requirements.txt
 conda activate gmpdocs
-./makedocs.sh
+</pre></div>
+</div>
+<p>Then install the python packages as described  in the
+<a class="reference internal" href="cli.html"><span class="doc std std-doc">Command Line Tools</span></a> section. For the demo, we’ll also need</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install ipyleaflet
+jupyter nbextension <span class="nb">enable</span> --py widgetsnbextension
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./makedocs.sh
 </pre></div>
 </div>
 <p>The above script builds the docs html in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> subdirectory. It can be previewed
@@ -235,14 +246,14 @@ locally by opening <code class="docutils literal notranslate"><span class="pre">
         
         <div class="related-pages">
           
-          <a class="prev-page" href="cli.html">
+          <a class="prev-page" href="demo.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Command Line Tools</div>
+                <div class="title">Demo</div>
                 
               </div>
             </a>
@@ -304,5 +315,9 @@ locally by opening <code class="docutils literal notranslate"><span class="pre">
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     </body>
 </html>
