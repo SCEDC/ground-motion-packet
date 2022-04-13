@@ -221,18 +221,18 @@ directory.</p>
 <p>To build this documentation, it is convenient to create a conda virtual environment
 with <a class="reference external" href="https://github.com/mamba-org/mamba">mamba</a> (note that mamba can be installed
 with <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a>).</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> doc_source
-mamba create -n gmpdocs <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 --file requirements.txt
-conda activate gmpdocs
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">doc_source</span>
+<span class="n">mamba</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">gmpdocs</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">gmpdocs</span>
 </pre></div>
 </div>
 <p>Then install the python packages as described  in the
 <a class="reference internal" href="cli.html"><span class="doc std std-doc">Command Line Tools</span></a> section. For the demo, we’ll also need</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install ipyleaflet
-jupyter nbextension <span class="nb">enable</span> --py widgetsnbextension
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipyleaflet</span>
+<span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="n">widgetsnbextension</span>
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./makedocs.sh
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">makedocs</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>The above script builds the docs html in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> subdirectory. It can be previewed
