@@ -43,6 +43,11 @@ Each stream dictionary contains the following keys:
       :  Depth (in m) of the stream relative to the ground surface 
          *(float; required)*.
 
+      **stream_location**
+      :  Description of stream locaiton; especially useful for structures (e.g., 
+         "8th floor center" or "east wall"). Equivalent to COSMOS text header line 9,
+         named "location" *(string, optional)*.
+
 **traces**
 :  A list of dictionaris in which each list element corresponds to a 
    different trace *(list; required)*.

@@ -151,12 +151,6 @@
                                             "units": "g",
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
