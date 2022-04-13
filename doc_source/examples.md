@@ -24,7 +24,7 @@ of traces into streams.
    For the ROTD50 trace, the metrics dictionary includes significant duration (a 2D
    array metric) and bracketed duration (a 1D array metric). 
 
-[Multichannel](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json)
+[Multichannel](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/multichannel_example.json)
 :  This example is also for a single station (BK.OVRO) and contains
    a single stream for the HN instrument. It contains three traces: HNN, HNE, and HNZ. Each traces includes PGA and response spectra 
    metrics. 
