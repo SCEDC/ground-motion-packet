@@ -21,48 +21,52 @@ minimizing the file size.
 The dictionary has the following required keys:
 
 **properties**
-:  A dictionary with the following keys <i>(dictionary; required)</i>:
+:  A dictionary with the following keys *(dictionary; required)*:
 
    **description**
-   :  Metric description <i>(string; required)</i>.
+   :  Metric description *(string; required)*.
 
    **name**
-   :  Metric name <i>(string; required)</i>.
+   :  Metric name *(string; required)*.
 
    **units**
-   :  Metric units <i>(string; required)</i>.
+   :  Metric units *(string; required)*.
 
    **provenance_ids**
    :  A list of strings giving provenance IDs relevant to this trace 
-      <i>(list; optional)</i>.
+      *(list; optional)*.
+
+   **time_of_peak**
+   :  Time of metric peak for the PGA metric in UTC in ISO 8601 *extended* format 
+      *(str; optional)*.
 
 **dimensions**
-:  A dictionary with the following keys <i>(dictionary; required)</i>:
+:  A dictionary with the following keys *(dictionary; required)*:
 
    **number**
-   :  The number of dimentions for this metric (<code>n</code>) 
-      <i>(integer; required)</i>.
+   :  The number of dimentions for this metric (`n`) 
+      *(integer; required)*.
 
    **names**
    :  A list of strings describing the metric dimension names; length must 
-      be equal to the number of metric dimentions <code>n</code>
-      <i>(list; required)</i>.
+      be equal to the number of metric dimentions `n`
+      *(list; required)*.
 
    **units**
-   :  A list of strings describing the units of the metric dimensions; 
+   :  A string or list of strings describing the units of the metric dimensions; 
       length must be equal to the number of metric dimentions 
-      <code>n</code> <i>(list; required)</i>.
+      `n` *(str or list; required)*.
 
-   **values**
+   **axis_values**
    :  An array giving the values of the dimensions; the first dimension of
-      the array must equal the number of metric dimentions <code>n</code>;
+      the array must equal the number of metric dimentions `n`;
       the lengths of each constituent array are are 
-      <code>[p, q, ...]</code> <i>(array; required)</i>.
+      `[p, q, ...]` *(array; required)*.
 
 **values**
 :  An array giving the metric values; the dimensions of the array must be 
    equal to the length of each of the dimention value arrays 
-   <code>p x q x ...</code> <i>(array; required)</i>.
+   `p x q x ...` *(float or array; required)*.
 
 An example metrics dictionary:
 

@@ -214,46 +214,45 @@
           <section id="streams-and-traces">
 <h1>Streams and Traces<a class="headerlink" href="#streams-and-traces" title="Permalink to this headline">#</a></h1>
 <p>For the purposes of the GMP format, we require that the traces be grouped into
-streams for which their corresponding properties (i.e., metadata) are
-consistent. Since a station may include traces from different locations or with
-different sample rates, a single station feature may contain multiple streams.
-The GMP format requires a “streams” key for each station dictionary. The
-streams key gives a list of dictionaries, and each dictionary represents a
-unique stream at that station.</p>
+streams for which their corresponding properties (i.e., metadata) are consistent.
+Since a station may include traces from different locations or with different sample
+rates, a single station feature may contain multiple streams. The GMP format requires
+a “streams” key for each station dictionary. The streams key gives a list of
+dictionaries, and each dictionary represents a unique stream at that station.</p>
 <p>Each stream dictionary contains the following keys:</p>
 <dl class="simple myst">
 <dt><strong>properties</strong></dt><dd><p>an element to store stream-level metadata that contains the following
-keys <i>(dictionary; required)</i>:</p>
+keys <em>(dictionary; required)</em>:</p>
 <dl class="simple myst">
 <dt><strong>band_code</strong></dt><dd><p>The SEED band
 <a class="reference external" href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">code</a>
-<i>(string; required)</i>.</p>
+<em>(string; required)</em>.</p>
 </dd>
 <dt><strong>instrument_code</strong></dt><dd><p>The SEED instrument
 <a class="reference external" href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">code</a>
-<i>(string; required)</i>.</p>
+<em>(string; required)</em>.</p>
 </dd>
 <dt><strong>samples_per_second</strong></dt><dd><p>The number of samples per second of the time series (Hz)
-(float; required).</p>
+(float; required)*.</p>
 </dd>
-<dt><strong>stream_housing</strong></dt><dd><p>A dictionary with the following keys <i>(dictionary; required)</i>:</p>
+<dt><strong>stream_housing</strong></dt><dd><p>A dictionary with the following keys <em>(dictionary; required)</em>:</p>
 <dl class="simple myst">
 <dt><strong>cosmos_code</strong></dt><dd><p>The COSMOS station type
 <a class="reference external" href="https://www.strongmotioncenter.org/vdc/tables/stationtype.table">code</a>
-<i>(integer; required)</i>.</p>
+<em>(integer; required)</em>.</p>
 </dd>
 <dt><strong>description</strong></dt><dd><p>The description associated with the cosmos_code
-<i>(string; required)</i>.</p>
+<em>(string; required)</em>.</p>
 </dd>
 <dt><strong>stream_depth</strong></dt><dd><p>Depth (in m) of the stream relative to the ground surface
-<i>(float; required)</i>.</p>
+<em>(float; required)</em>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd>
 <dt><strong>traces</strong></dt><dd><p>A list of dictionaris in which each list element corresponds to a
-different trace <i>(list; required)</i>.</p>
+different trace <em>(list; required)</em>.</p>
 </dd>
 </dl>
 <p>It is important to note that since the “properties” element is a key within the
@@ -305,29 +304,29 @@ include:</p>
 <p>Each of the “traces” dictionaries must have the following
 keys:</p>
 <dl class="simple myst">
-<dt><strong>properties</strong></dt><dd><p>A dictionary with the following keys <i>(dictionary, required)</i>:</p>
+<dt><strong>properties</strong></dt><dd><p>A dictionary with the following keys <em>(dictionary, required)</em>:</p>
 <dl class="simple myst">
 <dt><strong>channel_code:</strong></dt><dd><p><a class="reference external" href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">SEED</a>
-channel code <i>(string, required)</i>.</p>
+channel code <em>(string, required)</em>.</p>
 </dd>
 <dt><strong>location_code</strong></dt><dd><p><a class="reference external" href="https://ds.iris.edu/ds/support/faq/54/what-is-a-seed-location-identifier-or-location-code/">SEED</a>
-location code <i>(string, required)</i>.</p>
+location code <em>(string, required)</em>.</p>
 </dd>
 <dt><strong>as_recorded</strong></dt><dd><p>True if trace is a record from a data logger, False if trace is a
-function of multiple traces <i>(bool; required)</i>.</p>
+function of multiple traces <em>(bool; required)</em>.</p>
 </dd>
 <dt><strong>azimuth</strong></dt><dd><p>Degrees clockwise from north of the trace orientation
-<i>(float; required)</i>.</p>
+<em>(float; required)</em>.</p>
 </dd>
-<dt><strong>dip</strong></dt><dd><p>Degrees from horizontal of trace orientation <i>(float; required)</i>.</p>
+<dt><strong>dip</strong></dt><dd><p>Degrees from horizontal of trace orientation <em>(float; required)</em>.</p>
 </dd>
-<dt><strong>start_time</strong></dt><dd><p>Trace start time; UTC ISO 8601 time format <i>(string; required).</i></p>
+<dt><strong>start_time</strong></dt><dd><p>Trace start time; UTC ISO 8601 time format <em>(string; required).</em></p>
 </dd>
-<dt><strong>end_time</strong></dt><dd><p>Trace end time; UTC ISO 8601 time format <i>(string; required).</i></p>
+<dt><strong>end_time</strong></dt><dd><p>Trace end time; UTC ISO 8601 time format <em>(string; required).</em></p>
 </dd>
 </dl>
 </dd>
-<dt><strong>metrics</strong></dt><dd><p>A list of dictionaries <i>(dictionary; required)</i>.</p>
+<dt><strong>metrics</strong></dt><dd><p>A list of dictionaries <em>(dictionary; required)</em>.</p>
 </dd>
 </dl>
 <p>An example trace dictionary structure is illustrated below.</p>

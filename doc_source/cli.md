@@ -19,6 +19,12 @@ cd SEIS-PROV/validator
 pip install -e .
 ```
 
+We also need the "schema" package:
+
+```
+pip install schema
+```
+
 Then, to install this package:
 ```
 git clone https://github.com/SCEDC/ground-motion-packet.git

@@ -91,7 +91,7 @@
                                     "channel_code": "HNE",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 90,
+                                    "azimuth": 90.0,
                                     "dip": 0.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -158,6 +158,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -171,7 +172,7 @@
                                     "channel_code": "HNN",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 0,
+                                    "azimuth": 0.0,
                                     "dip": 0.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -238,6 +239,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -251,7 +253,7 @@
                                     "channel_code": "HNZ",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 0,
+                                    "azimuth": 0.0,
                                     "dip": -90.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -318,6 +320,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -331,8 +334,8 @@
                                     "channel_code": "ROTD50",
                                     "location_code": "--",
                                     "as_recorded": false,
-                                    "azimuth": 0,
-                                    "dip": 0,
+                                    "azimuth": 0.0,
+                                    "dip": 0.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
                                 },
@@ -417,7 +420,7 @@
                                     "channel_code": "HNE",
                                     "location_code": "2C",
                                     "as_recorded": true,
-                                    "azimuth": 90,
+                                    "azimuth": 90.0,
                                     "dip": 0.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -484,6 +487,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -497,7 +501,7 @@
                                     "channel_code": "HNN",
                                     "location_code": "2C",
                                     "as_recorded": true,
-                                    "azimuth": 0,
+                                    "azimuth": 0.0,
                                     "dip": 0.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -564,6 +568,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -577,7 +582,7 @@
                                     "channel_code": "HNZ",
                                     "location_code": "2C",
                                     "as_recorded": true,
-                                    "azimuth": 0,
+                                    "azimuth": 0.0,
                                     "dip": -90.0,
                                     "start_time": "2019-07-06T03:19:53Z",
                                     "end_time": "2019-07-06T04:59:53Z"
@@ -644,6 +649,7 @@
                                             "time_of_peak": "2019-07-06T03:42:53Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null

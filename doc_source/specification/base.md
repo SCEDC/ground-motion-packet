@@ -1,24 +1,24 @@
 ## Base Dictionary
 
-For the base GeoJSON dictionary, the GMP specification adds three additional
+For the base GeoJSON dictionary, the GMP specification adds four additional
 keys:
 
 **version**
-:  The version of the ground motion packet <i>(string; required)</i>.
+:  The version of the ground motion packet *(string; required)*.
 
 **creation_time**
 :  File creation timestamp in UTC in ISO 8601 *extended* format 
    (i.e., with separators between the year, month, and day, and the hour, 
    minutes, and seconds, and with a "T" between the date and time). 
-   Example: "2022-01-16T14:12:32.470Z"  <i>(string; required)</i>.
+   Example: "2022-01-16T14:12:32.470Z" *(string; required)*.
 
 **event**
 :   An optional dictionary containing earthquake properties for the
     earthquake associatd with the metrics given in this file 
-    <i>(dictionary; optional).</i>
+    *(dictionary; optional).*
 
 **provenance**
-:   A SEIS-PROV-compliant provenance document <i>(dictionary; required)</i>. 
+:   A SEIS-PROV-compliant provenance document *(dictionary; required)*. 
     The contents of this dictionary will be discussed in more detail later, 
     but the full specification is given 
     [here](http://seismicdata.github.io/SEIS-PROV/).

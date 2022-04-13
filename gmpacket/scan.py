@@ -3,10 +3,9 @@
 
 import sys
 import json
-import io
 import csv
 
-from seis_prov_validate import validate
+from gmpacket.validate import gmp_validate
 
 
 def scan_gmp(gmp_file, print_what="all", csvfile=None):
@@ -40,6 +39,10 @@ def scan_gmp(gmp_file, print_what="all", csvfile=None):
 
     event = gmp["event"]["properties"]
 
+    result = gmp_validate(gmp)
+    print("-" * 80)
+    print(f"Is GMP format valid? {result}")
+
     if print_summary:
         print("-" * 80)
         print(
@@ -49,19 +52,6 @@ def scan_gmp(gmp_file, print_what="all", csvfile=None):
         print("PROVENANCE")
 
     prov = gmp["provenance"]
-
-    # To check if valid SEIS-PROV:
-    # http://seismicdata.github.io/SEIS-PROV/validation.html
-    # git clone https://github.com/SeismicData/SEIS-PROV.git
-    # cd SEIS-PROV/validator
-    # pip install -v -e .
-    prov_string = json.dumps(prov)
-    prov_io = io.BytesIO(prov_string.encode())
-    result = validate(prov_io)
-    result.is_valid
-    # result.warnings
-    print(f"   Is valid? {result.is_valid}")
-
     agents = prov["agent"]
     for _, prov_dict in agents.items():
         print_provenance_agent(prov_dict, print_summary)
@@ -82,7 +72,7 @@ def scan_gmp(gmp_file, print_what="all", csvfile=None):
 
     for station in gmp["features"]:
         sta_properties = station["properties"]
-        sta_coords = station["geometry"]["coordinates"]
+        # sta_coords = station["geometry"]["coordinates"]
         if print_detail:
             print("── STATION", print_detail)
             print(f"   name:           {sta_properties['name']}")

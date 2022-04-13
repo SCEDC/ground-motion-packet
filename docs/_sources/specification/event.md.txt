@@ -3,28 +3,28 @@
 The event dictionary contains the following keys:
 
 **type**
-:  The value is always "Feature" <i>(string; required)</i>.
+:  The value is always "Feature" *(string; required)*.
 
 **properties**
-:  A dictionary with the following keys <i>(dictionary; required)</i>:
+:  A dictionary with the following keys *(dictionary; required)*:
 
    **id**
-   :  A unique event id <i>(string; required)</i>.
+   :  A unique event id *(string; required)*.
 
    **time**
    :  Event origin time in UTC ISO 8601 *extended* format (i.e., with 
       separators between the year, month, and day, and the hour, minutes,
-      and seconds, and with a “T” between the date and time)<i>(string; 
-      required)</i>.
+      and seconds, and with a “T” between the date and time)*(string; 
+      required)*.
 
    **magnitude**
-   :   Earthquake magnitude <i>(float; required)</i>.
+   :   Earthquake magnitude *(float; required)*.
 
 **geometry**
-:  A dictionary with the following keys <i>(dictionary; required)</i>;
+:  A dictionary with the following keys *(dictionary; required)*;
 
    **type**
-   :  The value is always "Point" <i>(string; required)</i>.
+   :  The value is always "Point" *(string; required)*.
 
    **coordinates**
    :  A list of three floats: longitude, latitude, and depth.
