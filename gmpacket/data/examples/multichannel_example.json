@@ -120,12 +120,6 @@
                                             "units": "g",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.018445
                                     },
                                     {
@@ -134,12 +128,6 @@
                                             "name": "PGV",
                                             "units": "cm/s",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 1.5478
                                     },
@@ -199,12 +187,6 @@
                                             "units": "g",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.018079
                                     },
                                     {
@@ -213,12 +195,6 @@
                                             "name": "PGV",
                                             "units": "cm/s",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 1.1615
                                     },
@@ -278,12 +254,6 @@
                                             "units": "g",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.014246
                                     },
                                     {
@@ -292,12 +262,6 @@
                                             "name": "PGV",
                                             "units": "cm/s",
                                             "time_of_peak": "2022-01-06T00:28:20Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 0.9487
                                     },

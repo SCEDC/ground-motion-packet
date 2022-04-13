@@ -34,7 +34,7 @@ FEATURES_SCHEMA = Schema(
             "station_code": str,
             "name": str,
             "streams": list,
-            Optional("structure_reference_orientation"): float
+            Optional("structure_reference_orientation"): float,
         },
     }
 )
@@ -79,13 +79,13 @@ METRICS_SCHEMA = Schema(
             Optional("provenance_ids"): list,  # list of str
             Optional("time_of_peak"): str,  # ISO 8601
         },
-        "dimensions": {
-            "number": int,
-            "names": Or(str, list, None),  # check len equals number
-            "units": Or(str, list, None),  # check len equals number
-            "axis_values": Or(list, None),  # check dims; list of lists
+        Optional("dimensions"): {
+            "number": int,  # >0
+            "names": list,  # check len equals number
+            "units": list,  # check len equals number
+            "axis_values": list,  # check dims; list of lists
         },
-        "values": Or(list, float),  # check dims; list of lists
+        "values": Or(list, float),  # check dims; list of lists, list if dims exist
     }
 )
 
@@ -119,6 +119,14 @@ def gmp_validate(gmp_dict):
                     # Validate metrics
                     for metric in trace["metrics"]:
                         METRICS_SCHEMA.validate(metric)
+                        if "provenance_ids" in metric["properties"]:
+                            for pid in metric["properties"]["provenance_ids"]:
+                                assert isinstance(pid, str)
+                        if "dimensions" in metric:
+                            assert metric["dimensions"]["number"] > 0
+                            assert isinstance(metric["values"], list)
+                        else:
+                            assert isinstance(metric["values"], float)
 
         prov = gmp_dict["provenance"]
         prov_string = json.dumps(prov)

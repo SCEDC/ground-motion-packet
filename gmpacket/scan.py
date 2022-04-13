@@ -191,7 +191,10 @@ def print_metrics(metric, indent=0, print_detail=True):
     metric_names = []
     metric_vals = []
     instr = " " * indent
-    ndims = metric["dimensions"]["number"]
+    if "dimensions" in metric:
+        ndims = metric["dimensions"]["number"]
+    else:
+        ndims = 0
     metric_properties = metric["properties"]
     desc = metric_properties["description"]
     munits = __format_units(metric_properties["units"])

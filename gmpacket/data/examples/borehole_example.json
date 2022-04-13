@@ -120,12 +120,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -148,12 +142,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -175,12 +163,6 @@
                                             "name": "PGA",
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 0.137
                                     }
@@ -218,12 +200,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -246,12 +222,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -273,12 +243,6 @@
                                             "name": "PGA",
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 0.137
                                     }
@@ -316,12 +280,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -344,12 +302,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -371,12 +323,6 @@
                                             "name": "PGA",
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 0.137
                                     }
@@ -414,12 +360,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -442,12 +382,6 @@
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
                                         },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
-                                        },
                                         "values": 0.137
                                     }
                                 ]
@@ -469,12 +403,6 @@
                                             "name": "PGA",
                                             "units": "g",
                                             "time_of_peak": "2018-01-04 10:40:07Z"
-                                        },
-                                        "dimensions": {
-                                            "names": null,
-                                            "number": 0,
-                                            "units": null,
-                                            "axis_values": null
                                         },
                                         "values": 0.137
                                     }

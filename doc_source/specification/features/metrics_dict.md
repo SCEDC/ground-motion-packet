@@ -41,7 +41,7 @@ The dictionary has the following required keys:
       *(str; optional)*.
 
 **dimensions**
-:  A dictionary with the following keys *(dictionary; required)*:
+:  A dictionary with the following keys *(dictionary; required when metric is an array)*:
 
    **number**
    :  The number of dimentions for this metric (`n`) 
