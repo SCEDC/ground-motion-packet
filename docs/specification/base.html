@@ -213,21 +213,21 @@
         <article role="main">
           <section id="base-dictionary">
 <h1>Base Dictionary<a class="headerlink" href="#base-dictionary" title="Permalink to this headline">#</a></h1>
-<p>For the base GeoJSON dictionary, the GMP specification adds three additional
+<p>For the base GeoJSON dictionary, the GMP specification adds four additional
 keys:</p>
 <dl class="simple myst">
-<dt><strong>version</strong></dt><dd><p>The version of the ground motion packet <i>(string; required)</i>.</p>
+<dt><strong>version</strong></dt><dd><p>The version of the ground motion packet <em>(string; required)</em>.</p>
 </dd>
 <dt><strong>creation_time</strong></dt><dd><p>File creation timestamp in UTC in ISO 8601 <em>extended</em> format
 (i.e., with separators between the year, month, and day, and the hour,
 minutes, and seconds, and with a “T” between the date and time).
-Example: “2022-01-16T14:12:32.470Z”  <i>(string; required)</i>.</p>
+Example: “2022-01-16T14:12:32.470Z” <em>(string; required)</em>.</p>
 </dd>
 <dt><strong>event</strong></dt><dd><p>An optional dictionary containing earthquake properties for the
 earthquake associatd with the metrics given in this file
-<i>(dictionary; optional).</i></p>
+<em>(dictionary; optional).</em></p>
 </dd>
-<dt><strong>provenance</strong></dt><dd><p>A SEIS-PROV-compliant provenance document <i>(dictionary; required)</i>.
+<dt><strong>provenance</strong></dt><dd><p>A SEIS-PROV-compliant provenance document <em>(dictionary; required)</em>.
 The contents of this dictionary will be discussed in more detail later,
 but the full specification is given
 <a class="reference external" href="http://seismicdata.github.io/SEIS-PROV/">here</a>.</p>

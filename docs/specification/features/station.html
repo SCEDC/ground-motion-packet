@@ -217,14 +217,29 @@
 Station metadata is included in the GeoJSON feature “properties” dictionary.
 Requited properties include:</p>
 <dl class="simple myst">
-<dt><strong>network_code</strong></dt><dd><p>The <a class="reference external" href="https://www.fdsn.org/networks/">FSDN</a> network code <i>(string; required)</i>.</p>
+<dt><strong>type</strong></dt><dd><p>Must be “Feature” <em>(string; required)</em>.</p>
 </dd>
-<dt><strong>station_code</strong></dt><dd><p>FDSN station code <i>(string; required)</i>.</p>
+<dt><strong>geometry</strong></dt><dd><p>A dictionary with the following keys <em>(dictionary; required)</em>.</p>
+<dl class="simple myst">
+<dt><strong>type</strong></dt><dd><p>Must be “Point” <em>(string; required)</em>.</p>
 </dd>
-<dt><strong>name</strong></dt><dd><p>Station name <i>(string; optional)</i>.</p>
+<dt><strong>coordinates</strong></dt><dd><p>List of coordinates as floats <em>(list; required)</em>.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>properties</strong></dt><dd><p>A dictionary to store station-level metadata that contains the following
+keys <em>(dictionary; required)</em>:</p>
+<dl class="simple myst">
+<dt><strong>network_code</strong></dt><dd><p>The <a class="reference external" href="https://www.fdsn.org/networks/">FSDN</a> network code <em>(string; required)</em>.</p>
+</dd>
+<dt><strong>station_code</strong></dt><dd><p>FDSN station code <em>(string; required)</em>.</p>
+</dd>
+<dt><strong>name</strong></dt><dd><p>Station name <em>(string; optional)</em>.</p>
 </dd>
 <dt><strong>streams</strong></dt><dd><p>A list of dictionaries, one for each stream at this station.
-<i>(list; required)</i>.</p>
+<em>(list; required)</em>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition note">

@@ -82,7 +82,7 @@
                 "coordinates": [
                     -118.283,
                     37.2307,
-                    0
+                    0.0
                 ]
             },
             "properties": {
@@ -94,11 +94,11 @@
                         "properties": {
                             "band_code": "H",
                             "instrument_code": "N",
-                            "samples_per_second": 200,
+                            "samples_per_second": 200.0,
                             "stream_housing": {
                                 "cosmos_code": 4,
                                 "description": "Reference station",
-                                "stream_depth": 0
+                                "stream_depth": 0.0
                             }
                         },
                         "traces": [
@@ -107,8 +107,8 @@
                                     "channel_code": "HNN",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 0,
-                                    "dip": 0,
+                                    "azimuth": 0.0,
+                                    "dip": 0.0,
                                     "start_time": "2022-01-06T00:28:10Z",
                                     "end_time": "2022-01-06T00:28:40Z"
                                 },
@@ -121,6 +121,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -135,6 +136,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -184,8 +186,8 @@
                                     "channel_code": "HNE",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 90,
-                                    "dip": 0,
+                                    "azimuth": 90.0,
+                                    "dip": 0.0,
                                     "start_time": "2022-01-06T00:28:10Z",
                                     "end_time": "2022-01-06T00:28:40Z"
                                 },
@@ -198,6 +200,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -212,6 +215,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -261,8 +265,8 @@
                                     "channel_code": "HNZ",
                                     "location_code": "--",
                                     "as_recorded": true,
-                                    "azimuth": 0,
-                                    "dip": 90,
+                                    "azimuth": 0.0,
+                                    "dip": 90.0,
                                     "start_time": "2022-01-06T00:28:10Z",
                                     "end_time": "2022-01-06T00:28:40Z"
                                 },
@@ -275,6 +279,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null
@@ -289,6 +294,7 @@
                                             "time_of_peak": "2022-01-06T00:28:20Z"
                                         },
                                         "dimensions": {
+                                            "names": null,
                                             "number": 0,
                                             "units": null,
                                             "axis_values": null

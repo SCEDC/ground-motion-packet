@@ -4,18 +4,34 @@ The GeoJSON features represent seismic stations in the GMP specification.
 Station metadata is included in the GeoJSON feature "properties" dictionary. 
 Requited properties include:
 
-**network_code**
-:  The [FSDN](https://www.fdsn.org/networks/) network code <i>(string; required)</i>.
+**type**
+:  Must be "Feature" *(string; required)*.
 
-**station_code**
-:  FDSN station code <i>(string; required)</i>.
+**geometry**
+:  A dictionary with the following keys *(dictionary; required)*.
 
-**name**
-:  Station name <i>(string; optional)</i>.
+   **type**
+   :  Must be "Point" *(string; required)*.
 
-**streams**
-:  A list of dictionaries, one for each stream at this station. 
-    <i>(list; required)</i>.
+   **coordinates**
+   :  List of coordinates as floats *(list; required)*.
+
+**properties**
+:  A dictionary to store station-level metadata that contains the following 
+   keys *(dictionary; required)*:
+
+   **network_code**
+   :  The [FSDN](https://www.fdsn.org/networks/) network code *(string; required)*.
+
+   **station_code**
+   :  FDSN station code *(string; required)*.
+
+   **name**
+   :  Station name *(string; optional)*.
+
+   **streams**
+   :  A list of dictionaries, one for each stream at this station. 
+      *(list; required)*.
 
 
 ```{note} "depth" in the station geometry coordinates array is defined as 

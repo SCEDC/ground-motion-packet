@@ -232,42 +232,45 @@ how the metrics are stored to make parsing the data more straight-forward, and
 minimizing the file size.</p>
 <p>The dictionary has the following required keys:</p>
 <dl class="simple myst">
-<dt><strong>properties</strong></dt><dd><p>A dictionary with the following keys <i>(dictionary; required)</i>:</p>
+<dt><strong>properties</strong></dt><dd><p>A dictionary with the following keys <em>(dictionary; required)</em>:</p>
 <dl class="simple myst">
-<dt><strong>description</strong></dt><dd><p>Metric description <i>(string; required)</i>.</p>
+<dt><strong>description</strong></dt><dd><p>Metric description <em>(string; required)</em>.</p>
 </dd>
-<dt><strong>name</strong></dt><dd><p>Metric name <i>(string; required)</i>.</p>
+<dt><strong>name</strong></dt><dd><p>Metric name <em>(string; required)</em>.</p>
 </dd>
-<dt><strong>units</strong></dt><dd><p>Metric units <i>(string; required)</i>.</p>
+<dt><strong>units</strong></dt><dd><p>Metric units <em>(string; required)</em>.</p>
 </dd>
 <dt><strong>provenance_ids</strong></dt><dd><p>A list of strings giving provenance IDs relevant to this trace
-<i>(list; optional)</i>.</p>
+<em>(list; optional)</em>.</p>
+</dd>
+<dt><strong>time_of_peak</strong></dt><dd><p>Time of metric peak for the PGA metric in UTC in ISO 8601 <em>extended</em> format
+<em>(str; optional)</em>.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>dimensions</strong></dt><dd><p>A dictionary with the following keys <i>(dictionary; required)</i>:</p>
+<dt><strong>dimensions</strong></dt><dd><p>A dictionary with the following keys <em>(dictionary; required)</em>:</p>
 <dl class="simple myst">
-<dt><strong>number</strong></dt><dd><p>The number of dimentions for this metric (<code>n</code>)
-<i>(integer; required)</i>.</p>
+<dt><strong>number</strong></dt><dd><p>The number of dimentions for this metric (<code class="docutils literal notranslate"><span class="pre">n</span></code>)
+<em>(integer; required)</em>.</p>
 </dd>
 <dt><strong>names</strong></dt><dd><p>A list of strings describing the metric dimension names; length must
-be equal to the number of metric dimentions <code>n</code>
-<i>(list; required)</i>.</p>
+be equal to the number of metric dimentions <code class="docutils literal notranslate"><span class="pre">n</span></code>
+<em>(list; required)</em>.</p>
 </dd>
-<dt><strong>units</strong></dt><dd><p>A list of strings describing the units of the metric dimensions;
+<dt><strong>units</strong></dt><dd><p>A string or list of strings describing the units of the metric dimensions;
 length must be equal to the number of metric dimentions
-<code>n</code> <i>(list; required)</i>.</p>
+<code class="docutils literal notranslate"><span class="pre">n</span></code> <em>(str or list; required)</em>.</p>
 </dd>
-<dt><strong>values</strong></dt><dd><p>An array giving the values of the dimensions; the first dimension of
-the array must equal the number of metric dimentions <code>n</code>;
+<dt><strong>axis_values</strong></dt><dd><p>An array giving the values of the dimensions; the first dimension of
+the array must equal the number of metric dimentions <code class="docutils literal notranslate"><span class="pre">n</span></code>;
 the lengths of each constituent array are are
-<code>[p, q, …]</code> <i>(array; required)</i>.</p>
+<code class="docutils literal notranslate"><span class="pre">[p,</span> <span class="pre">q,</span> <span class="pre">...]</span></code> <em>(array; required)</em>.</p>
 </dd>
 </dl>
 </dd>
 <dt><strong>values</strong></dt><dd><p>An array giving the metric values; the dimensions of the array must be
 equal to the length of each of the dimention value arrays
-<code>p x q x …</code> <i>(array; required)</i>.</p>
+<code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">x</span> <span class="pre">q</span> <span class="pre">x</span> <span class="pre">...</span></code> <em>(float or array; required)</em>.</p>
 </dd>
 </dl>
 <p>An example metrics dictionary:</p>
