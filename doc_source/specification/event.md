@@ -1,6 +1,10 @@
 ## Event
 
-The event dictionary contains the following keys:
+The event dictionary contains the following keys. Note that the event parameters listed
+here can become outdated as new information becomes available. For anyone using these
+data we strongly encourage you to retrieve updated event information from the USGS
+[Comcat](https://earthquake.usgs.gov/earthquakes/search/) database 
+([Comcat API documentation](https://earthquake.usgs.gov/fdsnws/event/1/)).
 
 **type**
 :  The value is always "Feature" *(string; required)*.
