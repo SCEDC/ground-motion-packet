@@ -16,7 +16,7 @@
                 "seis_prov:software_name": "ampgen",
                 "seis_prov:software_version": "0.0.36",
                 "seis_prov:website": {
-                    "$": "http://dx.doi.org/10.5066/P9ANQXN3",
+                    "$": "http://dx.doi.org/10.1785/0220190219",
                     "type": "xsd:anyURI"
                 }
             },

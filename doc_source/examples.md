@@ -32,3 +32,8 @@ of traces into streams.
 [Borehole Example](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json)
 :  This is for the downhole geotechnical array at Treasure Island. There are three
    traces at each depth, and each depth is grouped as a stream.
+
+[Multisamplerate](https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/sps-100-200-example.json)
+:  This is example is for a single free field station (CI.CCC). This station has a 3 component strong motion 
+   sensor that is being recorded at 100 sps and 200 sps. Each sample rate is grouped as a stream and as 
+   3 traces for each sensor component as well as ROTD50 trace in the 100 sps stream.   
