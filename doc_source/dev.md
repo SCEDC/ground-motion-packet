@@ -4,7 +4,7 @@ We welcome comments and contributions through github issues.
 
 ### Documentation
 
-Never edit the contents of tje `docs` directory, only edit files in the `doc_source`
+Never edit the contents of the `docs` directory, only edit files in the `doc_source`
 directory.
 
 To build this documentation, it is convenient to create a conda virtual environment
