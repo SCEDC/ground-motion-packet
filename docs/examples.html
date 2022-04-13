@@ -220,31 +220,28 @@ instrument configurations and to highlight the value of sensible grouping
 of traces into streams.</p>
 <dl class="simple myst">
 <dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/example1.json">Example 1</a></dt><dd><p>This is a very simple example for station CI.CCC. It contains a single stream
-for the HN instrument with. It contains two traces</p>
-<ul class="simple">
-<li><p>The HNE component</p></li>
-<li><p>ROTD50</p></li>
-</ul>
+for the HN instrument with. It contains two traces: the HNE component, and ROTD50.</p>
 <p>This illustrates one important aspect of this data structure: ROTD50 is derived from
 two horizontal components for this instrument and the ROTD50 metrics cannot be
 derived from the metrics of the individual components. Thus, it is valuable to
-report it at the “trace” level (there is an associated trace, that is the rotated
-combination of the horizontal traces that is associated the ROTD50 metrics).</p>
+report it at the “trace” level (note that there is a trace from which ROTD50 is
+derived, which is a rotated combination of the horizontal traces).</p>
 <p>For the HNE trace, the metrics dictionary includes response spectra (a 2D array
 metric) and peak ground acceleration (a scalar metric).</p>
 <p>For the ROTD50 trace, the metrics dictionary includes significant duration (a 2D
 array metric) and bracketed duration (a 1D array metric).</p>
 </dd>
 <dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/multichannel_example.json">Multichannel</a></dt><dd><p>This example is also for a single station (BK.OVRO) and contains
-a single stream for the HN instrument. It contains three traces: HNN, HNE, and HNZ. Each traces includes PGA and response spectra
-metrics.</p>
+a single stream for the HN instrument. It contains three traces: HNN, HNE, and HNZ.
+Each traces includes PGA and response spectra metrics.</p>
 </dd>
 <dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/borehole_example.json">Borehole Example</a></dt><dd><p>This is for the downhole geotechnical array at Treasure Island. There are three
 traces at each depth, and each depth is grouped as a stream.</p>
 </dd>
-<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/sps-100-200-example.json">Multisamplerate</a></dt><dd><p>This is example is for a single free field station (CI.CCC). This station has a 3 component strong motion
-sensor that is being recorded at 100 sps and 200 sps. Each sample rate is grouped as a stream and as
-3 traces for each sensor component as well as ROTD50 trace in the 100 sps stream.</p>
+<dt><a class="reference external" href="https://raw.githubusercontent.com/SCEDC/ground-motion-packet/main/gmpacket/data/examples/sps-100-200-example.json">Multisamplerate</a></dt><dd><p>This is example is for a single free field station (CI.CCC). This station has a 3
+component strong motion sensor that is being recorded at 100 sps and 200 sps. Each
+sample rate is grouped as a stream and as 3 traces for each sensor component as well
+as ROTD50 trace in the 100 sps stream.</p>
 </dd>
 </dl>
 </section>

@@ -214,11 +214,14 @@
           <section id="command-line-tools">
 <h1>Command Line Tools<a class="headerlink" href="#command-line-tools" title="Permalink to this headline">#</a></h1>
 <p>This respository contains some command line tools that are meant to assist in reading,
-parsing, and validating the ground motion data packet format.</p>
+parsing, and validating the ground motion data packet format. This is a python package
+that can be imported and the functions can be called directly in new scripts, jupyter
+notebooks, or interactive python sessions. An example session is given in the
+<a class="reference internal" href="demo.html"><span class="doc std std-doc">Demo</span></a> section.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<p>The basic dependencies are pip and git.
-The primary python package that is necessary is the
+<p>The basic dependencies are <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span></code>.</p>
+<p>The main python dependency is the
 <a class="reference external" href="http://seismicdata.github.io/SEIS-PROV/validation.html#official-validator">SEIS-PROV validator</a>.
 To install:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/SeismicData/SEIS-PROV.git
@@ -236,17 +239,17 @@ pip install -e .
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>The installed program is called <code class="docutils literal notranslate"><span class="pre">gmpformat</span></code>:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ gmpformat -h
-usage: gmpformat <span class="o">[</span>-h<span class="o">]</span> <span class="o">{</span>print,csv,validate<span class="o">}</span> ...
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gmpformat -h
+usage: gmpformat [-h] {print,csv,validate} ...
 
-This is a program <span class="k">for</span> describing, validating, and converting Ground Motion
-Packet <span class="o">(</span>GMP<span class="o">)</span> formatted data.
+This is a program for describing, validating, and converting Ground Motion
+Packet (GMP) formatted data.
 
 optional arguments:
-  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -h, --help            show this help message and exit
 
 subcommands:
-  <span class="o">{</span>print,csv,validate<span class="o">}</span>
+  {print,csv,validate}
     print               Print GMP file contents.
     csv                 Convert GMP file contents to a CSV flatfile.
     validate            Validate a GMP file.
