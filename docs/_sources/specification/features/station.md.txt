@@ -33,6 +33,10 @@ Requited properties include:
    :  A list of dictionaries, one for each stream at this station. 
       *(list; required)*.
 
+   **structure_reference_orientation**
+   :  Reference for the structural coordinate system with respect to geographic north. 
+      Equivalent to COSMOS integer 21 *(int; optional)*
+
 
 ```{note} "depth" in the station geometry coordinates array is defined as 
 meters positive from the WGS84 datum. This conforms with GEOJSON
