@@ -34,6 +34,7 @@ FEATURES_SCHEMA = Schema(
             "station_code": str,
             "name": str,
             "streams": list,
+            Optional("structure_reference_orientation"): float
         },
     }
 )
