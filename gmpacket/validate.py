@@ -90,12 +90,14 @@ METRICS_SCHEMA = Schema(
 )
 
 
-def gmp_validate(gmp_dict):
+def gmp_validate(gmp_dict, allow_exceptions=False):
     """Validate GMP schema
 
     Args:
         gmp_dict (dict):
-           A dictionary to check if it meets the GMP spec.
+            A dictionary to check if it meets the GMP spec.
+        allow_exceptions (bool):
+            Raise exceptions if encountered?
 
     Returns:
         bool: Did it validate?
@@ -134,5 +136,7 @@ def gmp_validate(gmp_dict):
         result = validate(prov_io)
         assert result.is_valid
         return True
-    except BaseException:
+    except BaseException as ex:
+        if allow_exceptions:
+            raise ex
         return False

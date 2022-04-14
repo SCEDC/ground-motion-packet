@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- encoding: utf8 -*-
 
+import json
 import argparse
 from gmpacket.scan import scan_gmp
+from gmpacket.validate import gmp_validate
 
 
 def run_gmpformat():
@@ -19,7 +21,7 @@ def run_gmpformat():
     sub_desc = [
         "Print GMP file contents.",
         "Convert GMP file contents to a CSV flatfile.",
-        "Validate a GMP file.",
+        "Validate a GMP file; will print encountered error messages.",
     ]
     methods = [__print, __convert, __validate]
     for name, desc, meth in zip(sub_name, sub_desc, methods):
@@ -60,4 +62,7 @@ def __convert(args):
 
 
 def __validate(args):
-    print("To be implmemented")
+    with open(args.file, "rt") as f:
+        gmp = json.load(f)
+    result = gmp_validate(gmp, allow_exceptions=True)
+    print(f"Is GMP format valid? {result}")
