@@ -39,8 +39,7 @@ The installed program is called `gmpformat`:
 $ gmpformat -h
 usage: gmpformat [-h] {print,csv,validate} ...
 
-This is a program for describing, validating, and converting Ground Motion
-Packet (GMP) formatted data.
+This is a program for describing, validating, and converting Ground Motion Packet (GMP) formatted data.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -49,5 +48,5 @@ subcommands:
   {print,csv,validate}
     print               Print GMP file contents.
     csv                 Convert GMP file contents to a CSV flatfile.
-    validate            Validate a GMP file.
+    validate            Validate a GMP file; will print encountered error messages.
 ```
