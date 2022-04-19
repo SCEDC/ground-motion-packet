@@ -13,3 +13,9 @@ metrics including, but not limited to, ShakeMap. The GMP format is not meant to
 describe station metadata or site installation. The purpose of the metadata 
 included in the GMP format is to provide high-level information regarding the 
 suitability of the data for common engineering/seismological applications.
+
+## Documentation
+[User Documentation](https://scedc.github.io/ground-motion-packet/index.html)
+
+## Demo
+[Sample Jupyter notebook](https://github.com/SCEDC/ground-motion-packet/blob/main/gmpacket/GMP-demo.ipynb)
