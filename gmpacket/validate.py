@@ -4,11 +4,37 @@
 import json
 import io
 from schema import Schema, Optional, Or
+from datetime import datetime
 
 from seis_prov_validate import validate
 
-# note:
-#   pip install schema
+
+def datetime_valid(str):
+    """Check that str is ISO 8601 extended.
+
+    Args:
+        str (str):
+            String to validte.
+
+    Returns:
+        bool: is it ISO 8601 extended?
+    """
+    try:
+        datetime.fromisoformat(str)
+    except BaseException:
+        try:
+            datetime.fromisoformat(str.replace("Z", "+00:00"))
+        except BaseException:
+            return False
+        return True
+    return True
+
+
+def get_dims(a):
+    if not type(a) == list:
+        return []
+    return [len(a)] + get_dims(a[0])
+
 
 GMP_SCHEMA = Schema(
     {
@@ -19,7 +45,7 @@ GMP_SCHEMA = Schema(
         "features": list,
         Optional("event"): {
             "type": "Feature",
-            "properties": {"id": str, "time": str, "magnitude": float},  # ISO 8601
+            "properties": {"id": str, "time": str, "magnitude": float},
             "geometry": {"type": str, "coordinates": [float, float, float]},
         },
     }
@@ -63,8 +89,8 @@ TRACES_SCHEMA = Schema(
             "as_recorded": bool,
             "azimuth": float,
             "dip": float,
-            "start_time": str,  # ISO 8601
-            "end_time": str,  # ISO 8601
+            "start_time": str,
+            "end_time": str,
         },
         "metrics": list,
     }
@@ -76,16 +102,16 @@ METRICS_SCHEMA = Schema(
             "description": str,
             "name": str,
             "units": str,
-            Optional("provenance_ids"): list,  # list of str
-            Optional("time_of_peak"): str,  # ISO 8601
+            Optional("provenance_ids"): list,
+            Optional("time_of_peak"): str,
         },
         Optional("dimensions"): {
-            "number": int,  # >0
-            "names": list,  # check len equals number
-            "units": list,  # check len equals number
-            "axis_values": list,  # check dims; list of lists
+            "number": int,
+            "names": list,
+            "units": list,
+            "axis_values": list,
         },
-        "values": Or(list, float),  # check dims; list of lists, list if dims exist
+        "values": Or(list, float),
     }
 )
 
@@ -106,6 +132,15 @@ def gmp_validate(gmp_dict, allow_exceptions=False):
         # Validate base level
         GMP_SCHEMA.validate(gmp_dict)
 
+        if not datetime_valid(gmp_dict["creation_time"]):
+            raise ValueError("creation_time is not a valid format.")
+
+        # event dict is optional
+        if "event" in gmp_dict:
+            event_time = gmp_dict["event"]["properties"]["time"]
+            if not datetime_valid(event_time):
+                raise ValueError("Event time is not a valid format.")
+
         # Validate features
         for feature in gmp_dict["features"]:
             FEATURES_SCHEMA.validate(feature)
@@ -118,17 +153,91 @@ def gmp_validate(gmp_dict, allow_exceptions=False):
                 for trace in stream["traces"]:
                     TRACES_SCHEMA.validate(trace)
 
+                    if not datetime_valid(trace["properties"]["start_time"]):
+                        raise ValueError("Trace start_time is not a valid format.")
+                    if not datetime_valid(trace["properties"]["end_time"]):
+                        raise ValueError("Trace end_time is not a valid format.")
+
                     # Validate metrics
                     for metric in trace["metrics"]:
                         METRICS_SCHEMA.validate(metric)
+
+                        # time_of_peak is optional
+                        mproperties = metric["properties"]
+                        if "time_of_peak" in mproperties:
+                            if not datetime_valid(mproperties["time_of_peak"]):
+                                raise ValueError(
+                                    "Metric time_of_peak is not a valid format."
+                                )
+
                         if "provenance_ids" in metric["properties"]:
                             for pid in metric["properties"]["provenance_ids"]:
-                                assert isinstance(pid, str)
+                                if not isinstance(pid, str):
+                                    raise ValueError(
+                                        "provenance_ids must be a list of strings."
+                                    )
                         if "dimensions" in metric:
-                            assert metric["dimensions"]["number"] > 0
-                            assert isinstance(metric["values"], list)
+                            # Metric dimension number
+                            ndim = metric["dimensions"]["number"]
+                            if not ndim > 0:
+                                raise ValueError(
+                                    "metric dimension number must be greater than zero."
+                                )
+                            if ndim > 2:
+                                # Note, to support higher dimensions we will need to
+                                # gmpacket.scan.print_metrics to handle it. There
+                                # should be a more elgant way to handle this than what
+                                # we are currently doing.
+                                raise ValueError(
+                                    "metric dimension number must be greater than 2 "
+                                    "not yet supported."
+                                )
+
+                            # Metric dimension names
+                            md_names = metric["dimensions"]["names"]
+                            if len(md_names) != ndim:
+                                raise ValueError(
+                                    "length of metric dimension names must be equal to "
+                                    "metric dimension number."
+                                )
+
+                            # Metric dimension units
+                            md_units = metric["dimensions"]["units"]
+                            if len(md_units) != ndim:
+                                raise ValueError(
+                                    "length of metric dimension units must be equal to "
+                                    "metric dimension number."
+                                )
+
+                            # Metric dimension axis_values
+                            md_avals = metric["dimensions"]["axis_values"]
+                            if len(md_avals) != ndim:
+                                raise ValueError(
+                                    "length of metric dimension axis_values must be "
+                                    "equal to metric dimension number."
+                                )
+                            metric_dims = [len(a) for a in md_avals]
+
+                            # Metric values
+                            if not isinstance(metric["values"], list):
+                                raise ValueError(
+                                    "metric dimension values must be a list when the "
+                                    "metric is an array."
+                                )
+                            metric_val_dims = get_dims(metric["values"])
+                            if not metric_val_dims == metric_dims:
+                                raise ValueError(
+                                    "metric value dimensions are inconsistent with "
+                                    "metric dimesion axis_values."
+                                )
+
                         else:
-                            assert isinstance(metric["values"], float)
+                            # Metric values
+                            if not isinstance(metric["values"], float):
+                                raise ValueError(
+                                    "metric values must be float when the metric is "
+                                    "scalar."
+                                )
 
         prov = gmp_dict["provenance"]
         prov_string = json.dumps(prov)

@@ -210,7 +210,7 @@ def print_metrics(metric, indent=0, print_detail=True):
         dims = metric["dimensions"]
         dnames = dims["names"]
         dunits = dims["units"]
-        dvals = dims["axis_values"]
+        dvals = dims["axis_values"][0]
         shape = len(dvals)
         dname0 = dnames[0]
         dunit0 = __format_units(dunits[0])
