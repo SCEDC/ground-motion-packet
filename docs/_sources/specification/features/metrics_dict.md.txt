@@ -55,7 +55,7 @@ The dictionary has the following required keys:
    **units**
    :  A string or list of strings describing the units of the metric dimensions; 
       length must be equal to the number of metric dimentions 
-      `n` *(str or list; required)*.
+      `n` *(list; required)*.
 
    **axis_values**
    :  An array giving the values of the dimensions; the first dimension of
