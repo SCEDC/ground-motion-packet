@@ -1,0 +1,166 @@
+{
+    "type": "FeatureCollection",
+    "version": "0.1-dev",
+    "creation_time": "2018-01-04T10:59:47Z",
+    "provenance": {
+        "prefix": {
+            "seis_prov": "http://seisprov.org/seis_prov/0.1/#"
+        },
+        "agent": {
+            "seis_prov:sp000_sa_0000000": {
+                "prov:label": "gmprocess",
+                "prov:type": {
+                    "$": "prov:SoftwareAgent",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:software_name": "gmprocess",
+                "seis_prov:software_version": "1.1",
+                "seis_prov:website": {
+                    "$": "http://dx.doi.org/10.5066/P9ANQXN3",
+                    "type": "xsd:anyURI"
+                }
+            },
+            "seis_prov:sp000_pp_0000000": {
+                "prov:label": "Mr. Processor",
+                "prov:type": {
+                    "$": "prov:Person",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "Mr. Processor",
+                "seis_prov:email": "mrprocessor@processing.org",
+                "seis_prov:role": "data processor"
+            },
+            "seis_prov:sp000_og_0000000": {
+                "prov:label": "IRIS DMC",
+                "prov:type": {
+                    "$": "prov:Organization",
+                    "type": "prov:QUALIFIED_NAME"
+                },
+                "seis_prov:name": "IRIS DMC",
+                "seis_prov:role": "data distributor",
+                "seis_prov:website": {
+                    "$": "https://www.iris.edu/",
+                    "type": "xsd:anyURI"
+                }
+            }
+        }
+    },
+    "event": {
+        "type": "Feature",
+        "properties": {
+            "id": "ci38457511",
+            "time": "2019-07-06T03:19:53Z",
+            "magnitude": 7.1
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -117.599,
+                35.77,
+                -8000.0
+            ]
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "network_code": "CI",
+                "station_code": "CCC",
+                "name": "Christmas Canyon China Lake",
+                "structure_reference_orientation": null,
+                "streams": [
+                    {
+                        "properties": {
+                            "band_code": "H",
+                            "instrument_code": "N",
+                            "samples_per_second": 100.0,
+                            "stream_housing": {
+                                "cosmos_code": 10,
+                                "description": "Building",
+                                "stream_depth": 0.0,
+                                "stream_location": null
+                            }
+                        },
+                        "traces": [
+                            {
+                                "properties": {
+                                    "channel_code": "HNE",
+                                    "location_code": "--",
+                                    "as_recorded": true,
+                                    "azimuth": 0.0,
+                                    "dip": -90.0,
+                                    "start_time": "2019-07-06T03:19:53Z",
+                                    "end_time": "2019-07-06T04:59:53Z"
+                                },
+                                "metrics": [
+                                    {
+                                        "properties": {
+                                            "description": "Spectral acceleration",
+                                            "name": "SA",
+                                            "units": "g",
+                                            "provenance_ids": [
+                                                "seis_prov:sp000_sa_0000000",
+                                                "seis_prov:sp000_pp_0000000",
+                                                "seis_prov:sp000_og_0000000"
+                                            ],
+                                            "time_of_peak": null
+                                        },
+                                        "dimensions": {
+                                            "number": 2,
+                                            "names": [
+                                                "critical damping",
+                                                "period"
+                                            ],
+                                            "units": [
+                                                "%",
+                                                "s"
+                                            ],
+                                            "axis_values": [
+                                                [
+                                                    5.0,
+                                                    10.0,
+                                                    20.0
+                                                ],
+                                                [
+                                                    0.5,
+                                                    1.0,
+                                                    1.5
+                                                ]
+                                            ]
+                                        },
+                                        "values": [
+                                            [
+                                                2.3,
+                                                2.0,
+                                                0.4
+                                            ],
+                                            [
+                                                1.6,
+                                                1.4,
+                                                0.8
+                                            ],
+                                            [
+                                                2.0,
+                                                1.8,
+                                                1.0
+                                            ]
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3645,
+                    35.5249,
+                    670.0
+                ]
+            }
+        }
+    ]
+}

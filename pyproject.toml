@@ -1,0 +1,46 @@
+[project]
+name = "gmpacket"
+version = "0.1.0"
+description = "ANSS Ground Motion Packet"
+authors = [
+    {name = "Mike Hearne", email="mhearne@usgs.gov"},
+    {name = "Eric Thompson", email="ethompson@usgs.gov"},
+    {name = "Ellen Yu", email="eyu@caltech.edu"},
+]
+
+license = {file = "LICENSE.md"}
+readme = "README.md"
+requires-python = "<=3.10"
+
+keywords = ["ground motion", "earthquake"]
+
+
+dependencies = [
+    "pandas>=1.4.0",
+    "pydantic[email]>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=0.7.0",
+    "black>=21",
+    "flake8>=3.9",
+    "ipython>=7.26",
+    "notebook>=6.4.1",
+    "twine>=3.8.0"
+]
+test = [
+    "deepdiff>=5.7.0",
+    "pytest>=6.2",
+    "pytest-cov>=2.12.0",
+]
+
+[build-system]
+requires = [
+  "setuptools>=42",
+  "wheel",
+  "setuptools_scm[toml]>=3.4",
+  "Cython>=0.29.23",
+  "numpy",
+]
+build-backend = "setuptools.build_meta"
