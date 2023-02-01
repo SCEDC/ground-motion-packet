@@ -1,0 +1,633 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developer Notes" href="dev.html" /><link rel="prev" title="Demo" href="demo.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Pydantic Demo - Ground Motion Packet Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/pied-piper-admonition.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Ground Motion Packet Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="geojson.html">GeoJSON Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terms.html">Terminology</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="specification/index.html">Specification</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="specification/base.html">Base Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification/event.html">Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification/provenance.html">Provenance</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="specification/features/index.html">Features</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/station.html">Stations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/streams_traces.html">Streams and Traces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specification/features/metrics_dict.html">Metrics Dictionary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Pydantic Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Developer Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="pydantic-demo">
+<h1>Pydantic Demo<a class="headerlink" href="#pydantic-demo" title="Permalink to this heading">#</a></h1>
+<p>We will start with the necessary imports</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">gmpacket.provenance</span> <span class="kn">import</span> <span class="n">SoftwareAgent</span><span class="p">,</span> <span class="n">PersonAgent</span><span class="p">,</span> <span class="n">OrganizationAgent</span><span class="p">,</span> <span class="n">Website</span><span class="p">,</span> <span class="n">Provenance</span>
+<span class="kn">from</span> <span class="nn">gmpacket.feature</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Feature</span><span class="p">,</span>
+    <span class="n">FeatureGeometry</span><span class="p">,</span>
+    <span class="n">FeatureProperties</span><span class="p">,</span>
+    <span class="n">Metric</span><span class="p">,</span>
+    <span class="n">MetricDimensions</span><span class="p">,</span>
+    <span class="n">MetricProperties</span><span class="p">,</span>
+    <span class="n">Stream</span><span class="p">,</span>
+    <span class="n">StreamHousing</span><span class="p">,</span>
+    <span class="n">StreamProperties</span><span class="p">,</span>
+    <span class="n">Trace</span><span class="p">,</span>
+    <span class="n">TraceProperties</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gmpacket.packet</span> <span class="kn">import</span> <span class="n">Event</span><span class="p">,</span> <span class="n">GroundMotionPacket</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dealing-with-provenance">
+<h2>Dealing with Provenance<a class="headerlink" href="#dealing-with-provenance" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="n">PersonAgent</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="s2">&quot;Alex Processor&quot;</span><span class="p">,</span> 
+                                 <span class="s2">&quot;aprocessor@datagenerator.org&quot;</span><span class="p">,</span> 
+                                 <span class="s2">&quot;Data Processor&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="n">website</span> <span class="o">=</span> <span class="n">Website</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&quot;</span><span class="p">)</span>
+<span class="n">software</span> <span class="o">=</span> <span class="n">SoftwareAgent</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="s2">&quot;gmprocess&quot;</span><span class="p">,</span> <span class="s2">&quot;1.2.0&quot;</span><span class="p">,</span> <span class="n">website</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">software</span><span class="p">)</span>
+
+<span class="n">org_website</span> <span class="o">=</span> <span class="n">Website</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.datagenerator.org&quot;</span><span class="p">)</span>
+<span class="n">organization</span> <span class="o">=</span> <span class="n">OrganizationAgent</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="s2">&quot;Data Generator&quot;</span><span class="p">,</span> <span class="s2">&quot;Data Provider&quot;</span><span class="p">,</span> <span class="n">org_website</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">organization</span><span class="p">)</span>
+
+<span class="c1"># the names of the keys are not important, but the values must be valid Person,Software, or </span>
+<span class="c1"># OrganizationAgent objects.</span>
+<span class="n">agents</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;person&quot;</span><span class="p">:</span> <span class="n">person</span><span class="p">,</span> <span class="s2">&quot;software&quot;</span><span class="p">:</span> <span class="n">software</span><span class="p">,</span> <span class="s2">&quot;organization&quot;</span><span class="p">:</span><span class="n">organization</span><span class="p">}</span>
+<span class="n">provenance</span> <span class="o">=</span> <span class="n">Provenance</span><span class="p">(</span><span class="n">agent</span><span class="o">=</span><span class="n">agents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">provenance</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>label=&#39;Alex Processor&#39; name=&#39;Alex Processor&#39; email=&#39;aprocessor@datagenerator.org&#39; role=&#39;Data Processor&#39; prov:type={&#39;$&#39;: &#39;prov:Person&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}
+label=&#39;gmprocess&#39; name=&#39;gmprocess&#39; version=&#39;1.2.0&#39; website=Website(url=&#39;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&#39;, site_type=&#39;xsd:anyURI&#39;) prov:type={&#39;$&#39;: &#39;prov:SoftwareAgent&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}
+label=&#39;Data Generator&#39; name=&#39;Data Generator&#39; role=&#39;Data Provider&#39; website=Website(url=&#39;https://www.datagenerator.org&#39;, site_type=&#39;xsd:anyURI&#39;) prov:type={&#39;$&#39;: &#39;prov:Organization&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}
+agent={&#39;person&#39;: PersonAgent(label=&#39;Alex Processor&#39;, name=&#39;Alex Processor&#39;, email=&#39;aprocessor@datagenerator.org&#39;, role=&#39;Data Processor&#39;, prov:type={&#39;$&#39;: &#39;prov:Person&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;software&#39;: SoftwareAgent(label=&#39;gmprocess&#39;, name=&#39;gmprocess&#39;, version=&#39;1.2.0&#39;, website=Website(url=&#39;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:SoftwareAgent&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;organization&#39;: OrganizationAgent(label=&#39;Data Generator&#39;, name=&#39;Data Generator&#39;, role=&#39;Data Provider&#39;, website=Website(url=&#39;https://www.datagenerator.org&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:Organization&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;})} prefix={&#39;seis_prov&#39;: &#39;http://seisprov.org/seis_prov/0.1/#&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-simple-metrics">
+<h2>Creating Simple Metrics<a class="headerlink" href="#creating-simple-metrics" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pga_props</span> <span class="o">=</span> <span class="n">MetricProperties</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Peak Ground Accleration&quot;</span><span class="p">,</span>
+                           <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PGA&quot;</span><span class="p">,</span>
+                           <span class="n">units</span><span class="o">=</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+                           <span class="n">provenance_ids</span><span class="o">=</span> <span class="n">provenance</span><span class="o">.</span><span class="n">getAgents</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pga_props</span><span class="p">)</span>
+
+<span class="c1"># for scalar values like PGA, MetricDimensions are not necessary</span>
+<span class="n">pga_metric</span> <span class="o">=</span> <span class="n">Metric</span><span class="p">(</span><span class="n">properties</span><span class="o">=</span><span class="n">pga_props</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pga_metric</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>description=&#39;Peak Ground Accleration&#39; name=&#39;PGA&#39; units=&#39;g&#39; provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;] time_of_peak=None
+properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None) dimensions=None values=1.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-complex-metrics">
+<h2>Creating Complex Metrics<a class="headerlink" href="#creating-complex-metrics" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sa_props</span> <span class="o">=</span> <span class="n">MetricProperties</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Spectral Accleration&quot;</span><span class="p">,</span>
+                             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SA&quot;</span><span class="p">,</span>
+                             <span class="n">units</span><span class="o">=</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
+                             <span class="n">provenance_ids</span><span class="o">=</span> <span class="n">provenance</span><span class="o">.</span><span class="n">getAgents</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sa_props</span><span class="p">)</span>
+
+<span class="n">sa_dims</span> <span class="o">=</span> <span class="n">MetricDimensions</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                           <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;critical damping&quot;</span><span class="p">,</span> <span class="s2">&quot;period&quot;</span><span class="p">],</span>
+                           <span class="n">units</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;%&quot;</span><span class="p">,</span><span class="s2">&quot;s&quot;</span><span class="p">],</span>
+                           <span class="n">axis_values</span><span class="o">=</span><span class="p">[[</span><span class="mf">5.0</span><span class="p">],[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sa_dims</span><span class="p">)</span>
+
+<span class="n">sa_metric</span> <span class="o">=</span> <span class="n">Metric</span><span class="p">(</span><span class="n">properties</span><span class="o">=</span><span class="n">sa_props</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="n">sa_dims</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sa_metric</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>description=&#39;Spectral Accleration&#39; name=&#39;SA&#39; units=&#39;g&#39; provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;] time_of_peak=None
+number=2 names=[&#39;critical damping&#39;, &#39;period&#39;] units=[&#39;%&#39;, &#39;s&#39;] axis_values=[[5.0], [0.3, 1.0, 3.0]]
+properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None) dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]) values=[[1.2, 1.4, 1.6]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-traces">
+<h2>Creating Traces<a class="headerlink" href="#creating-traces" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">sa_trace_props</span> <span class="o">=</span> <span class="n">TraceProperties</span><span class="p">(</span><span class="n">channel_code</span><span class="o">=</span><span class="s2">&quot;HNE&quot;</span><span class="p">,</span> 
+                                 <span class="n">location_code</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> 
+                                 <span class="n">as_recorded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                 <span class="n">azimuth</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> 
+                                 <span class="n">dip</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                 <span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">,</span> 
+                                 <span class="n">end_time</span><span class="o">=</span><span class="n">end_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sa_trace_props</span><span class="p">)</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">pga_metric</span><span class="p">,</span> <span class="n">sa_metric</span><span class="p">]</span>
+<span class="n">hne_trace</span> <span class="o">=</span> <span class="n">Trace</span><span class="p">(</span><span class="n">properties</span><span class="o">=</span><span class="n">sa_trace_props</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hne_trace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>channel_code=&#39;HNE&#39; location_code=&#39;10&#39; as_recorded=True azimuth=90.0 dip=0.0 start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235) end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)
+properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)) metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-stream">
+<h2>Creating a Stream<a class="headerlink" href="#creating-a-stream" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stream_housing</span> <span class="o">=</span> <span class="n">StreamHousing</span><span class="p">(</span><span class="n">cosmos_code</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A building&quot;</span><span class="p">,</span> <span class="n">stream_depth</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stream_housing</span><span class="p">)</span>
+
+<span class="n">stream_props</span> <span class="o">=</span> <span class="n">StreamProperties</span><span class="p">(</span><span class="n">band_code</span><span class="o">=</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> 
+                                <span class="n">instrument_code</span><span class="o">=</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> 
+                                <span class="n">samples_per_second</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> 
+                                <span class="n">stream_housing</span><span class="o">=</span><span class="n">stream_housing</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stream_props</span><span class="p">)</span>
+
+<span class="n">stream</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">(</span><span class="n">properties</span><span class="o">=</span><span class="n">stream_props</span><span class="p">,</span> <span class="n">traces</span><span class="o">=</span><span class="p">[</span><span class="n">hne_trace</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cosmos_code=10 description=&#39;A building&#39; stream_depth=0.0 stream_location=None
+band_code=&#39;H&#39; instrument_code=&#39;N&#39; samples_per_second=100.0 stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)
+properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)) traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-feature-station">
+<h2>Creating a Feature (station)<a class="headerlink" href="#creating-a-feature-station" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_geom</span> <span class="o">=</span> <span class="n">FeatureGeometry</span><span class="p">(</span><span class="n">coordinates</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">124.1</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_geom</span><span class="p">)</span>
+
+<span class="n">feature_props</span> <span class="o">=</span> <span class="n">FeatureProperties</span><span class="p">(</span><span class="n">network_code</span><span class="o">=</span><span class="s2">&quot;NC&quot;</span><span class="p">,</span> 
+                                  <span class="n">station_code</span><span class="o">=</span><span class="s2">&quot;ABCD&quot;</span><span class="p">,</span> 
+                                  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;A nice place for picnics&quot;</span><span class="p">,</span> 
+                                  <span class="n">streams</span><span class="o">=</span><span class="p">[</span><span class="n">stream</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_props</span><span class="p">)</span>
+
+<span class="n">feature</span> <span class="o">=</span> <span class="n">Feature</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">feature_geom</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">feature_props</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coordinates=[-124.1, 32.0, 1.1] type=&#39;Point&#39;
+network_code=&#39;NC&#39; station_code=&#39;ABCD&#39; name=&#39;A nice place for picnics&#39; streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])] structure_reference_orientation=None
+geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;) properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None) type=&#39;Feature&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-ground-motion-packet">
+<h2>Creating a Ground Motion Packet<a class="headerlink" href="#creating-a-ground-motion-packet" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="s2">&quot;us2023abcd&quot;</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">(),</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">32.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">120.0</span><span class="p">,</span> <span class="mf">35.3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+<span class="n">gm_packet</span> <span class="o">=</span> <span class="n">GroundMotionPacket</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.1dev&quot;</span><span class="p">,</span> 
+                               <span class="n">event</span><span class="o">=</span><span class="n">event</span><span class="p">,</span> 
+                               <span class="n">provenance</span><span class="o">=</span><span class="n">provenance</span><span class="p">,</span> 
+                               <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+                              <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gm_packet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type=&#39;Feature&#39; properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 2, 1, 17, 2, 49, 309312), &#39;magnitude&#39;: 7.3} geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}
+version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 258873) event=Event(type=&#39;Feature&#39;, properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 2, 1, 17, 2, 49, 309312), &#39;magnitude&#39;: 7.3}, geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}) provenance=Provenance(agent={&#39;person&#39;: PersonAgent(label=&#39;Alex Processor&#39;, name=&#39;Alex Processor&#39;, email=&#39;aprocessor@datagenerator.org&#39;, role=&#39;Data Processor&#39;, prov:type={&#39;$&#39;: &#39;prov:Person&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;software&#39;: SoftwareAgent(label=&#39;gmprocess&#39;, name=&#39;gmprocess&#39;, version=&#39;1.2.0&#39;, website=Website(url=&#39;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:SoftwareAgent&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;organization&#39;: OrganizationAgent(label=&#39;Data Generator&#39;, name=&#39;Data Generator&#39;, role=&#39;Data Provider&#39;, website=Website(url=&#39;https://www.datagenerator.org&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:Organization&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;})}, prefix={&#39;seis_prov&#39;: &#39;http://seisprov.org/seis_prov/0.1/#&#39;}) features=[Feature(geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;), properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None), type=&#39;Feature&#39;)] type=&#39;FeatureCollection&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exporting-groundmotion-packets">
+<h2>Exporting GroundMotion Packets<a class="headerlink" href="#exporting-groundmotion-packets" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gm_packet</span><span class="o">.</span><span class="n">as_json</span><span class="p">())</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">gm_packet</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;version&quot;:&quot;0.1dev&quot;,&quot;creation_time&quot;:&quot;2023-02-01T17:02:49Z&quot;,&quot;event&quot;:{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;id&quot;:&quot;us2023abcd&quot;,&quot;time&quot;:&quot;2023-02-01T17:02:49Z&quot;,&quot;magnitude&quot;:7.3},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-120,32.1,35300]}},&quot;provenance&quot;:{&quot;agent&quot;:{&quot;person&quot;:{&quot;prov:label&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:name&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:email&quot;:&quot;aprocessor@datagenerator.org&quot;,&quot;seis_prov:role&quot;:&quot;Data Processor&quot;,&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Person&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;software&quot;:{&quot;prov:label&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_name&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_version&quot;:&quot;1.2.0&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:SoftwareAgent&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;organization&quot;:{&quot;prov:label&quot;:&quot;Data Generator&quot;,&quot;seis_prov:name&quot;:&quot;Data Generator&quot;,&quot;seis_prov:role&quot;:&quot;Data Provider&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://www.datagenerator.org&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Organization&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}}},&quot;prefix&quot;:{&quot;seis_prov&quot;:&quot;http://seisprov.org/seis_prov/0.1/#&quot;}},&quot;features&quot;:[{&quot;geometry&quot;:{&quot;coordinates&quot;:[-124.1,32,1.1],&quot;type&quot;:&quot;Point&quot;},&quot;properties&quot;:{&quot;network_code&quot;:&quot;NC&quot;,&quot;station_code&quot;:&quot;ABCD&quot;,&quot;name&quot;:&quot;A nice place for picnics&quot;,&quot;streams&quot;:[{&quot;properties&quot;:{&quot;band_code&quot;:&quot;H&quot;,&quot;instrument_code&quot;:&quot;N&quot;,&quot;samples_per_second&quot;:100,&quot;stream_housing&quot;:{&quot;cosmos_code&quot;:10,&quot;description&quot;:&quot;A building&quot;,&quot;stream_depth&quot;:0,&quot;stream_location&quot;:null}},&quot;traces&quot;:[{&quot;properties&quot;:{&quot;channel_code&quot;:&quot;HNE&quot;,&quot;location_code&quot;:&quot;10&quot;,&quot;as_recorded&quot;:true,&quot;azimuth&quot;:90,&quot;dip&quot;:0,&quot;start_time&quot;:&quot;2023-02-01T17:02:19Z&quot;,&quot;end_time&quot;:&quot;2023-02-01T17:02:49Z&quot;},&quot;metrics&quot;:[{&quot;properties&quot;:{&quot;description&quot;:&quot;Peak Ground Accleration&quot;,&quot;name&quot;:&quot;PGA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:null,&quot;values&quot;:1.5},{&quot;properties&quot;:{&quot;description&quot;:&quot;Spectral Accleration&quot;,&quot;name&quot;:&quot;SA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:{&quot;number&quot;:2,&quot;names&quot;:[&quot;critical damping&quot;,&quot;period&quot;],&quot;units&quot;:[&quot;%&quot;,&quot;s&quot;],&quot;axis_values&quot;:[[5],[0.3,1,3]]},&quot;values&quot;:[[1.2,1.4,1.6]]}]}]}],&quot;structure_reference_orientation&quot;:null},&quot;type&quot;:&quot;Feature&quot;}],&quot;type&quot;:&quot;FeatureCollection&quot;}
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>time</th>
+      <th>magnitude</th>
+      <th>event_longitude</th>
+      <th>event_latitude</th>
+      <th>event_depth</th>
+      <th>network</th>
+      <th>station</th>
+      <th>station_name</th>
+      <th>station_longitude</th>
+      <th>station_latitude</th>
+      <th>station_elevation</th>
+      <th>channel</th>
+      <th>location</th>
+      <th>PGA(g)</th>
+      <th>SA(g)_critical_damping_5.0%_period_0.3s</th>
+      <th>SA(g)_critical_damping_5.0%_period_1.0s</th>
+      <th>SA(g)_critical_damping_5.0%_period_3.0s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>us2023abcd</td>
+      <td>2023-02-01 17:02:49.309312</td>
+      <td>7.3</td>
+      <td>-120.0</td>
+      <td>32.1</td>
+      <td>35300.0</td>
+      <td>NC</td>
+      <td>ABCD</td>
+      <td>A nice place for picnics</td>
+      <td>-124.1</td>
+      <td>32.0</td>
+      <td>1.1</td>
+      <td>HNE</td>
+      <td>10</td>
+      <td>1.5</td>
+      <td>1.2</td>
+      <td>1.4</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>us2023abcd</td>
+      <td>2023-02-01 17:02:49.309312</td>
+      <td>7.3</td>
+      <td>-120.0</td>
+      <td>32.1</td>
+      <td>35300.0</td>
+      <td>NC</td>
+      <td>ABCD</td>
+      <td>A nice place for picnics</td>
+      <td>-124.1</td>
+      <td>32.0</td>
+      <td>1.1</td>
+      <td>HNE</td>
+      <td>10</td>
+      <td>1.5</td>
+      <td>1.2</td>
+      <td>1.4</td>
+      <td>1.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="dev.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Developer Notes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="demo.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Demo</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Unlicense
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/SCEDC/ground-motion-packet" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Pydantic Demo</a><ul>
+<li><a class="reference internal" href="#dealing-with-provenance">Dealing with Provenance</a></li>
+<li><a class="reference internal" href="#creating-simple-metrics">Creating Simple Metrics</a></li>
+<li><a class="reference internal" href="#creating-complex-metrics">Creating Complex Metrics</a></li>
+<li><a class="reference internal" href="#creating-traces">Creating Traces</a></li>
+<li><a class="reference internal" href="#creating-a-stream">Creating a Stream</a></li>
+<li><a class="reference internal" href="#creating-a-feature-station">Creating a Feature (station)</a></li>
+<li><a class="reference internal" href="#creating-a-ground-motion-packet">Creating a Ground Motion Packet</a></li>
+<li><a class="reference internal" href="#exporting-groundmotion-packets">Exporting GroundMotion Packets</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    </body>
+</html>

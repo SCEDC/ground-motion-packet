@@ -1,18 +1,17 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Features" href="features/index.html" /><link rel="prev" title="Event" href="event.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Provenance - Ground Motion Packet Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/pied-piper-admonition.css" />
@@ -155,7 +154,7 @@
   <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -178,6 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydantic_demo.html">Pydantic Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev.html">Developer Notes</a></li>
 </ul>
 
@@ -197,7 +197,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -212,20 +214,20 @@
         </div>
         <article role="main">
           <section id="provenance">
-<h1>Provenance<a class="headerlink" href="#provenance" title="Permalink to this headline">#</a></h1>
+<h1>Provenance<a class="headerlink" href="#provenance" title="Permalink to this heading">#</a></h1>
 <p>The provenance document is meant to inform the user about the provider, source,
 distributor, and processing of the data in this file. The provenance should
 meet the requirements of
 <a class="reference external" href="http://seismicdata.github.io/SEIS-PROV/index.html">SEIS-PROV</a>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nt">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">  </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The SEIS-PROV standard allows for a wide variety of information. SEIS-PROV
@@ -233,7 +235,7 @@ categorizes entries into three main categories: “agents”, “entities”, an
 “activities”. “Agents” entries can be either “software”, “person”, or
 “organization” agents.</p>
 <p>The GMP format requires at least two entries:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>A “person” agent or an “organization” agent.</p></li>
 <li><p>A “software” agent.</p></li>
 </ol>
@@ -244,15 +246,15 @@ categorizes entries into three main categories: “agents”, “entities”, an
 <dt><strong>agent</strong></dt><dd><p>A dictionary for agent provenance information.</p>
 </dd>
 </dl>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    	  </span><span class="nt">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://seisprov.org/seis_prov/0.1/#"</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;provenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	  </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://seisprov.org/seis_prov/0.1/#&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>For “person” and “organization” agents, we define and require a specific
@@ -263,27 +265,27 @@ distributor”.</p>
 </dd>
 </dl>
 <p>An example software agent is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    	</span><span class="err">...</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov:sp000_sa_0000000"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gmprocess"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:SoftwareAgent"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:QUALIFIED_NAME"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:software_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gmprocess"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:software_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://dx.doi.org/10.5066/P9ANQXN3"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xsd:anyURI"</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;provenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span><span class="err">...</span>
+<span class="w">        </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov:sp000_sa_0000000&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prov:label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gmprocess&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;prov:type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:SoftwareAgent&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:QUALIFIED_NAME&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:software_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gmprocess&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:software_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.1&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://dx.doi.org/10.5066/P9ANQXN3&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xsd:anyURI&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Note that the keys in the “agent” dictionary are the SEIS-PROV IDs for each
@@ -291,75 +293,75 @@ provenance record, and must be unique. See the SEIS-PROV documentation for
 additional details.</p>
 <p>An example with an organization (the data distributor) and a person agents
 (the data processor) is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    	</span><span class="err">...</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov:sp000_pp_0000000"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Processor"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:Person"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:QUALIFIED_NAME"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Processor"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mrprocessor@processing.org"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data processor"</span><span class="w"></span>
-<span class="w">            </span><span class="p">},</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov:sp000_og_0000000"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IRIS DMC"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:Organization"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:QUALIFIED_NAME"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IRIS DMC"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data distributor"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.iris.edu/"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xsd:anyURI"</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;provenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span><span class="err">...</span>
+<span class="w">        </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov:sp000_pp_0000000&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prov:label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mr. Processor&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;prov:type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:Person&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:QUALIFIED_NAME&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mr. Processor&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mrprocessor@processing.org&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data processor&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov:sp000_og_0000000&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prov:label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRIS DMC&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;prov:type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:Organization&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:QUALIFIED_NAME&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRIS DMC&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data distributor&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.iris.edu/&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xsd:anyURI&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>An example with two organization agents (the data distributor and the data
 provider) is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    	</span><span class="err">...</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov:sp000_og_0000000"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Processor"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:Organization"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:QUALIFIED_NAME"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCEDC"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ncedc.org/"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xsd:anyURI"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data provider"</span><span class="w"></span>
-<span class="w">            </span><span class="p">},</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"seis_prov:sp000_og_0000001"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IRIS DMC"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"prov:type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:Organization"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:QUALIFIED_NAME"</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IRIS DMC"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data distributor"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"seis_prov:website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"$"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.iris.edu/"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xsd:anyURI"</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;provenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span><span class="err">...</span>
+<span class="w">        </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov:sp000_og_0000000&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prov:label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mr. Processor&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;prov:type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:Organization&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:QUALIFIED_NAME&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCEDC&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ncedc.org/&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xsd:anyURI&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data provider&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;seis_prov:sp000_og_0000001&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prov:label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRIS DMC&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;prov:type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:Organization&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prov:QUALIFIED_NAME&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRIS DMC&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data distributor&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;seis_prov:website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;$&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.iris.edu/&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xsd:anyURI&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -376,10 +378,10 @@ provider) is:</p>
                 </div>
                 <div class="title">Features</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="event.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -423,14 +425,12 @@ provider) is:</p>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/tabs.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     </body>
 </html>
