@@ -99,7 +99,7 @@ class Metric(BaseModel):
 
     @root_validator(pre=True)
     def check_dimensions(cls, values):
-        if "dimensions" in values:
+        if "dimensions" in values and values["dimensions"] is not None:
             if "number" in values["dimensions"]:
                 ndims = values["dimensions"]["number"]
             else:
