@@ -1,18 +1,17 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Metrics Dictionary" href="metrics_dict.html" /><link rel="prev" title="Stations" href="station.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Streams and Traces - Ground Motion Packet Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/pied-piper-admonition.css" />
@@ -155,7 +154,7 @@
   <span class="sidebar-brand-text">Ground Motion Packet Documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -178,6 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydantic_demo.html">Pydantic Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev.html">Developer Notes</a></li>
 </ul>
 
@@ -197,7 +197,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -212,7 +214,7 @@
         </div>
         <article role="main">
           <section id="streams-and-traces">
-<h1>Streams and Traces<a class="headerlink" href="#streams-and-traces" title="Permalink to this headline">#</a></h1>
+<h1>Streams and Traces<a class="headerlink" href="#streams-and-traces" title="Permalink to this heading">#</a></h1>
 <p>For the purposes of the GMP format, we require that the traces be grouped into
 streams for which their corresponding properties (i.e., metadata) are consistent.
 Since a station may include traces from different locations or with different sample
@@ -272,37 +274,37 @@ include:</p>
 <li><p>“RotD50” (see Boore 2010 for the full definition of RotD50).</p></li>
 </ul>
 <p>An example stream dictionary structure is illustrated below.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="err">...</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                            </span><span class="nt">"band_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                            </span><span class="nt">"instrument_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                            </span><span class="nt">"samples_per_second"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w"></span>
-<span class="w">                            </span><span class="nt">"stream_housing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                                </span><span class="nt">"cosmos_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Building"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                </span><span class="nt">"stream_depth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
-<span class="w">                            </span><span class="p">}</span><span class="w"></span>
-<span class="w">                        </span><span class="p">},</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">"traces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                                </span><span class="err">...</span><span class="w"></span>
-<span class="w">                            </span><span class="p">},</span><span class="w"></span>
-<span class="w">                            </span><span class="err">...</span><span class="w"></span>
-<span class="w">                        </span><span class="p">]</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="err">...</span>
+<span class="w">                </span><span class="nt">&quot;streams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;band_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;instrument_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;samples_per_second&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;stream_housing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="nt">&quot;cosmos_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Building&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nt">&quot;stream_depth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="nt">&quot;traces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="err">...</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                            </span><span class="err">...</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Each of the “traces” dictionaries must have the following
@@ -334,41 +336,41 @@ function of multiple traces <em>(bool; required)</em>.</p>
 </dd>
 </dl>
 <p>An example trace dictionary structure is illustrated below.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="err">...</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="err">...</span><span class="w"></span>
-<span class="w">                </span><span class="nt">"streams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="err">...</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">"traces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                                </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"channel_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HNE"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"location_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"--"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"as_recorded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"azimuth"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"dip"</span><span class="p">:</span><span class="w"> </span><span class="mf">-90.0</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-06T03:19:53Z"</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                    </span><span class="nt">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-06T04:59:53Z"</span><span class="w"></span>
-<span class="w">                                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                                </span><span class="nt">"metrics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                                        </span><span class="err">...</span><span class="w"></span>
-<span class="w">                                    </span><span class="p">},</span><span class="w"></span>
-<span class="w">                                    </span><span class="err">...</span><span class="w"></span>
-<span class="w">                                </span><span class="p">]</span><span class="w"></span>
-<span class="w">                            </span><span class="p">}</span><span class="w"></span>
-<span class="w">                        </span><span class="p">]</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">...</span>
+<span class="w">            </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="err">...</span>
+<span class="w">                </span><span class="nt">&quot;streams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="err">...</span>
+<span class="w">                        </span><span class="nt">&quot;traces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                    </span><span class="nt">&quot;channel_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HNE&quot;</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;location_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;as_recorded&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;azimuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;dip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-90.0</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;start_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-07-06T03:19:53Z&quot;</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-07-06T04:59:53Z&quot;</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                                </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                                    </span><span class="p">{</span>
+<span class="w">                                        </span><span class="err">...</span>
+<span class="w">                                    </span><span class="p">},</span>
+<span class="w">                                    </span><span class="err">...</span>
+<span class="w">                                </span><span class="p">]</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -385,10 +387,10 @@ function of multiple traces <em>(bool; required)</em>.</p>
                 </div>
                 <div class="title">Metrics Dictionary</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="station.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -432,14 +434,12 @@ function of multiple traces <em>(bool; required)</em>.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     </body>
 </html>

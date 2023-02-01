@@ -1,12 +1,14 @@
 # stdlib imports
 import json
 import pathlib
+from datetime import datetime, timedelta
 
 # third party imports
 from deepdiff import DeepDiff
 
 # local imports
 from gmpacket.feature import (
+    CosmosCode,
     Feature,
     Metric,
     MetricDimensions,
@@ -72,6 +74,21 @@ def test_stream_housing():
     ]
     housing = StreamHousing(**data)
     assert housing.dict(by_alias=True) == data
+
+    # test class constructors
+    # from_enum(cls, code: CosmosCode, depth: float, location: str = ""):
+    housing = StreamHousing.from_enum(CosmosCode.BUILDING, 33.0, "in a building")
+    cmp_dict = {
+        "cosmos_code": 10,
+        "description": "Building",
+        "stream_depth": 33.0,
+        "stream_location": "in a building",
+    }
+    assert housing.dict(by_alias=True) == cmp_dict
+
+    # from_int(cls, code: int, depth: float, location: str = ""):
+    housing = StreamHousing.from_int(10, 33.0, "in a building")
+    assert housing.dict(by_alias=True) == cmp_dict
 
 
 def test_stream_properties():

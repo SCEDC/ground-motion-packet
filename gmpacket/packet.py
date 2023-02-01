@@ -1,9 +1,10 @@
 # stdlib imports
+# third party imports
+import json
 import re
 from datetime import datetime
 from typing import List, Optional
 
-# third party imports
 import numpy as np
 import pandas as pd
 from pydantic import BaseModel
@@ -14,13 +15,26 @@ from gmpacket.provenance import Provenance
 from gmpacket.utils import datetime_to_iso8601
 
 
+# ######################################
+# We're monkey-patching the json module to control the output precision of floats
+class RoundingFloat(float):
+    __repr__ = staticmethod(lambda x: format(x, ".5g"))
+
+
+json.encoder.c_make_encoder = None
+json.encoder.float = RoundingFloat
+# ######################################
+
+
 class Event(BaseModel):
+    """Represent a ground motion packet Event object."""
+
     type: str = "Feature"
     properties: dict
     geometry: dict
 
     @classmethod
-    def from_parameters(cls, id, time, magnitude, lat, lon, depth):
+    def from_params(cls, id, time, magnitude, lat, lon, depth):
         props = {"id": id, "time": time, "magnitude": magnitude}
         geometry = {"type": "Point", "coordinates": [lon, lat, depth * 1000]}
         return cls(properties=props, geometry=geometry)
@@ -33,6 +47,8 @@ class Event(BaseModel):
 
 
 class GroundMotionPacket(BaseModel):
+    """Represent a high level ground motion packet object."""
+
     type = "FeatureCollection"
     version: str
     creation_time: datetime = datetime.utcnow()
@@ -41,12 +57,34 @@ class GroundMotionPacket(BaseModel):
     features: List[Feature]
 
     class Config:
+        anystr_strip_whitespace = True
         json_encoders = {
             # custom output conversion for datetime
             datetime: datetime_to_iso8601
         }
 
+    @classmethod
+    def load_from_json(cls, filename):
+        with open(filename, "rt") as f:
+            data = json.load(f)
+        return cls(**data)
+
+    def save_to_json(self, filename):
+        json_str = self.as_json()
+        with open(filename, "wt") as f:
+            f.write(json_str)
+
+    def as_dict(self):
+        return self.dict(by_alias=True)
+
+    def as_json(self):
+        # pydantic doesn't seem to support minifying output, so we'll use a combination
+        # of pydantic and json module methods to minify and get json encoding the way we want
+        jdict = json.loads(self.json(by_alias=True))
+        return json.dumps(jdict, separators=(",", ":"))
+
     def to_dataframe(self):
+        """Render the groundmotion packet to a pandas dataframe object."""
         event_dict = self.event.properties.copy()
         cdict = dict(
             zip(

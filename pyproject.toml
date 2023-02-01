@@ -22,17 +22,32 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
+    "altair",
     "build>=0.7.0",
     "black>=21",
     "flake8>=3.9",
+    "furo",
     "ipython>=7.26",
+    "myst-nb",
+    "myst-parser",
+    "nbsphinx",
     "notebook>=6.4.1",
-    "twine>=3.8.0"
+    "twine>=3.8.0",
+    "recommonmark",
+    "requests>=2",
+    "setuptools_scm",
+    "sphinx>3.0.0",
+    "sphinx-autoapi",
+    "sphinx-copybutton",
+    "sphinx-inline-tabs",
+    "sphinxcontrib-programoutput"
 ]
 test = [
     "deepdiff>=5.7.0",
+    "openpyxl>=3.0.9",
     "pytest>=6.2",
     "pytest-cov>=2.12.0",
+
 ]
 
 [build-system]
