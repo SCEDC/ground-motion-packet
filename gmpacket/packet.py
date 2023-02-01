@@ -95,19 +95,21 @@ class GroundMotionPacket(BaseModel):
         event_dict.update(cdict)
         rows = []
         for feature in self.features:
-            row = {}
-            row.update(event_dict)
-            row["network"] = feature.properties.network_code
-            row["station"] = feature.properties.station_code
-            row["station_name"] = feature.properties.name
+            feature_row = {}
+            feature_row.update(event_dict)
+            feature_row["network"] = feature.properties.network_code
+            feature_row["station"] = feature.properties.station_code
+            feature_row["station_name"] = feature.properties.name
             (
-                row["station_longitude"],
-                row["station_latitude"],
-                row["station_elevation"],
+                feature_row["station_longitude"],
+                feature_row["station_latitude"],
+                feature_row["station_elevation"],
             ) = feature.geometry.coordinates
             for stream in feature.properties.streams:
                 for trace in stream.traces:
-                    row["channel"] = trace.properties.channel_code
+                    row = {}
+                    row.update(feature_row)
+                    row["component"] = trace.properties.channel_code
                     row["location"] = trace.properties.location_code
                     for metric in trace.metrics:
                         metric_type = metric.properties.name
@@ -140,7 +142,7 @@ class GroundMotionPacket(BaseModel):
                                     row[key] = value
                         elif metric.dimensions.number != 2:
                             raise Exception("Can't support 1d arrays yet!")
-                        rows.append(row)
+                    rows.append(row)
 
         dataframe = pd.DataFrame(rows)
         return dataframe
