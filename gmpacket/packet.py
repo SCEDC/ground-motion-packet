@@ -5,8 +5,10 @@ import re
 from datetime import datetime
 from typing import List, Optional
 
+# third party imports
 import numpy as np
 import pandas as pd
+from geopy import distance
 from pydantic import BaseModel
 
 # local imports
@@ -86,12 +88,14 @@ class GroundMotionPacket(BaseModel):
     def to_dataframe(self):
         """Render the groundmotion packet to a pandas dataframe object."""
         event_dict = self.event.properties.copy()
+        eqlon, eqlat, eqdepth = self.event.geometry["coordinates"]
         cdict = dict(
             zip(
                 ["event_longitude", "event_latitude", "event_depth"],
-                self.event.geometry["coordinates"],
+                (eqlon, eqlat, eqdepth),
             )
         )
+
         event_dict.update(cdict)
         rows = []
         for feature in self.features:
@@ -100,11 +104,15 @@ class GroundMotionPacket(BaseModel):
             feature_row["network"] = feature.properties.network_code
             feature_row["station"] = feature.properties.station_code
             feature_row["station_name"] = feature.properties.name
+            slon, slat, _ = feature.geometry.coordinates
             (
                 feature_row["station_longitude"],
                 feature_row["station_latitude"],
                 feature_row["station_elevation"],
             ) = feature.geometry.coordinates
+            feature_row["epicentral_distance_km"] = distance.distance(
+                (eqlat, eqlon), (slat, slon)
+            ).km
             for stream in feature.properties.streams:
                 for trace in stream.traces:
                     row = {}

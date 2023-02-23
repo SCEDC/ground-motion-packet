@@ -1,6 +1,6 @@
 [project]
 name = "gmpacket"
-version = "0.1.0"
+version = "0.1.1"
 description = "ANSS Ground Motion Packet"
 authors = [
     {name = "Mike Hearne", email="mhearne@usgs.gov"},
@@ -16,9 +16,20 @@ keywords = ["ground motion", "earthquake"]
 
 
 dependencies = [
+    "geopy>=2.1.0",
     "pandas>=1.4.0",
     "pydantic[email]>=1.10.0",
 ]
+
+dynamic = ["entry-points"]
+
+[project.scripts]
+gmpformat = "gmpacket.bin.gmpformat:main"
+
+[tool.setuptools]
+packages = ["gmpacket", "gmpacket.bin"]
+
+
 
 [project.optional-dependencies]
 dev = [
