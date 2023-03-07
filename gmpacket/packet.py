@@ -23,8 +23,6 @@ class RoundingFloat(float):
     __repr__ = staticmethod(lambda x: format(x, ".5g"))
 
 
-json.encoder.c_make_encoder = None
-json.encoder.float = RoundingFloat
 # ######################################
 
 
@@ -80,10 +78,23 @@ class GroundMotionPacket(BaseModel):
         return self.dict(by_alias=True)
 
     def as_json(self):
+        # temporarily monkey-patch
+        old_c_encoder = json.encoder.c_make_encoder
+        json.encoder.c_make_encoder = None
+        json.encoder.float = RoundingFloat
+
         # pydantic doesn't seem to support minifying output, so we'll use a combination
-        # of pydantic and json module methods to minify and get json encoding the way we want
+        # of pydantic and json module methods to minify and get json encoding the way
+        # we want
         jdict = json.loads(self.json(by_alias=True))
-        return json.dumps(jdict, separators=(",", ":"))
+        json_str = json.dumps(jdict, separators=(",", ":"))
+
+        # undo monkey-patching to make this safe for other modules that also want to
+        # import json
+        json.encoder.c_make_encoder = old_c_encoder
+        delattr(json.encoder, "float")
+
+        return json_str
 
     def to_dataframe(self):
         """Render the groundmotion packet to a pandas dataframe object."""
