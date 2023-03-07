@@ -197,23 +197,23 @@ def test_from_objects():
     )
     feature = gm_packet.features[0]
     cmp_json = (
-        '{"geometry": {"coordinates": [-124.1, 32, 1.1], "type": "Point"}, '
+        '{"geometry": {"coordinates": [-124.1, 32.0, 1.1], "type": "Point"}, '
         '"properties": {"network_code": "NC", "station_code": "ABCD", "name": '
-        '"A nice place for picnics", "streams": [{"properties": {"band_code": '
-        '"H", "instrument_code": "N", "samples_per_second": 100, "stream_housing": '
-        '{"cosmos_code": 10, "description": "A building", "stream_depth": 0, '
+        '"A nice place for picnics", "streams": [{"properties": {"band_code": "H", '
+        '"instrument_code": "N", "samples_per_second": 100.0, "stream_housing": '
+        '{"cosmos_code": 10, "description": "A building", "stream_depth": 0.0, '
         '"stream_location": null}}, "traces": [{"properties": {"channel_code": '
-        '"HNE", "location_code": "10", "as_recorded": true, "azimuth": 90, "dip": 0, '
-        '"start_time": "2023-01-31T19:18:40Z", "end_time": "2023-01-31T19:19:10Z"}, '
-        '"metrics": [{"properties": {"description": "Peak Ground Accleration", "name": '
-        '"PGA", "units": "g", "provenance_ids": ["person", "software", "organization"], '
-        '"time_of_peak": null}, "dimensions": null, "values": 1.5}, {"properties": '
-        '{"description": "Spectral Acceleration", "name": "SA", "units": "g", '
-        '"provenance_ids": ["person", "software", "organization"], "time_of_peak": '
-        'null}, "dimensions": {"number": 2, "names": ["critical damping", "period"], '
-        '"units": ["%", "s"], "axis_values": [[5], [0.3, 1, 3]]}, "values": '
-        '[[1.2344, 1.4568, 1.6789]]}]}]}], "structure_reference_orientation": null}, '
-        '"type": "Feature"}'
+        '"HNE", "location_code": "10", "as_recorded": true, "azimuth": 90.0, "dip": '
+        '0.0, "start_time": "2023-03-07T19:23:58Z", "end_time": "2023-03-07T19:24:28Z"}, '
+        '"metrics": [{"properties": {"description": "Peak Ground Accleration", '
+        '"name": "PGA", "units": "g", "provenance_ids": ["person", "software", '
+        '"organization"], "time_of_peak": null}, "dimensions": null, "values": 1.5}, '
+        '{"properties": {"description": "Spectral Acceleration", "name": "SA", "units": '
+        '"g", "provenance_ids": ["person", "software", "organization"], '
+        '"time_of_peak": null}, "dimensions": {"number": 2, "names": ["critical damping", '
+        '"period"], "units": ["%", "s"], "axis_values": [[5.0], [0.3, 1.0, 3.0]]}, '
+        '"values": [[1.23435678, 1.456789, 1.678901]]}]}]}], '
+        '"structure_reference_orientation": null}, "type": "Feature"}'
     )
     feature_json = feature.json(by_alias=True)
     cmp_dict = json.loads(cmp_json)
