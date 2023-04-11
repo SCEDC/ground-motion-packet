@@ -43,8 +43,6 @@ geojson
 terms
 specification/index
 examples
-cli
-demo
 pydantic_demo
 dev
 ```
