@@ -1,4 +1,4 @@
-## Base Dictionary
+# Base Dictionary
 
 For the base GeoJSON dictionary, the GMP specification adds four additional
 keys:

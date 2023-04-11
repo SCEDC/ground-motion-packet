@@ -28,25 +28,11 @@ packages = ["gmpacket"]
 
 [project.optional-dependencies]
 dev = [
-    "altair",
-    "build>=0.7.0",
     "black>=21",
     "flake8>=3.9",
-    "furo",
     "ipython>=7.26",
-    "myst-nb",
-    "myst-parser",
-    "nbsphinx",
-    "notebook>=6.4.1",
-    "twine>=3.8.0",
-    "recommonmark",
-    "requests>=2",
     "setuptools_scm",
-    "sphinx>3.0.0",
-    "sphinx-autoapi",
-    "sphinx-copybutton",
-    "sphinx-inline-tabs",
-    "sphinxcontrib-programoutput"
+    "notebook>=6.4.1",
 ]
 test = [
     "deepdiff>=5.7.0",
@@ -54,6 +40,24 @@ test = [
     "pytest>=6.2",
     "pytest-cov>=2.12.0",
 
+]
+doc = [
+    "sphinx>3.0.0",
+    "requests>=2",
+    "furo",
+    "myst-nb",
+    "myst-parser",
+    "altair",
+    "nbsphinx",
+    "recommonmark",
+    "sphinx-autoapi",
+    "sphinx-copybutton",
+    "sphinx-inline-tabs",
+    "sphinxcontrib-programoutput"
+]
+build = [
+    "build",
+    "twine",
 ]
 
 [build-system]

@@ -1,4 +1,4 @@
-## Provenance 
+# Provenance 
 
 The provenance document is meant to inform the user about the provider, source, 
 distributor, and processing of the data in this file. The provenance should 

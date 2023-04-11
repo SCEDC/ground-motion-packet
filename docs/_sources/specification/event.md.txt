@@ -1,4 +1,4 @@
-## Event
+# Event
 
 The event dictionary contains the following keys. Note that the event parameters listed
 here can become outdated as new information becomes available. For anyone using these
