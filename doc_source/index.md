@@ -2,7 +2,7 @@
 hide-toc: true
 ---
 
-## Earthquake Ground Motion Data Packet 
+# Earthquake Ground Motion Data Packet 
 
 Here we present a specification for a [GeoJSON](https://geojson.org/) format 
 for unassociated and event-associated ground motion metrics—that is, quantities
@@ -38,7 +38,7 @@ not stored in the format presented here.
 
 ```{toctree}
 :hidden:
-
+getting_started
 geojson
 terms
 specification/index
