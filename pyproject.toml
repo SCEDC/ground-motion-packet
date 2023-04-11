@@ -21,13 +21,8 @@ dependencies = [
     "pydantic[email]>=1.10.0",
 ]
 
-dynamic = ["entry-points"]
-
-[project.scripts]
-gmpformat = "gmpacket.bin.gmpformat:main"
-
 [tool.setuptools]
-packages = ["gmpacket", "gmpacket.bin"]
+packages = ["gmpacket"]
 
 
 
