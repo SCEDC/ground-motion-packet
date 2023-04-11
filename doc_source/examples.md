@@ -1,4 +1,4 @@
-## Examples
+# GMP Examples
 
 Examples **with fake data** can be found in this repository 
 [here](https://github.com/SCEDC/ground-motion-packet/tree/main/gmpacket/data/examples).

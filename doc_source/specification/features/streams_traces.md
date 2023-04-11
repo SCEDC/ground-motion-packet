@@ -1,4 +1,4 @@
-## Streams and Traces
+# Streams and Traces
 
 For the purposes of the GMP format, we require that the traces be grouped into
 streams for which their corresponding properties (i.e., metadata) are consistent.

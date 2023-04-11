@@ -12,6 +12,8 @@ kernelspec:
 ---
 # Pydantic Demo
 
+Before starting, ensure you have installed the python packages as described in the [Getting Started](getting_started) section.
+
 We will start with the necessary imports 
 
 ```{code-cell} ipython3

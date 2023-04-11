@@ -1,4 +1,4 @@
-## Stations
+# Stations
 
 The GeoJSON features represent seismic stations in the GMP specification. 
 Station metadata is included in the GeoJSON feature "properties" dictionary. 

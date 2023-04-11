@@ -1,8 +1,8 @@
-## Developer Notes
+# Developer Notes
 
 We welcome comments and contributions through github issues.
 
-### Documentation
+## Documentation
 
 Never edit the contents of the `docs` directory, only edit files in the `doc_source`
 directory.
@@ -18,7 +18,7 @@ conda activate gmpdocs
 ```
 
 Then install the python packages as described  in the 
-[Command Line Tools](cli) section. For the demo, we'll also need
+[Getting Started](getting_started) section. For the demo, we'll also need
 
 ```
 pip install ipyleaflet

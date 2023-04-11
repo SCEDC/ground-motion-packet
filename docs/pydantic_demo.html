@@ -3,12 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developer Notes" href="dev.html" /><link rel="prev" title="Demo" href="demo.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developer Notes" href="dev.html" /><link rel="prev" title="GMP Examples" href="examples.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Pydantic Demo - Ground Motion Packet Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -160,6 +160,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geojson.html">GeoJSON Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terms.html">Terminology</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="specification/index.html">Specification</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -174,9 +175,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">GMP Examples</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Pydantic Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev.html">Developer Notes</a></li>
 </ul>
@@ -215,6 +214,7 @@
         <article role="main">
           <section id="pydantic-demo">
 <h1>Pydantic Demo<a class="headerlink" href="#pydantic-demo" title="Permalink to this heading">#</a></h1>
+<p>Before starting, ensure you have installed the python packages as described in the <a class="reference internal" href="getting_started.html"><span class="doc std std-doc">Getting Started</span></a> section.</p>
 <p>We will start with the necessary imports</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -349,8 +349,8 @@ properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>channel_code=&#39;HNE&#39; location_code=&#39;10&#39; as_recorded=True azimuth=90.0 dip=0.0 start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235) end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)
-properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)) metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>channel_code=&#39;HNE&#39; location_code=&#39;10&#39; as_recorded=True azimuth=90.0 dip=0.0 start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774) end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)
+properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774), end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)) metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])]
 </pre></div>
 </div>
 </div>
@@ -377,7 +377,7 @@ properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cosmos_code=10 description=&#39;A building&#39; stream_depth=0.0 stream_location=None
 band_code=&#39;H&#39; instrument_code=&#39;N&#39; samples_per_second=100.0 stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)
-properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)) traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])]
+properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)) traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774), end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])]
 </pre></div>
 </div>
 </div>
@@ -403,8 +403,8 @@ properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coordinates=[-124.1, 32.0, 1.1] type=&#39;Point&#39;
-network_code=&#39;NC&#39; station_code=&#39;ABCD&#39; name=&#39;A nice place for picnics&#39; streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])] structure_reference_orientation=None
-geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;) properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None) type=&#39;Feature&#39;
+network_code=&#39;NC&#39; station_code=&#39;ABCD&#39; name=&#39;A nice place for picnics&#39; streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774), end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])] structure_reference_orientation=None
+geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;) properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774), end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None) type=&#39;Feature&#39;
 </pre></div>
 </div>
 </div>
@@ -427,8 +427,8 @@ geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;) 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type=&#39;Feature&#39; properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 2, 1, 17, 2, 49, 309312), &#39;magnitude&#39;: 7.3} geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}
-version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 258873) event=Event(type=&#39;Feature&#39;, properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 2, 1, 17, 2, 49, 309312), &#39;magnitude&#39;: 7.3}, geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}) provenance=Provenance(agent={&#39;person&#39;: PersonAgent(label=&#39;Alex Processor&#39;, name=&#39;Alex Processor&#39;, email=&#39;aprocessor@datagenerator.org&#39;, role=&#39;Data Processor&#39;, prov:type={&#39;$&#39;: &#39;prov:Person&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;software&#39;: SoftwareAgent(label=&#39;gmprocess&#39;, name=&#39;gmprocess&#39;, version=&#39;1.2.0&#39;, website=Website(url=&#39;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:SoftwareAgent&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;organization&#39;: OrganizationAgent(label=&#39;Data Generator&#39;, name=&#39;Data Generator&#39;, role=&#39;Data Provider&#39;, website=Website(url=&#39;https://www.datagenerator.org&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:Organization&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;})}, prefix={&#39;seis_prov&#39;: &#39;http://seisprov.org/seis_prov/0.1/#&#39;}) features=[Feature(geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;), properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 2, 1, 17, 2, 19, 290235), end_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 290235)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None), type=&#39;Feature&#39;)] type=&#39;FeatureCollection&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type=&#39;Feature&#39; properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 4, 11, 20, 38, 40, 463823), &#39;magnitude&#39;: 7.3} geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}
+version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 426764) event=Event(type=&#39;Feature&#39;, properties={&#39;id&#39;: &#39;us2023abcd&#39;, &#39;time&#39;: datetime.datetime(2023, 4, 11, 20, 38, 40, 463823), &#39;magnitude&#39;: 7.3}, geometry={&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-120.0, 32.1, 35300.0]}) provenance=Provenance(agent={&#39;person&#39;: PersonAgent(label=&#39;Alex Processor&#39;, name=&#39;Alex Processor&#39;, email=&#39;aprocessor@datagenerator.org&#39;, role=&#39;Data Processor&#39;, prov:type={&#39;$&#39;: &#39;prov:Person&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;software&#39;: SoftwareAgent(label=&#39;gmprocess&#39;, name=&#39;gmprocess&#39;, version=&#39;1.2.0&#39;, website=Website(url=&#39;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:SoftwareAgent&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;}), &#39;organization&#39;: OrganizationAgent(label=&#39;Data Generator&#39;, name=&#39;Data Generator&#39;, role=&#39;Data Provider&#39;, website=Website(url=&#39;https://www.datagenerator.org&#39;, site_type=&#39;xsd:anyURI&#39;), prov:type={&#39;$&#39;: &#39;prov:Organization&#39;, &#39;type&#39;: &#39;prov:QUALIFIED_NAME&#39;})}, prefix={&#39;seis_prov&#39;: &#39;http://seisprov.org/seis_prov/0.1/#&#39;}) features=[Feature(geometry=FeatureGeometry(coordinates=[-124.1, 32.0, 1.1], type=&#39;Point&#39;), properties=FeatureProperties(network_code=&#39;NC&#39;, station_code=&#39;ABCD&#39;, name=&#39;A nice place for picnics&#39;, streams=[Stream(properties=StreamProperties(band_code=&#39;H&#39;, instrument_code=&#39;N&#39;, samples_per_second=100.0, stream_housing=StreamHousing(cosmos_code=10, description=&#39;A building&#39;, stream_depth=0.0, stream_location=None)), traces=[Trace(properties=TraceProperties(channel_code=&#39;HNE&#39;, location_code=&#39;10&#39;, as_recorded=True, azimuth=90.0, dip=0.0, start_time=datetime.datetime(2023, 4, 11, 20, 38, 10, 450774), end_time=datetime.datetime(2023, 4, 11, 20, 38, 40, 450774)), metrics=[Metric(properties=MetricProperties(description=&#39;Peak Ground Accleration&#39;, name=&#39;PGA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=None, values=1.5), Metric(properties=MetricProperties(description=&#39;Spectral Accleration&#39;, name=&#39;SA&#39;, units=&#39;g&#39;, provenance_ids=[&#39;person&#39;, &#39;software&#39;, &#39;organization&#39;], time_of_peak=None), dimensions=MetricDimensions(number=2, names=[&#39;critical damping&#39;, &#39;period&#39;], units=[&#39;%&#39;, &#39;s&#39;], axis_values=[[5.0], [0.3, 1.0, 3.0]]), values=[[1.2, 1.4, 1.6]])])])], structure_reference_orientation=None), type=&#39;Feature&#39;)] type=&#39;FeatureCollection&#39;
 </pre></div>
 </div>
 </div>
@@ -446,7 +446,7 @@ version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;version&quot;:&quot;0.1dev&quot;,&quot;creation_time&quot;:&quot;2023-02-01T17:02:49Z&quot;,&quot;event&quot;:{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;id&quot;:&quot;us2023abcd&quot;,&quot;time&quot;:&quot;2023-02-01T17:02:49Z&quot;,&quot;magnitude&quot;:7.3},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-120,32.1,35300]}},&quot;provenance&quot;:{&quot;agent&quot;:{&quot;person&quot;:{&quot;prov:label&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:name&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:email&quot;:&quot;aprocessor@datagenerator.org&quot;,&quot;seis_prov:role&quot;:&quot;Data Processor&quot;,&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Person&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;software&quot;:{&quot;prov:label&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_name&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_version&quot;:&quot;1.2.0&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:SoftwareAgent&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;organization&quot;:{&quot;prov:label&quot;:&quot;Data Generator&quot;,&quot;seis_prov:name&quot;:&quot;Data Generator&quot;,&quot;seis_prov:role&quot;:&quot;Data Provider&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://www.datagenerator.org&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Organization&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}}},&quot;prefix&quot;:{&quot;seis_prov&quot;:&quot;http://seisprov.org/seis_prov/0.1/#&quot;}},&quot;features&quot;:[{&quot;geometry&quot;:{&quot;coordinates&quot;:[-124.1,32,1.1],&quot;type&quot;:&quot;Point&quot;},&quot;properties&quot;:{&quot;network_code&quot;:&quot;NC&quot;,&quot;station_code&quot;:&quot;ABCD&quot;,&quot;name&quot;:&quot;A nice place for picnics&quot;,&quot;streams&quot;:[{&quot;properties&quot;:{&quot;band_code&quot;:&quot;H&quot;,&quot;instrument_code&quot;:&quot;N&quot;,&quot;samples_per_second&quot;:100,&quot;stream_housing&quot;:{&quot;cosmos_code&quot;:10,&quot;description&quot;:&quot;A building&quot;,&quot;stream_depth&quot;:0,&quot;stream_location&quot;:null}},&quot;traces&quot;:[{&quot;properties&quot;:{&quot;channel_code&quot;:&quot;HNE&quot;,&quot;location_code&quot;:&quot;10&quot;,&quot;as_recorded&quot;:true,&quot;azimuth&quot;:90,&quot;dip&quot;:0,&quot;start_time&quot;:&quot;2023-02-01T17:02:19Z&quot;,&quot;end_time&quot;:&quot;2023-02-01T17:02:49Z&quot;},&quot;metrics&quot;:[{&quot;properties&quot;:{&quot;description&quot;:&quot;Peak Ground Accleration&quot;,&quot;name&quot;:&quot;PGA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:null,&quot;values&quot;:1.5},{&quot;properties&quot;:{&quot;description&quot;:&quot;Spectral Accleration&quot;,&quot;name&quot;:&quot;SA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:{&quot;number&quot;:2,&quot;names&quot;:[&quot;critical damping&quot;,&quot;period&quot;],&quot;units&quot;:[&quot;%&quot;,&quot;s&quot;],&quot;axis_values&quot;:[[5],[0.3,1,3]]},&quot;values&quot;:[[1.2,1.4,1.6]]}]}]}],&quot;structure_reference_orientation&quot;:null},&quot;type&quot;:&quot;Feature&quot;}],&quot;type&quot;:&quot;FeatureCollection&quot;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;version&quot;:&quot;0.1dev&quot;,&quot;creation_time&quot;:&quot;2023-04-11T20:38:40Z&quot;,&quot;event&quot;:{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;id&quot;:&quot;us2023abcd&quot;,&quot;time&quot;:&quot;2023-04-11T20:38:40Z&quot;,&quot;magnitude&quot;:7.3},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-120,32.1,35300]}},&quot;provenance&quot;:{&quot;agent&quot;:{&quot;person&quot;:{&quot;prov:label&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:name&quot;:&quot;Alex Processor&quot;,&quot;seis_prov:email&quot;:&quot;aprocessor@datagenerator.org&quot;,&quot;seis_prov:role&quot;:&quot;Data Processor&quot;,&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Person&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;software&quot;:{&quot;prov:label&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_name&quot;:&quot;gmprocess&quot;,&quot;seis_prov:software_version&quot;:&quot;1.2.0&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://code.usgs.gov/ghsc/esi/groundmotion-processing/#introduction&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:SoftwareAgent&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}},&quot;organization&quot;:{&quot;prov:label&quot;:&quot;Data Generator&quot;,&quot;seis_prov:name&quot;:&quot;Data Generator&quot;,&quot;seis_prov:role&quot;:&quot;Data Provider&quot;,&quot;seis_prov:website&quot;:{&quot;$&quot;:&quot;https://www.datagenerator.org&quot;,&quot;type&quot;:&quot;xsd:anyURI&quot;},&quot;prov:type&quot;:{&quot;$&quot;:&quot;prov:Organization&quot;,&quot;type&quot;:&quot;prov:QUALIFIED_NAME&quot;}}},&quot;prefix&quot;:{&quot;seis_prov&quot;:&quot;http://seisprov.org/seis_prov/0.1/#&quot;}},&quot;features&quot;:[{&quot;geometry&quot;:{&quot;coordinates&quot;:[-124.1,32,1.1],&quot;type&quot;:&quot;Point&quot;},&quot;properties&quot;:{&quot;network_code&quot;:&quot;NC&quot;,&quot;station_code&quot;:&quot;ABCD&quot;,&quot;name&quot;:&quot;A nice place for picnics&quot;,&quot;streams&quot;:[{&quot;properties&quot;:{&quot;band_code&quot;:&quot;H&quot;,&quot;instrument_code&quot;:&quot;N&quot;,&quot;samples_per_second&quot;:100,&quot;stream_housing&quot;:{&quot;cosmos_code&quot;:10,&quot;description&quot;:&quot;A building&quot;,&quot;stream_depth&quot;:0,&quot;stream_location&quot;:null}},&quot;traces&quot;:[{&quot;properties&quot;:{&quot;channel_code&quot;:&quot;HNE&quot;,&quot;location_code&quot;:&quot;10&quot;,&quot;as_recorded&quot;:true,&quot;azimuth&quot;:90,&quot;dip&quot;:0,&quot;start_time&quot;:&quot;2023-04-11T20:38:10Z&quot;,&quot;end_time&quot;:&quot;2023-04-11T20:38:40Z&quot;},&quot;metrics&quot;:[{&quot;properties&quot;:{&quot;description&quot;:&quot;Peak Ground Accleration&quot;,&quot;name&quot;:&quot;PGA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:null,&quot;values&quot;:1.5},{&quot;properties&quot;:{&quot;description&quot;:&quot;Spectral Accleration&quot;,&quot;name&quot;:&quot;SA&quot;,&quot;units&quot;:&quot;g&quot;,&quot;provenance_ids&quot;:[&quot;person&quot;,&quot;software&quot;,&quot;organization&quot;],&quot;time_of_peak&quot;:null},&quot;dimensions&quot;:{&quot;number&quot;:2,&quot;names&quot;:[&quot;critical damping&quot;,&quot;period&quot;],&quot;units&quot;:[&quot;%&quot;,&quot;s&quot;],&quot;axis_values&quot;:[[5],[0.3,1,3]]},&quot;values&quot;:[[1.2,1.4,1.6]]}]}]}],&quot;structure_reference_orientation&quot;:null},&quot;type&quot;:&quot;Feature&quot;}],&quot;type&quot;:&quot;FeatureCollection&quot;}
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -479,7 +479,8 @@ version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 
       <th>station_longitude</th>
       <th>station_latitude</th>
       <th>station_elevation</th>
-      <th>channel</th>
+      <th>epicentral_distance_km</th>
+      <th>component</th>
       <th>location</th>
       <th>PGA(g)</th>
       <th>SA(g)_critical_damping_5.0%_period_0.3s</th>
@@ -491,7 +492,7 @@ version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 
     <tr>
       <th>0</th>
       <td>us2023abcd</td>
-      <td>2023-02-01 17:02:49.309312</td>
+      <td>2023-04-11 20:38:40.463823</td>
       <td>7.3</td>
       <td>-120.0</td>
       <td>32.1</td>
@@ -502,27 +503,7 @@ version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 
       <td>-124.1</td>
       <td>32.0</td>
       <td>1.1</td>
-      <td>HNE</td>
-      <td>10</td>
-      <td>1.5</td>
-      <td>1.2</td>
-      <td>1.4</td>
-      <td>1.6</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>us2023abcd</td>
-      <td>2023-02-01 17:02:49.309312</td>
-      <td>7.3</td>
-      <td>-120.0</td>
-      <td>32.1</td>
-      <td>35300.0</td>
-      <td>NC</td>
-      <td>ABCD</td>
-      <td>A nice place for picnics</td>
-      <td>-124.1</td>
-      <td>32.0</td>
-      <td>1.1</td>
+      <td>387.346866</td>
       <td>HNE</td>
       <td>10</td>
       <td>1.5</td>
@@ -551,14 +532,14 @@ version=&#39;0.1dev&#39; creation_time=datetime.datetime(2023, 2, 1, 17, 2, 49, 
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="demo.html">
+          <a class="prev-page" href="examples.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Demo</div>
+                <div class="title">GMP Examples</div>
                 
               </div>
             </a>

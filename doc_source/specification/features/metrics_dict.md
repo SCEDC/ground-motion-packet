@@ -1,4 +1,4 @@
-## Metrics Dictionary
+# Metrics Dictionary
 
 The "metrics" dictionary contains the values and metadata relevant for the 
 metrics associated with the parent trace. One challenge with ground motion
@@ -9,14 +9,14 @@ the assumed percent of critical damping).
 
 While it is possible to list each metric as a separate element in a list, there
 are two main drawbacks to doing so:
-  1. It is inefficient from a file size perspective, and 
+
+  1. It is inefficient from a file size perspective, and
   2. It is difficult to parse because the properties will be different for each
      metric.
 
 Thus, we have designed a general metrics data structure with the goals of
 being easy to extend to a wide range of metric data structures, consistency in
-how the metrics are stored to make parsing the data more straight-forward, and 
-minimizing the file size. 
+how the metrics are stored to make parsing the data more straight-forward, and minimizing the file size.
 
 The dictionary has the following required keys:
 
@@ -113,5 +113,3 @@ force: true
   ]
 
 ```
-
-
