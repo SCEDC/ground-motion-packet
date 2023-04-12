@@ -1,6 +1,6 @@
 [project]
 name = "gmpacket"
-version = "0.1.2"
+dynamic = ["version"]
 description = "ANSS Ground Motion Packet"
 authors = [
     {name = "Mike Hearne", email="mhearne@usgs.gov"},
@@ -69,3 +69,5 @@ requires = [
   "numpy",
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
