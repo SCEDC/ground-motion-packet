@@ -1,0 +1,3 @@
+recursive-include gmpacket/data *
+prune tests
+prune doc_source

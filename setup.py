@@ -13,9 +13,4 @@ setup(
     url="https://github.com/SCEDC/ground-motion-packet",
     packages=["gmpacket"],
     package_data={"gmpacket": glob.glob("gmpacket/data/**", recursive=True)},
-    entry_points={
-        "console_scripts": [
-            "gmpformat = gmpacket.bin.gmpformat:main",
-        ]
-    },
 )

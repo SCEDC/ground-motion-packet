@@ -18,4 +18,4 @@ suitability of the data for common engineering/seismological applications.
 [User Documentation](https://scedc.github.io/ground-motion-packet/index.html)
 
 ## Demo
-[Sample Jupyter notebook](https://github.com/SCEDC/ground-motion-packet/blob/main/gmpacket/GMP-demo.ipynb)
+[Sample Jupyter notebook](https://github.com/SCEDC/ground-motion-packet/blob/main/notebooks/pydantic_demo.ipynb)
