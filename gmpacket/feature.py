@@ -5,7 +5,7 @@ from typing import List, Optional, Union
 
 # third party imports
 import numpy as np
-from pydantic import BaseModel, root_validator
+from pydantic import BaseModel, ConfigDict, model_validator
 
 # local imports
 from gmpacket.utils import datetime_to_iso8601
@@ -65,8 +65,8 @@ class MetricProperties(BaseModel):
     description: str
     name: str
     units: str
-    provenance_ids: Optional[List[str]]
-    time_of_peak: Optional[datetime]
+    provenance_ids: Optional[List[str]] = None
+    time_of_peak: Optional[datetime] = None
 
 
 class MetricDimensions(BaseModel):
@@ -77,7 +77,7 @@ class MetricDimensions(BaseModel):
     units: List[str]
     axis_values: List[List[float]]
 
-    @root_validator(pre=True)
+    @model_validator(mode="before")
     def check_dimensions(cls, values):
         ndims = values["number"]
         assert len(values["names"]) == ndims
@@ -88,16 +88,10 @@ class Metric(BaseModel):
     """Represent a ground motion packet Metric object."""
 
     properties: MetricProperties
-    dimensions: Optional[MetricDimensions]  # required when metric is an array
+    dimensions: Optional[MetricDimensions] = None  # required when metric is an array
     values: Union[List[List[float]], List[float], float]
 
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
-
-    @root_validator(pre=True)
+    @model_validator(mode="before")
     def check_dimensions(cls, values):
         if "dimensions" in values and values["dimensions"] is not None:
             if "number" in values["dimensions"]:
@@ -119,24 +113,12 @@ class TraceProperties(BaseModel):
     start_time: datetime
     end_time: datetime
 
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
-
 
 class Trace(BaseModel):
     """Represent a ground motion packet Trace object."""
 
     properties: TraceProperties
     metrics: List[Metric]
-
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
 
 
 class StreamHousing(BaseModel):
@@ -145,7 +127,7 @@ class StreamHousing(BaseModel):
     cosmos_code: int
     description: str
     stream_depth: float
-    stream_location: Optional[str]
+    stream_location: Optional[str] = None
 
     @classmethod
     def from_enum(cls, code: CosmosCode, depth: float, location: str = ""):
@@ -183,17 +165,11 @@ class Stream(BaseModel):
     properties: StreamProperties
     traces: List[Trace]
 
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
-
 
 class FeatureGeometry(BaseModel):
     """Represent a ground motion packet FeatureGeometry object."""
 
-    type = "Point"
+    type: str = "Point"
     coordinates: List[float]
 
 
@@ -202,20 +178,14 @@ class FeatureProperties(BaseModel):
 
     network_code: str
     station_code: str
-    name: Optional[str]
+    name: Optional[str] = None
     streams: List[Stream]
-    structure_reference_orientation: Optional[int]
+    structure_reference_orientation: Optional[int] = None
 
 
 class Feature(BaseModel):
     """Represent a ground motion packet Feature object."""
 
-    type = "Feature"
+    type: str = "Feature"
     geometry: FeatureGeometry
     properties: FeatureProperties
-
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }

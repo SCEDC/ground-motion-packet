@@ -36,7 +36,7 @@ def test_event():
     jdict = get_jdict()
     data = jdict["event"]
     event = Event(**data)
-    assert event.dict(by_alias=True) == data
+    assert event.model_dump(by_alias=True) == data
 
     event = Event.from_params(
         "ci38457511", "2019-07-06T03:19:53Z", 7.1, -117.599, 35.77, -8.0
@@ -50,13 +50,13 @@ def test_event():
         },
         "geometry": {"type": "Point", "coordinates": [35.77, -117.599, -8000.0]},
     }
-    assert event.dict(by_alias=True) == cmp_dict
+    assert event.model_dump(by_alias=True) == cmp_dict
 
 
 def test_packet():
     data = get_jdict()
     packet = GroundMotionPacket(**data)
-    pdict = json.loads(packet.json(by_alias=True))
+    pdict = json.loads(packet.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, pdict) == {}
 
@@ -215,7 +215,7 @@ def test_from_objects():
         '"values": [[1.23435678, 1.456789, 1.678901]]}]}]}], '
         '"structure_reference_orientation": null}, "type": "Feature"}'
     )
-    feature_json = feature.json(by_alias=True)
+    feature_json = feature.model_dump_json(by_alias=True)
     cmp_dict = json.loads(cmp_json)
     feature_dict = json.loads(feature_json)
     res = DeepDiff(feature_dict, cmp_dict)

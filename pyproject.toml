@@ -18,7 +18,7 @@ keywords = ["ground motion", "earthquake"]
 dependencies = [
     "geopy>=2.1.0",
     "pandas>=1.4.0",
-    "pydantic[email]>=1.10.0",
+    "pydantic[email]>=2.0",
 ]
 
 [tool.setuptools]
