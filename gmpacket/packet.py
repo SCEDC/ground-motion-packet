@@ -9,7 +9,7 @@ from typing import List, Optional
 import numpy as np
 import pandas as pd
 from geopy import distance
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 # local imports
 from gmpacket.feature import Feature
@@ -39,29 +39,20 @@ class Event(BaseModel):
         geometry = {"type": "Point", "coordinates": [lon, lat, depth * 1000]}
         return cls(properties=props, geometry=geometry)
 
-    class Config:
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
+    # model_config: ConfigDict = ConfigDict(json_encoders={datetime: datetime_to_iso8601})
 
 
 class GroundMotionPacket(BaseModel):
     """Represent a high level ground motion packet object."""
 
-    type = "FeatureCollection"
+    type: str = "FeatureCollection"
     version: str
     creation_time: datetime = datetime.utcnow()
     event: Optional[Event]
     provenance: Provenance
     features: List[Feature]
 
-    class Config:
-        anystr_strip_whitespace = True
-        json_encoders = {
-            # custom output conversion for datetime
-            datetime: datetime_to_iso8601
-        }
+    model_config: ConfigDict = ConfigDict(str_strip_whitespace=True)
 
     @classmethod
     def load_from_json(cls, filename):

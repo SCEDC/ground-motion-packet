@@ -28,7 +28,7 @@ def test_metric_properties():
         "properties"
     ]
     metprops = MetricProperties(**data)
-    assert metprops.dict(by_alias=True) == data
+    assert metprops.model_dump(by_alias=True) == data
 
 
 def test_metric_dimensions():
@@ -37,14 +37,14 @@ def test_metric_dimensions():
         "dimensions"
     ]
     metdims = MetricDimensions(**data)
-    assert metdims.dict(by_alias=True) == data
+    assert metdims.model_dump(by_alias=True) == data
 
 
 def test_metric():
     jdict = get_jdict()
     data = jdict["features"][0]["properties"]["streams"][0]["traces"][0]["metrics"][0]
     metric = Metric(**data)
-    mdict = json.loads(metric.json(by_alias=True))
+    mdict = json.loads(metric.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, mdict) == {}
 
@@ -53,7 +53,7 @@ def test_trace_properties():
     jdict = get_jdict()
     data = jdict["features"][0]["properties"]["streams"][0]["traces"][0]["properties"]
     traceprops = TraceProperties(**data)
-    pdict = json.loads(traceprops.json(by_alias=True))
+    pdict = json.loads(traceprops.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, pdict) == {}
 
@@ -62,7 +62,7 @@ def test_trace():
     jdict = get_jdict()
     data = jdict["features"][0]["properties"]["streams"][0]["traces"][0]
     trace = Trace(**data)
-    tdict = json.loads(trace.json(by_alias=True))
+    tdict = json.loads(trace.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, tdict) == {}
 
@@ -73,7 +73,7 @@ def test_stream_housing():
         "stream_housing"
     ]
     housing = StreamHousing(**data)
-    assert housing.dict(by_alias=True) == data
+    assert housing.model_dump(by_alias=True) == data
 
     # test class constructors
     # from_enum(cls, code: CosmosCode, depth: float, location: str = ""):
@@ -84,25 +84,36 @@ def test_stream_housing():
         "stream_depth": 33.0,
         "stream_location": "in a building",
     }
-    assert housing.dict(by_alias=True) == cmp_dict
+    assert housing.model_dump(by_alias=True) == cmp_dict
+
+    # test with None for stream_location
+    # from_enum(cls, code: CosmosCode, depth: float, location: str = ""):
+    housing = StreamHousing.from_enum(CosmosCode.BUILDING, 33.0, "in a building")
+    cmp_dict = {
+        "cosmos_code": 10,
+        "description": "Building",
+        "stream_depth": 33.0,
+        "stream_location": "in a building",
+    }
+    assert housing.model_dump(by_alias=True) == cmp_dict
 
     # from_int(cls, code: int, depth: float, location: str = ""):
     housing = StreamHousing.from_int(10, 33.0, "in a building")
-    assert housing.dict(by_alias=True) == cmp_dict
+    assert housing.model_dump(by_alias=True) == cmp_dict
 
 
 def test_stream_properties():
     jdict = get_jdict()
     data = jdict["features"][0]["properties"]["streams"][0]["properties"]
     props = StreamProperties(**data)
-    assert props.dict(by_alias=True) == data
+    assert props.model_dump(by_alias=True) == data
 
 
 def test_stream():
     jdict = get_jdict()
     data = jdict["features"][0]["properties"]["streams"][0]
     stream = Stream(**data)
-    sdict = json.loads(stream.json(by_alias=True))
+    sdict = json.loads(stream.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, sdict) == {}
 
@@ -111,7 +122,7 @@ def test_feature():
     jdict = get_jdict()
     data = jdict["features"][0]
     feature = Feature(**data)
-    fdict = json.loads(feature.json(by_alias=True))
+    fdict = json.loads(feature.model_dump_json(by_alias=True))
     cmp_dict = json.loads(json.dumps(data))
     assert DeepDiff(cmp_dict, fdict) == {}
 
