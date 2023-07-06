@@ -1,0 +1,53 @@
+# schedules:
+# - cron: "0 6 * * *"
+#   displayName: Daily midnight build
+#   branches:
+#     include:
+#     - main
+#   always: true
+
+pr:
+  - main
+
+trigger:
+  tags:
+    include:
+    - 'dev*'
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+jobs:
+- job: linux
+  timeoutInMinutes: '120'
+  pool: {vmImage: 'Ubuntu-latest'}
+  strategy:
+    matrix:
+      Python38:
+        python.version: '3.8'
+      Python39:
+        python.version: '3.9'
+      Python310:
+        python.version: '3.10'
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(python.version)'
+    - bash: |
+        set -o errexit
+        python3 -m pip install --upgrade pip
+        pip3 install cibuildwheel==2.9.0
+      displayName: Install dependencies
+    - bash: cibuildwheel --output-dir wheelhouse .
+      displayName: Build wheels
+    - script: python -m pip install --upgrade twine
+      displayName: 'Install Twine'
+
+    # Download a secure file to the agent machine
+    - task: DownloadSecureFile@1
+      name: securePyPiRC # The name with which to reference the secure file's path on the agent, like $(mySecureFile.secureFilePath)
+      inputs:
+        secureFile: .pypirc
+      
+    # - script: cat $(PYPIRC_PATH)
+    - script: python -m twine upload --skip-existing --non-interactive -r pypi --verbose --config-file $(securePyPiRC.secureFilePath) wheelhouse/*
+      displayName: 'Publish to PyPi through Twine'
